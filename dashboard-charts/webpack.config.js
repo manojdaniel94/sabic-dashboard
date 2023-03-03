@@ -12,7 +12,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 3002,
+    port: 3003,
     historyApiFallback: true,
   },
 
@@ -27,7 +27,12 @@ module.exports = {
       },
       {
         test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+      },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        exclude: /(node_modules)/,
+        use: ["url-loader"],
       },
       {
         test: /\.(ts|tsx|js|jsx)$/,
@@ -45,7 +50,8 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        "./codingDeatils": "./src/codingDeatils.tsx",
+        "./GraphicalOverview": "./src/components/Asset/AssetModel/GraphicalOverview.tsx",
+        "./ReliablityHeatMap": "./src/components/PmtComponent/ReliablityHeatMap/ReliablityHeatMap.tsx",
       },
       shared: {
         ...deps,

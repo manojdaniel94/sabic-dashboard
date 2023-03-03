@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="626.317" height="230.395" viewBox="0 0 626.317 230.395">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0047bb"/>
+      <stop offset="0.33" stop-color="#3bb44a"/>
+      <stop offset="0.66" stop-color="#ffa300"/>
+      <stop offset="1" stop-color="#e35205"/>
+    </linearGradient>
+  </defs>
+  <g id="image_Heatmap" transform="translate(313.159 115.198)">
+    <path id="Path_218" data-name="Path 218" d="M626.317,230.4C552.389,92.778,412.922,0,253.044,0H0V230.4Z" transform="translate(-313.159 -115.198)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>
