@@ -4,7 +4,7 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "http://localhost:3003/",
+    publicPath: "http://localhost:3002/",
   },
 
   resolve: {
@@ -27,7 +27,12 @@ module.exports = {
       },
       {
         test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+      },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        exclude: /(node_modules)/,
+        use: ["url-loader"],
       },
       {
         test: /\.(ts|tsx|js|jsx)$/,
@@ -45,7 +50,9 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        "./codingDeatils": "./src/codingDeatils.tsx",
+        "./AssetCard": "./src/components/PmtComponent/AssetCard/AssetCard.tsx",
+        "./PlantAlertList": "./src/components/PmtComponent/PlantAlertList/PlantAlertList.tsx",
+        "./LiveModel": "./src/components/Asset/AssetModel/LiveModel.tsx",
       },
       shared: {
         ...deps,

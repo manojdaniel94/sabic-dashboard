@@ -1,8 +1,13 @@
 {
-  "name": "sabic-base",
+  "name": "table",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.10.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -11,6 +16,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/react-router-dom": "^5.3.3",
+    "antd": "^5.2.3",
     "html-webpack-plugin": "^5.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -21,13 +27,17 @@
     "web-vitals": "^2.1.4",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1"
+    "webpack-dev-server": "^4.11.1",
+    "url-loader": "^4.1.1",
+    "autoprefixer": "^10.1.0",
+    "babel-loader": "^8.2.2"
   },
   "scripts": {
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "build:start": "cd dist && PORT=3002 npx serve",
     "start": "webpack serve --open --mode development",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start:live": "webpack serve --open --mode development --live-reload --hot"
   },
   "eslintConfig": {
     "extends": [

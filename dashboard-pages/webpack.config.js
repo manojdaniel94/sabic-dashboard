@@ -50,8 +50,9 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {
         components: "components@http://localhost:3001/remoteEntry.js",
-        // charts: "charts@http://localhost:3002/remoteEntry.js",
-        // table: "table@http://localhost:3003/remoteEntry.js",
+        table: "table@http://localhost:3002/remoteEntry.js",
+        charts: "charts@http://localhost:3003/remoteEntry.js",
+
       },
       exposes: {},
       shared: {

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./Button.scss"
+import "./SensorPlot.scss"
 
 interface Props {
     buttonName: string;

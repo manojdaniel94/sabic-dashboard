@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
-import AssetCard from "components/AssetCard";
-import PlantAlertList from "components/PlantAlertList";
+import AssetCard from "table/AssetCard";
+import PlantAlertList from "table/PlantAlertList";
 import '../../../assets/common/PmtDashboard.scss';
-import ReliablityHeatMap from "components/ReliablityHeatMap";
+import ReliablityHeatMap from "charts/ReliablityHeatMap";
 import { useDispatch, useSelector } from "react-redux";
 import Dropdown from "components/Dropdown";
 import {
@@ -126,14 +126,14 @@ const PmtDashboard = () => {
     // console.log("heatMapToolTipbyAssetStatus", heatMapToolTipbyAssetStatus);
     // console.log("topBarToolTipbyPlantId", topBarToolTipbyPlantId);
 
-    let handleNavigation = (select:any)=>{
-       console.log("Go to Asset Page with Asset ID",select);
-       if(select ===""){
-          setErrorMag(true);
-       }
-       if(select !==""){
-          setErrorMag(false);
-       }
+    let handleNavigation = (select: any) => {
+        console.log("Go to Asset Page with Asset ID", select);
+        if (select === "") {
+            setErrorMag(true);
+        }
+        if (select !== "") {
+            setErrorMag(false);
+        }
     }
 
     // const getSelectedclassName = (id: any) => selectedID === id ? "error" : "";
@@ -147,15 +147,15 @@ const PmtDashboard = () => {
                 <div id="pmt-asset-card">
                     <div className="pmt-filter">
                         <div className="pmt-title">ASSET CARD</div>
-                        <div className="pmt-time" 
-                         onClick={() => handleNavigation(selectedAssetId)}
+                        <div className="pmt-time"
+                            onClick={() => handleNavigation(selectedAssetId)}
                         >Go to Asset Page</div>
                         <div className={`pmt-time`}><span>Asset ID</span>
-                        <input type="text"  value={selectedAssetId}/>
-                        <br></br>
-                        {getErrorMag === true ? <span className="PmtErrorMsg">Need to select AssetID</span> : ""}
+                            <input type="text" value={selectedAssetId} />
+                            <br></br>
+                            {getErrorMag === true ? <span className="PmtErrorMsg">Need to select AssetID</span> : ""}
                         </div>
- 
+
                         <Dropdown
                             options={assetIdDropList}
                             // defaultValue={selectedRegion}
