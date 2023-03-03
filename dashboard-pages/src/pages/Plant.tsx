@@ -13,6 +13,7 @@ const PLANT_MENU_DATA = [
     { id: 2, value: "ALERT SATISTICS" },
     { id: 3, value: "MODEL PERFORMNACE" },
     { id: 4, value: "ALERT MANAGEMENT PAGE" },
+    { id: 5, value: "PM COMPLIANCE" },
 ];
 const Plant = () => {
 

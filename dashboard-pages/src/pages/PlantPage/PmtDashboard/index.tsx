@@ -144,23 +144,21 @@ const PmtDashboard = () => {
     return (
         <div id="pmt">
             <div id="pmt-left">
-                <div id="pmt-asset-card">
+            <div id="pmt-asset-card">
+                    <div className="pmt-title">ASSET CARD</div>
                     <div className="pmt-filter">
-                        <div className="pmt-title">ASSET CARD</div>
-                        <div className="pmt-time"
-                            onClick={() => handleNavigation(selectedAssetId)}
-                        >Go to Asset Page</div>
+                        <div className="pmt-asset-name">LC-01-CGC</div>                        
                         <div className={`pmt-time`}><span>Asset ID</span>
                             <input type="text" value={selectedAssetId} />
                             <br></br>
                             {getErrorMag === true ? <span className="PmtErrorMsg">Need to select AssetID</span> : ""}
                         </div>
-
-                        <Dropdown
+                        <div className="pmt-options"><Dropdown
                             options={assetIdDropList}
                             // defaultValue={selectedRegion}
                             handleChange={handleAssetIdDropChange}
-                        />
+                        /></div>
+                        <div className="pmt-gobtn" onClick={() => handleNavigation(selectedAssetId)} >Go</div>
                     </div>
                     {/* <div className="pmt-asset-name">LC-01 - CGC</div> */}
                     <AssetCard
