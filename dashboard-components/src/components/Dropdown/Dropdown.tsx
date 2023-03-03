@@ -8,6 +8,7 @@ interface Props {
   defaultValue?: any
 }
 
+// initial
 const Dropdown = ({ options, handleChange, value, defaultValue }: Props) => {
   return (
     <>
