@@ -1,4 +1,8 @@
 //PMT PAGE
+
+*::-webkit-scrollbar {width: 2px;scrollbar-width: 2px;width: 2px;scrollbar-width: 2px;}
+*::-webkit-scrollbar-track {background-color:transparent;box-shadow:none;}
+*::-webkit-scrollbar-thumb {background-color:#777777;outline: 1px solid #FBFCFD;background-color: #ccc;border-radius: 8px;outline: 1px solid #EAEBEC; background-clip: padding-box;}
 #pmt {
     display: flex;
     justify-content: space-between;
@@ -10,44 +14,51 @@
         justify-content: flex-start;
         border-radius: 5px;
         flex-direction: column;
-
         #pmt-asset-card {
             background: #fff;
             box-shadow: 0px 0px 18px #eaeaea;
             padding: 30px;
-
+            .pmt-title {
+                font-size: 20px;
+                display: flex;
+                color: #58595B;
+                font: normal 600 16px 'SABIC Typeface Text Regular', arial, helvetica;
+                letter-spacing: 1px;
+            }
             .pmt-filter {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-
-                .pmt-title {
-                    font-size: 20px;
-                    display: flex;
-                    color: #58595B;
-                    font: normal 600 16px 'SABIC Typeface Text Regular', arial, helvetica;
+                margin-bottom:10px;
+                .pmt-asset-name {
+                    padding: 10px;
+                    font-size: 14px;
                     letter-spacing: 1px;
+                    color: #939598;
+                    padding: 15px 0 15px 0;
                 }
-
                 .pmt-time {
                     color: #009FDF;
-                    font-size: 16px;
-
+                    font-size: 16px;flex-basis:30%;
+                    display:flex;
                     span {
                         color: #939598;
-                        padding: 0 15px 0 30px;
+                        padding: 0 15px;
+                        flex-basis: 40%;
+                        font-size: 14px;
                     }
-
                     input {
                         background: #EAEBEC;
                         border: 0px;
                         font-size: 14px;
                         height: 25px;
                         border-radius: 5px;
+                        width: 60%;
                     }
                 }
+                .pmt-gobtn{background:#EAEBEC;border-radius: 2px;padding:5px 10px;color:#666;font-size: 14px;}
 
-                .pmt-options {
+                .pmt-options {flex-basis:30%;
                     select {
                         border: 0px;
                         font-size: 17px;
@@ -57,6 +68,9 @@
                         border-radius: 5px;
                     }
                 }
+                .css-13cymwt-control{border:0px;font-size: 14px;background:#eaebec;min-height:25px;}
+                .css-1u9des2-indicatorSeparator{display:none;}
+                .css-1xc3v61-indicatorContainer{padding:0 5px;}
             }
 
             .pmt-asset-name {
@@ -94,7 +108,7 @@
 
                     span {
                         color: #939598;
-                        padding: 0 15px 0 30px;
+                        padding: 0 15px;
                     }
 
                     input {
@@ -123,18 +137,18 @@
                 font-size: 16px;
                 letter-spacing: 1px;
                 color: #939598;
-                padding: 15px 0 15px 0;
+                padding:5px 0 10px 0;
             }
 
         }
-
-        .pmt-plot-graph {
-            text-align: center;
-
-            img {
-                max-width: 100%;
-            }
+        .ant-table-body{
+            .status-tooltip-box::-webkit-scrollbar {width: 2px;scrollbar-width: 2px;width: 2px;scrollbar-width: 2px;}
+            .status-tooltip-box::-webkit-scrollbar-track {background-color:transparent;box-shadow:none;}
+            .status-tooltip-box::-webkit-scrollbar-thumb {background-color:#777777;outline: 1px solid #FBFCFD;background-color: #EAEBEC;border-radius: 8px;outline: 1px solid #EAEBEC; background-clip: padding-box;}
         }
+        .ant-table-cell{padding:5px;}
+        .ant-table-thead th.ant-table-cell{background:transparent}
+        :where(.css-dev-only-do-not-override-10ed4xt).ant-table-wrapper .ant-table{color:#9395a5}
 
     }
 
@@ -153,6 +167,11 @@
             right: 10px;
             top: 20px;
             width: 200px;
+            .css-13cymwt-control{
+                border:0px;
+                font-size:12px;
+            }
+            .css-1u9des2-indicatorSeparator{display:none}
         }
 
         .pmt-right-title {
@@ -476,7 +495,6 @@
                 #pmt-left {
                     flex-basis: 55%
                 }
-
                 #pmt-right {
                     .pmt-health-index {
                         .pmt-heatmapvalues {
@@ -508,60 +526,61 @@
 }
 
 @media screen and (max-width:1440px) {
-    #pmt {
-        margin: 2vh 0;
+    #content {
+        .content-inner {
+            #pmt {
+                margin: 2vh 0;
+                #pmt-left {
+                    flex-basis: 50%;
+                    #pmt-asset-card {
+                        padding: 20px;
 
-        #pmt-left {
-            flex-basis: 50%;
-
-            #pmt-asset-card {
-                padding: 20px;
-
-                .pmt-filter {
-                    .pmt-time {
-                        input {
-                            width: 100px
+                        .pmt-filter {
+                            .pmt-time {
+                                input {
+                                    width: 50%
+                                }
+                            }
                         }
                     }
+
+                    #pmt-alert-list {
+                        padding: 20px;
+                    }
                 }
-            }
 
-            #pmt-alert-list {
-                padding: 20px;
-            }
-        }
+                #pmt-right {
+                    flex-basis: calc(50% - 55px);
+                    padding: 20px;
 
-        #pmt-right {
-            flex-basis: calc(50% - 55px);
-            padding: 20px;
+                    .pmt-health-index {
+                        .pmt-heatmapvalues {
+                            .hi-pos-off {
+                                left: -15% !important
+                            }
 
-            .pmt-health-index {
-                .pmt-heatmapvalues {
-                    .hi-pos-off {
-                        left: -15% !important
-                    }
+                            .hi-pos-normal {
+                                left: 5% !important
+                            }
 
-                    .hi-pos-normal {
-                        left: 5% !important
-                    }
+                            .hi-pos-warning {
+                                left: 0px !important
+                            }
 
-                    .hi-pos-warning {
-                        left: 0px !important
-                    }
+                            .hi-pos-risk {
+                                left: 30% !important
+                            }
 
-                    .hi-pos-risk {
-                        left: 30% !important
-                    }
-
-                    .hi-pos-risk::after {
-                        left: 82%
+                            .hi-pos-risk::after {
+                                left: 82%
+                            }
+                        }
                     }
                 }
             }
         }
     }
 }
-
 
 @media screen and (max-width:1280px) {
     #content {

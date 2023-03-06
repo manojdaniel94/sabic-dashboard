@@ -12,7 +12,7 @@ interface Props {
 const MenuContainer = ({ data, handleMenuClick, getSelectedclassName }: Props) => {
 
     return (
-        <div id="asset-menu">
+        <div id="pmt-menu">
             {data.map((item) => (
                 <a
                     id={item.id}
