@@ -43,7 +43,8 @@ const GraphicalOverview = () => {
             // plotBackgroundImage: `${Image2Y3001A}`,
             events: {
                 click: function (event:any){
-                    console.log(event);
+                    console.log("******event*****",event);
+                    // alert(event);
                    }
             }
         },
@@ -99,44 +100,122 @@ const GraphicalOverview = () => {
                         }
                     }
                 },
+                // tooltip: {
+                //     useHTML: true,
+                //     backgroundColor: "#000000",
+                //     borderRadius: 6,
+                //     borderColor: "#000000",
+                //     valueDecimals: 2,
+                //     animation: true,
+                //     style: {
+                //       color: "white",
+                //       opacity: 0.75,
+                //       shadow: "0px 3px 6px #000000",
+                //       pointerEvents: "auto"
+                //     },
+                //     hideDelay: 1000,
+                //     formatter() {
+                //       return `<span>
+                //       <button type="button" onclick="showMoreDetails()">More Details</button>
+                //      </span>`;
+                //     }
+                //   }
                 tooltip: {
-                    useHTML: true,
-                    backgroundColor: "#000000",
-                    borderRadius: 6,
-                    borderColor: "#000000",
-                    valueDecimals: 2,
-                    animation: true,
-                    style: {
-                      color: "white",
-                      opacity: 0.75,
-                      shadow: "0px 3px 6px #000000",
-                      pointerEvents: "auto"
-                    },
-                    hideDelay: 1000,
-                    formatter() {
-                      return `<span>
-                      <button type="button" onclick="showMoreDetails()">More Details</button>
-                     </span>`;
-                    }
-                  }
+                    pointFormat: "{point.custom.extraInformation}",
+                    backgroundColor: "black",
+                    // "The value for <b>{point.x}</b> is <b>{point.y}</b><br>{point.custom.extraInformation}",
+                },
                 
             },
-            series: {
-                cursor: 'pointer',
-                point: {
-                    events: {
-                        click: function () {
-                           console.log("amit")
-                        }
-                    }
-                }
-            }
+            // series: {
+            //     cursor: 'pointer',
+            //     point: {
+            //         events: {
+            //             click: function () {
+            //                console.log("amit")
+            //             }
+            //         }
+            //     }
+            // }
         },
         series: [{
             name: 'Series 1',
             color: 'rgba(118, 189, 34, .7)',
-            // 1st model data-km-S206
-            data: [[19.5, 19.7],[42.7, 38],[74.7, 66.5],[56.2, 66.5],[58.7, 66.5],[63.5, 66.5],[40.5, 79.5],[82.5, 26],[65, 88.5],[79, 66.5]]
+             // 1st model data-km-S206
+             data: [
+                {
+                  x: 19.5,
+                  y: 19.7,
+                  color: "#FF0000",
+                  custom: {
+                    extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
+                  },
+                },
+                {
+                  x: 42.7,
+                  y: 38,
+                  color: "yellow",
+                  custom: {
+                    extraInformation: "Go to Devaition Plot.",
+                  },
+                },
+                {
+                  x: 74.7,
+                  y: 66.5,
+                  custom: {
+                    extraInformation: "Go toAlertList<br>Go to Devaition Plot.",
+                  },
+                },
+                {
+                  x: 56.2,
+                  y: 66.5,
+                  custom: {
+                    extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
+                  },
+                },
+                {
+                  x: 58.7,
+                  y: 66.5,
+                  custom: {
+                    extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
+                  },
+                },
+                {
+                  x: 63.5,
+                  y: 66.5,
+                  custom: {
+                    extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
+                  },
+                },
+                {
+                  x: 40.5,
+                  y: 79.5,
+                  custom: {
+                    extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
+                  },
+                },
+                {
+                  x: 82.5,
+                  y: 26,
+                  custom: {
+                    extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
+                  },
+                },
+                {
+                  x: 65,
+                  y: 88.5,
+                  custom: {
+                    extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
+                  },
+                },
+                {
+                  x: 79,
+                  y: 66.5,
+                  custom: {
+                    extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
+                  },
+                },
+              ],
 
             // 2st model data 2K3101
             // data: [[55.5,32],[60, 32],[38, 32],[47, 32],[3.5, 75.5],[28.5, 32],[38, 43]]
