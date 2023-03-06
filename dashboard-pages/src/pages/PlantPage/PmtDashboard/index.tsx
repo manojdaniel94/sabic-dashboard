@@ -40,7 +40,7 @@ const PmtDashboard = () => {
     const [assetIdDropList, setAssetIdDropList] = useState<any>();
     const [selectedAssetId, setSelectedAssetId] = useState<any>("")
     const [heatStatusList, setHeatStatusList] = useState<any>();
-    const [selectedHeatStatus, setSelectedHeatStatus] = useState<any>("")
+    const [selectedHeatStatus, setSelectedHeatStatus] = useState<any>("All")
     const [heatMapData, setheatMapData] = useState({
         assetOff: "",
         warning: "",
@@ -144,10 +144,10 @@ const PmtDashboard = () => {
     return (
         <div id="pmt">
             <div id="pmt-left">
-            <div id="pmt-asset-card">
+                <div id="pmt-asset-card">
                     <div className="pmt-title">ASSET CARD</div>
                     <div className="pmt-filter">
-                        <div className="pmt-asset-name">LC-01-CGC</div>                        
+                        <div className="pmt-asset-name">LC-01-CGC</div>
                         <div className={`pmt-time`}><span>Asset ID</span>
                             <input type="text" value={selectedAssetId} />
                             <br></br>
@@ -174,8 +174,10 @@ const PmtDashboard = () => {
                     <div>Click on the map to get more details</div>
                     <div className="pmt-right-dropdown"><Dropdown
                         options={heatStatusList}
-                        // defaultValue={selectedRegion}
+                        // defaultValue={selectedHeatStatus}
+                        defaultValue={{ label: "All", value: "All" }}
                         handleChange={handleHeatStatusDropChange}
+                    // value={selectedHeatStatus}
                     /></div>
                     <ReliablityHeatMap
                         statusData={heatMapData}

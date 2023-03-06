@@ -32,7 +32,7 @@ const ReliablityHeatMap = ({ statusData,
                             })
                         }}
                     >
-                        <div className={`hi-popup hi-pos-off ${mouseHover.statusName === "Asset-off" && selectedHeatStatus === "Asset-off" ? 'show' : 'hidden'}`}>
+                        <div className={`hi-popup hi-pos-off ${(mouseHover.statusName === "Asset-off" && selectedHeatStatus === "Asset-off") || (mouseHover.statusName === "Asset-off" && selectedHeatStatus === "All") ? 'show' : 'hidden'}`}>
                             <h3>HEALTH INDEX <a href="#" className="hi-pop-close" onClick={() => setMouseHover({
                                 ...mouseHover, over: false, statusName: ""
                             })}> X</a></h3>
@@ -42,7 +42,7 @@ const ReliablityHeatMap = ({ statusData,
                                 ))}
                             </div>
                         </div>
-                        {selectedHeatStatus === "Asset-off" || selectedHeatStatus === "" ? statusData.assetOff.value : 0}</span><span className="hi-name">Asset-Off</span><span className="hi-status">Off</span></div>
+                        {selectedHeatStatus === "Asset-off" || selectedHeatStatus === "" || selectedHeatStatus === "All" ? statusData.assetOff.value : 0}</span><span className="hi-name">Asset-Off</span><span className="hi-status">Off</span></div>
                 <div className="hi-value2">
                     <span className="hi-numbers hi-normal"
                         onMouseOver={() => {
@@ -52,7 +52,7 @@ const ReliablityHeatMap = ({ statusData,
                             })
                         }}
                     >
-                        <div className={`hi-popup hi-pos-normal ${mouseHover.statusName === "Normal" && selectedHeatStatus === "Normal" ? 'show' : 'hidden'}`}>
+                        <div className={`hi-popup hi-pos-normal ${(mouseHover.statusName === "Normal" && selectedHeatStatus === "Normal") || (mouseHover.statusName === "Normal" && selectedHeatStatus === "All") ? 'show' : 'hidden'}`}>
                             <h3>HEALTH INDEX <a href="#" className="hi-pop-close" onClick={() => setMouseHover({
                                 ...mouseHover, over: false, statusName: ""
                             })}> X</a></h3>
@@ -61,7 +61,7 @@ const ReliablityHeatMap = ({ statusData,
                                     <div className="hi-popuprow"><span>{item.assetId}</span><span><i></i>{item.assetHealthIndex}%</span></div>
                                 ))}
                             </div>
-                        </div> {selectedHeatStatus === "Normal" || selectedHeatStatus === "" ? statusData.warning.value : 0}</span><span className="hi-name">Normal</span><span className="hi-status">Health Index &gt; 70%</span></div>
+                        </div> {selectedHeatStatus === "Normal" || selectedHeatStatus === "" || selectedHeatStatus === "All" ? statusData.warning.value : 0}</span><span className="hi-name">Normal</span><span className="hi-status">Health Index &gt; 70%</span></div>
 
 
                 <div className="hi-value3"><span className="hi-numbers hi-warning"
@@ -69,7 +69,7 @@ const ReliablityHeatMap = ({ statusData,
                         ...mouseHover, over: true, statusName: "Warning"
                     })}
                 >
-                    <div className={`hi-popup hi-pos-warning ${mouseHover.statusName === "Warning" && selectedHeatStatus === "Warning" ? 'show' : 'hidden'}`}>
+                    <div className={`hi-popup hi-pos-warning ${(mouseHover.statusName === "Warning" && selectedHeatStatus === "Warning") || (mouseHover.statusName === "Warning" && selectedHeatStatus === "All") ? 'show' : 'hidden'}`}>
                         <h3>HEALTH INDEX <a href="#" className="hi-pop-close" onClick={() => setMouseHover({
                             ...mouseHover, over: false, statusName: ""
                         })}> X</a></h3>
@@ -78,7 +78,7 @@ const ReliablityHeatMap = ({ statusData,
                                 <div className="hi-popuprow"><span>{item.assetId}</span><span><i></i>{item.assetHealthIndex}%</span></div>
                             ))}
                         </div>
-                    </div>  {selectedHeatStatus === "Warning" || selectedHeatStatus === "" ? statusData.normal.value : 0}</span><span className="hi-name">Warning</span><span className="hi-status">Health Index &lt; 70%</span></div>
+                    </div>  {selectedHeatStatus === "Warning" || selectedHeatStatus === "" || selectedHeatStatus === "All" ? statusData.normal.value : 0}</span><span className="hi-name">Warning</span><span className="hi-status">Health Index &lt; 70%</span></div>
 
 
                 <div className="hi-value4"><span className="hi-numbers hi-risk"
@@ -86,7 +86,7 @@ const ReliablityHeatMap = ({ statusData,
                         ...mouseHover, over: true, statusName: "Asset Under Risk"
                     })}
                 >
-                    <div className={`hi-popup hi-pos-risk ${mouseHover.statusName === "Asset Under Risk" && selectedHeatStatus === "Asset Under Risk" ? 'show' : 'hidden'}`}>
+                    <div className={`hi-popup hi-pos-risk ${(mouseHover.statusName === "Asset Under Risk" && selectedHeatStatus === "Asset Under Risk") || (mouseHover.statusName === "Asset Under Risk" && selectedHeatStatus === "All") ? 'show' : 'hidden'}`}>
                         <h3>HEALTH INDEX <a href="#" className="hi-pop-close" onClick={() => setMouseHover({
                             ...mouseHover, over: false, statusName: ""
                         })}> X</a></h3>
@@ -96,7 +96,7 @@ const ReliablityHeatMap = ({ statusData,
                             ))}
                         </div>
                     </div>
-                    {selectedHeatStatus === "Asset Under Risk" || selectedHeatStatus === "" ? statusData.assetUnderRisk.value : 0}</span><span className="hi-name">Asset Under Risk</span><span className="hi-status">Health Index Under Risk</span></div>
+                    {selectedHeatStatus === "Asset Under Risk" || selectedHeatStatus === "" || selectedHeatStatus === "All" ? statusData.assetUnderRisk.value : 0}</span><span className="hi-name">Asset Under Risk</span><span className="hi-status">Health Index Under Risk</span></div>
             </div>
 
         </div >
