@@ -1,8 +1,26 @@
 //PMT PAGE
 
-*::-webkit-scrollbar {width: 2px;scrollbar-width: 2px;width: 2px;scrollbar-width: 2px;}
-*::-webkit-scrollbar-track {background-color:transparent;box-shadow:none;}
-*::-webkit-scrollbar-thumb {background-color:#777777;outline: 1px solid #FBFCFD;background-color: #ccc;border-radius: 8px;outline: 1px solid #EAEBEC; background-clip: padding-box;}
+*::-webkit-scrollbar {
+    width: 2px;
+    scrollbar-width: 2px;
+    width: 2px;
+    scrollbar-width: 2px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #777777;
+    outline: 1px solid #FBFCFD;
+    background-color: #ccc;
+    border-radius: 8px;
+    outline: 1px solid #EAEBEC;
+    background-clip: padding-box;
+}
+
 #pmt {
     display: flex;
     justify-content: space-between;
@@ -14,10 +32,12 @@
         justify-content: flex-start;
         border-radius: 5px;
         flex-direction: column;
+
         #pmt-asset-card {
             background: #fff;
             box-shadow: 0px 0px 18px #eaeaea;
             padding: 30px;
+
             .pmt-title {
                 font-size: 20px;
                 display: flex;
@@ -25,28 +45,37 @@
                 font: normal 600 16px 'SABIC Typeface Text Regular', arial, helvetica;
                 letter-spacing: 1px;
             }
+
             .pmt-filter {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom:10px;
+                margin-bottom: 10px;
+                flex-wrap: wrap;
+
                 .pmt-asset-name {
                     padding: 10px;
                     font-size: 14px;
                     letter-spacing: 1px;
                     color: #939598;
                     padding: 15px 0 15px 0;
+                    word-wrap: break-word;
+                    flex-basis: 30%;
                 }
+
                 .pmt-time {
                     color: #009FDF;
-                    font-size: 16px;flex-basis:30%;
-                    display:flex;
+                    font-size: 16px;
+                    flex-basis: 30%;
+                    display: flex;
+
                     span {
                         color: #939598;
                         padding: 0 15px;
                         flex-basis: 40%;
                         font-size: 14px;
                     }
+
                     input {
                         background: #EAEBEC;
                         border: 0px;
@@ -54,11 +83,23 @@
                         height: 25px;
                         border-radius: 5px;
                         width: 60%;
+                        color: #58595B;
+                        padding: 0 5px;
+                        font-family: inherit;
                     }
                 }
-                .pmt-gobtn{background:#EAEBEC;border-radius: 2px;padding:5px 10px;color:#666;font-size: 14px;}
 
-                .pmt-options {flex-basis:30%;
+                .pmt-gobtn {
+                    background: #EAEBEC;
+                    border-radius: 5px;
+                    padding: 5px 10px;
+                    color: #666;
+                    font-size: 14px;
+                }
+
+                .pmt-options {
+                    flex-basis: 30%;
+
                     select {
                         border: 0px;
                         font-size: 17px;
@@ -68,10 +109,35 @@
                         border-radius: 5px;
                     }
                 }
-                .css-13cymwt-control{border:0px;font-size: 14px;background:#eaebec;min-height:25px;}
-                .css-1u9des2-indicatorSeparator{display:none;}
-                .css-1xc3v61-indicatorContainer{padding:0 5px;}
+
+                .css-13cymwt-control {
+                    border: 0px;
+                    font-size: 14px;
+                    background: #eaebec;
+                    min-height: 25px;
+                }
+
+                .css-1u9des2-indicatorSeparator {
+                    display: none;
+                }
+
+                .css-1xc3v61-indicatorContainer {
+                    padding: 0 5px;
+                }
+
+                .pmt-error {
+                    flex-basis: 100%;
+                    padding: 5px;
+                    font-family: inherit;
+                    text-align: center;
+
+                    span.PmtErrorMsg {
+                        float: None;
+                    }
+                }
             }
+
+
 
             .pmt-asset-name {
                 padding: 10px;
@@ -137,18 +203,45 @@
                 font-size: 16px;
                 letter-spacing: 1px;
                 color: #939598;
-                padding:5px 0 10px 0;
+                padding: 5px 0 10px 0;
             }
 
         }
-        .ant-table-body{
-            .status-tooltip-box::-webkit-scrollbar {width: 2px;scrollbar-width: 2px;width: 2px;scrollbar-width: 2px;}
-            .status-tooltip-box::-webkit-scrollbar-track {background-color:transparent;box-shadow:none;}
-            .status-tooltip-box::-webkit-scrollbar-thumb {background-color:#777777;outline: 1px solid #FBFCFD;background-color: #EAEBEC;border-radius: 8px;outline: 1px solid #EAEBEC; background-clip: padding-box;}
+
+        .ant-table-body {
+            .status-tooltip-box::-webkit-scrollbar {
+                width: 2px;
+                scrollbar-width: 2px;
+                width: 2px;
+                scrollbar-width: 2px;
+            }
+
+            .status-tooltip-box::-webkit-scrollbar-track {
+                background-color: transparent;
+                box-shadow: none;
+            }
+
+            .status-tooltip-box::-webkit-scrollbar-thumb {
+                background-color: #777777;
+                outline: 1px solid #FBFCFD;
+                background-color: #EAEBEC;
+                border-radius: 8px;
+                outline: 1px solid #EAEBEC;
+                background-clip: padding-box;
+            }
         }
-        .ant-table-cell{padding:5px;}
-        .ant-table-thead th.ant-table-cell{background:transparent}
-        :where(.css-dev-only-do-not-override-10ed4xt).ant-table-wrapper .ant-table{color:#9395a5}
+
+        .ant-table-cell {
+            padding: 5px;
+        }
+
+        .ant-table-thead th.ant-table-cell {
+            background: transparent
+        }
+
+        :where(.css-dev-only-do-not-override-10ed4xt).ant-table-wrapper .ant-table {
+            color: #9395a5
+        }
 
     }
 
@@ -167,11 +260,15 @@
             right: 10px;
             top: 20px;
             width: 200px;
-            .css-13cymwt-control{
-                border:0px;
-                font-size:12px;
+
+            .css-13cymwt-control {
+                border: 0px;
+                font-size: 12px;
             }
-            .css-1u9des2-indicatorSeparator{display:none}
+
+            .css-1u9des2-indicatorSeparator {
+                display: none
+            }
         }
 
         .pmt-right-title {
@@ -495,25 +592,10 @@
                 #pmt-left {
                     flex-basis: 55%
                 }
+
                 #pmt-right {
                     .pmt-health-index {
                         .pmt-heatmapvalues {
-                            .hi-pos-off {
-                                // left: -15% !important;
-                            }
-
-                            .hi-pos-normal {
-                                // left: 5% !important
-                            }
-
-                            .hi-pos-warning {
-                                // left: 25% !important
-                            }
-
-                            .hi-pos-risk {
-                                // left: 30% !important
-                            }
-
                             .hi-pos-risk::after {
                                 left: 77%
                             }
@@ -530,8 +612,10 @@
         .content-inner {
             #pmt {
                 margin: 2vh 0;
+
                 #pmt-left {
                     flex-basis: 50%;
+
                     #pmt-asset-card {
                         padding: 20px;
 
@@ -555,22 +639,6 @@
 
                     .pmt-health-index {
                         .pmt-heatmapvalues {
-                            .hi-pos-off {
-                                left: -15% !important
-                            }
-
-                            .hi-pos-normal {
-                                left: 5% !important
-                            }
-
-                            .hi-pos-warning {
-                                left: 0px !important
-                            }
-
-                            .hi-pos-risk {
-                                left: 30% !important
-                            }
-
                             .hi-pos-risk::after {
                                 left: 82%
                             }
@@ -642,22 +710,39 @@
         #content {
             .content-inner {
 
+                //breadcrumb
+                #breadcrumb {
+                    .breadcrumb-left {
+                        flex-basis: 90% !important
+                    }
+
+                    .breadcrumb-right {
+                        flex-basis: 10% !important
+                    }
+                }
+
                 // PMT
                 #pmt {
                     #pmt-left {
+                        padding: 0px;
+
                         .pmt-filter {
                             flex-wrap: wrap;
 
-                            div {
-                                flex-basis: 50%;
+                            >div {
                                 margin: 0px;
                                 padding: 2px 0px;
-                                display: flex;
                                 justify-content: flex-start;
                                 align-items: center;
                             }
 
+                            .pmt-asset-name {
+                                flex-basis: 20%;
+                            }
+
                             .pmt-time {
+                                flex-basis: 30%;
+
                                 span {
                                     padding: 0px;
                                     width: 40%
@@ -672,6 +757,8 @@
                             }
 
                             .pmt-options {
+                                flex-basis: 35%;
+
                                 select {
                                     padding: 0px;
                                     border: 1px #ccc solid;
@@ -679,6 +766,17 @@
                                     border-radius: 5px;
                                     height: 25px;
                                 }
+
+                                .css-qbdosj-Input {
+                                    position: absolute;
+                                }
+                            }
+
+                            .pmt-gobtn {
+                                flex-basis: 5%;
+                                text-align: center;
+                                padding: auto 15px;
+                                height: 21px;
                             }
                         }
 
@@ -734,55 +832,80 @@
                         flex-basis: 98%
                     }
                 }
-            }
-        }
-    }
-}
 
-@media screen and (max-width:400px) {
-    #container {
-        #content {
-            .content-inner {
 
                 // PMT
                 #pmt {
                     #pmt-left {
-                        .pmt-filter {
-                            flex-wrap: wrap;
+                        #pmt-asset-card {
+                            padding: 10px;
 
-                            div:first-child {
-                                width: 60%;
-                            }
+                            .pmt-filter {
+                                flex-wrap: wrap;
 
-                            div:nth-child(2) {
-                                width: 40%;
-                            }
-
-                            div {
-                                width: 100%;
-                            }
-
-                            .pmt-time {
-                                span {
-                                    padding: 0px;
-                                    margin-right: 0px;
-                                    width: 45%
+                                >div {
+                                    margin: 0px;
+                                    padding: 2px 0px;
+                                    justify-content: flex-start;
+                                    align-items: center;
                                 }
 
-                                input {
-                                    width: 50%;
+                                .pmt-asset-name {
+                                    flex-basis: 100%;
+                                }
+
+                                .pmt-time {
+                                    flex-basis: 47%;
+                                    margin-right: 1%;
+
+                                    span {
+                                        padding: 0px;
+                                        flex-basis: 50%;
+                                    }
+
+                                    input {
+                                        flex-basis: 50%;
+                                        border-radius: 5px;
+                                        height: 25px;
+                                    }
+                                }
+
+                                .pmt-options {
+                                    flex-basis: 40%;
                                     margin-right: 2%;
-                                    border-radius: 5px;
-                                }
-                            }
 
-                            .pmt-options {
-                                select {
-                                    padding: 0px;
-                                    border: 1px #ccc solid;
-                                    border-radius: 5px;
+                                    select {
+                                        padding: 0px;
+                                        border: 1px #ccc solid;
+                                        width: 90%;
+                                        border-radius: 5px;
+                                        height: 25px;
+                                    }
+
+                                    .css-qbdosj-Input {
+                                        position: absolute;
+                                    }
+                                }
+
+                                .pmt-gobtn {
+                                    flex-basis: 10%;
+                                    text-align: center;
                                 }
                             }
+                        }
+                    }
+
+                    #pmt-right {
+                        .pmt-right-title {
+                            font: normal 600 15px "SABIC Typeface Text Regular", arial, helvetica;
+                        }
+
+                        >div:nth-child(2) {
+                            font-size: 11px
+                        }
+
+                        .pmt-right-dropdown {
+                            width: 150px;
                         }
                     }
                 }

@@ -105,7 +105,7 @@ const PmtDashboard = () => {
 
     const handleAssetIdDropChange = (e: any) => {
         // console.log(e.value)
-        setSelectedAssetId(e.value)
+        setSelectedAssetId(e)
         dispatch(getAssetCardPmtByAssetId(e.value)); //selectedAssetId.value
         setErrorMag(false);
     };
@@ -147,11 +147,9 @@ const PmtDashboard = () => {
                 <div id="pmt-asset-card">
                     <div className="pmt-title">ASSET CARD</div>
                     <div className="pmt-filter">
-                        <div className="pmt-asset-name">LC-01-CGC</div>
+                        <div className="pmt-asset-name">{selectedAssetId === "" ? "Polly 2" : selectedAssetId.label}</div>
                         <div className={`pmt-time`}><span>Asset ID</span>
-                            <input type="text" value={selectedAssetId} />
-                            <br></br>
-                            {getErrorMag === true ? <span className="PmtErrorMsg">Need to select AssetID</span> : ""}
+                            <input type="text" value={selectedAssetId.value} />
                         </div>
                         <div className="pmt-options"><Dropdown
                             options={assetIdDropList}
@@ -159,7 +157,9 @@ const PmtDashboard = () => {
                             handleChange={handleAssetIdDropChange}
                         /></div>
                         <div className="pmt-gobtn" onClick={() => handleNavigation(selectedAssetId)} >Go</div>
+                        <div className="pmt-error">{getErrorMag === true ? <span className="PmtErrorMsg">Need to select AssetID</span> : ""}</div>
                     </div>
+
                     {/* <div className="pmt-asset-name">LC-01 - CGC</div> */}
                     <AssetCard
                         data={selectedAssetId === "" ?
