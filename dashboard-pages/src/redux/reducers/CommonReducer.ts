@@ -34,6 +34,8 @@ const CommonSlice = createSlice({
         loadingFailurepreDictionByAssetId: false,
         GraphicalImageByAssetId:[],
         loadingGraphicalImageByAssetId: false,
+        AssetKPIForAssetModel:[],
+        loadingAssetKPIForAssetModel: false,
         //PlotScreen
         plotModelDropDown: [],
         loadingPlotModelDropDown: false,
@@ -201,6 +203,17 @@ const CommonSlice = createSlice({
             state.message = action.payload
             state.loadingGraphicalImageByAssetId = false
         },
+        getAssetKPI: (state, action) => {
+            state.loadingAssetKPIForAssetModel = true
+        },
+        getAssetKPISuccess: (state, action) => {
+            state.AssetKPIForAssetModel = action.payload
+            state.loadingAssetKPIForAssetModel = false
+        },
+        getAssetKPIFailure: (state, action) => {
+            state.message = action.payload
+            state.loadingAssetKPIForAssetModel = false
+        },
         // Plot Screen
         getPlotModelDropDown: (state, action) => {
             state.loadingPlotModelDropDown = true
@@ -300,6 +313,9 @@ export const {
     getGraphicalImageByAssetId,
     getGraphicalImageByAssetIdSuccess,
     getGraphicalImageByAssetIdFailure,
+    getAssetKPI,
+    getAssetKPISuccess,
+    getAssetKPIFailure,
     // Plot Screen
     getPlotModelDropDown,
     getPlotModelDropDownSuccess,
