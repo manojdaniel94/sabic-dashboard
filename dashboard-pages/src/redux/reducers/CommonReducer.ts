@@ -17,14 +17,26 @@ const CommonSlice = createSlice({
         loadingAssetCardPmtByAssetId: false,
         assetStatusPmtByPlantId: [],
         loadingAssetStatusPmtByPlantId: false,
-        statusAssetPmtByPlantId:[],
+        statusAssetPmtByPlantId: [],
         loadingStatusAssetPmtByPlantId: false,
-        setStatusListbyPlantId:[],
+        setStatusListbyPlantId: [],
         loadingSetStatusListbyPlantId: false,
-        heatMapToolTipbyAssetStatus:[],
+        heatMapToolTipbyAssetStatus: [],
         loadingHeatMapToolTipbyAssetStatus: false,
-        topBarToolTipbyPlantId:[],
+        topBarToolTipbyPlantId: [],
         loadingTopBarToolTipbyPlantId: false,
+        //PlotScreen
+        plotModelDropDown: [],
+        loadingPlotModelDropDown: false,
+        plotAssetDropDown: [],
+        loadingPlotAssetDropDown: false,
+        plotSensorDropDown: [],
+        loadingPlotSensorDropDown: false,
+        plotDeviationData: [],
+        loadingPlotDeviationData: false,
+        plotStatusData: [],
+        loadingPlotStatusData: false,
+        //PlotScreen End
     },
     reducers: {
         getRegions: (state, action) => {
@@ -45,7 +57,7 @@ const CommonSlice = createSlice({
             state.loadingGetAssetListByPlantId = false
         },
         getAssetListByPlantIdFailure: (state, action) => {
-           state.loadingGetAssetListByPlantId = false
+            state.loadingGetAssetListByPlantId = false
         },
         getPlantAlertSpmt: (state, action) => {
             state.loadingplantAlertSpmt = true
@@ -135,6 +147,58 @@ const CommonSlice = createSlice({
             state.message = action.payload
             state.loadingTopBarToolTipbyPlantId = false
         },
+        // Plot Screen
+        getPlotModelDropDown: (state, action) => {
+            state.loadingPlotModelDropDown = true
+        },
+        getPlotModelDropDownSuccess: (state, action) => {
+            state.plotModelDropDown = action.payload
+            state.loadingPlotModelDropDown = false
+        },
+        getPlotModelDropDownFailure: (state, action) => {
+            state.loadingPlotModelDropDown = false
+        },
+        getPlotAssetDropDown: (state, action) => {
+            state.loadingPlotAssetDropDown = true
+        },
+        getPlotAssetDropDownSuccess: (state, action) => {
+            state.plotAssetDropDown = action.payload
+            state.loadingPlotAssetDropDown = false
+        },
+        getPlotAssetDropDownFailure: (state, action) => {
+            state.loadingPlotAssetDropDown = false
+        },
+        getPlotSensorDropDown: (state, action) => {
+            state.loadingPlotSensorDropDown = true
+        },
+        getPlotSensorDropDownSuccess: (state, action) => {
+            state.plotSensorDropDown = action.payload
+            state.loadingPlotSensorDropDown = false
+        },
+        getPlotSensorDropDownFailure: (state, action) => {
+            state.loadingPlotSensorDropDown = false
+        },
+        getPlotDeviationData: (state, action) => {
+            state.loadingPlotDeviationData = true
+        },
+        getPlotDeviationDataSuccess: (state, action) => {
+            state.plotDeviationData = action.payload
+            state.loadingPlotDeviationData = false
+        },
+        getPlotDeviationDataFailure: (state, action) => {
+            state.loadingPlotDeviationData = false
+        },
+        getPlotStatusData: (state, action) => {
+            state.loadingPlotStatusData = true
+        },
+        getPlotStatusDataSuccess: (state, action) => {
+            state.plotStatusData = action.payload
+            state.loadingPlotStatusData = false
+        },
+        getPlotStatusDataFailure: (state, action) => {
+            state.loadingPlotStatusData = false
+        },
+        // Plot Screen Ends
     }
 })
 
@@ -169,6 +233,23 @@ export const {
     getTopBarToolTipbyPlantId,
     getTopBarToolTipbyPlantIdSuccess,
     getTopBarToolTipbyPlantIdFailure,
+    // Plot Screen
+    getPlotModelDropDown,
+    getPlotModelDropDownSuccess,
+    getPlotModelDropDownFailure,
+    getPlotAssetDropDown,
+    getPlotAssetDropDownSuccess,
+    getPlotAssetDropDownFailure,
+    getPlotSensorDropDown,
+    getPlotSensorDropDownSuccess,
+    getPlotSensorDropDownFailure,
+    getPlotDeviationData,
+    getPlotDeviationDataSuccess,
+    getPlotStatusData,
+    getPlotStatusDataSuccess,
+    getPlotStatusDataFailure
+    // Plot Screen Ends
+
 } = CommonSlice.actions
 
 export default CommonSlice.reducer
