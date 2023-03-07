@@ -22,5 +22,14 @@ export const Api = {
     getApiHeatMapToolTipbyAssetStatus: BASE_URL + 'PlantPmt/GetHeatMapToolTipbyAssetStatus//',
     getApiTopBarToolTipbyPlantId: BASE_URL + 'PlantPmt/GetTopBarToolTipbyPlantId/',
 
+    // plot Screen
+    getplotsmodel_byassetid: BASE_URL + 'api/DeviationPlotController/getplotsmodel_byassetid/',//Model Dropdown
+    getplotsassetlist_byplantid: BASE_URL + 'api/DeviationPlotController/getplotsassetlist_byplantid/',//Asset Dropdown
+    getplotssensorlist_bysensorgroupId: BASE_URL + 'api/DeviationPlotController/getplotssensorlist_bysensorgroupId/', //Sensor Dropdown
+    getplotsdeviationgraph_byassetid: BASE_URL + 'api/DeviationPlotController/getplotsdeviationgraph_byassetid/', //deviation chart
+    getplotsstatusgraph_byassetid: BASE_URL + 'api/DeviationPlotController/getplotsstatusgraph_byassetid/',//sensor chart
+    // Plot screen Ends
+
+
 }
 
