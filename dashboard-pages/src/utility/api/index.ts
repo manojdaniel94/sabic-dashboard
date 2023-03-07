@@ -17,10 +17,23 @@ export const Api = {
     getApiTopbarsummaryAssetpmtByplantid: BASE_URL + 'PlantPmt/gettopbarsummary_assetpmt_byplantid/',
     getApiassetcardpmtByassetid: BASE_URL + 'PlantPmt/gettopbarsummary_assetpmt_byplantid/',
     getdeviationplotgraph_byassetid: BASE_URL + 'DeviationPlot/getdeviationplotgraph_byassetid/',
-
     getApiAssetStatusListbyPlantId: BASE_URL + 'PlantPmt/GetAssetStatusListbyPlantId/',
     getApiHeatMapToolTipbyAssetStatus: BASE_URL + 'PlantPmt/GetHeatMapToolTipbyAssetStatus//',
     getApiTopBarToolTipbyPlantId: BASE_URL + 'PlantPmt/GetTopBarToolTipbyPlantId/',
+     // Asset Model Start
+    getApiAssetlistOfAssetModelByplantid: BASE_URL + 'PlantPmt/getassetcardpmt_byplantid/',
+    getApiAnomalyModelbyAssetId: BASE_URL + 'PlantPmt/getassetcardpmt_byplantid/',
+    getApiFailurepreDictionByAssetId: BASE_URL + 'PlantPmt/getassetcardpmt_byplantid/',
+    getApiGraphicalImageByAssetId: BASE_URL + 'PlantPmt/getassetcardpmt_byplantid/',
+    // Asset Model End
+    // plot Screen Start
+    getplotsmodel_byassetid: BASE_URL + 'api/DeviationPlotController/getplotsmodel_byassetid/',//Model Dropdown
+    getplotsassetlist_byplantid: BASE_URL + 'api/DeviationPlotController/getplotsassetlist_byplantid/',//Asset Dropdown
+    getplotssensorlist_bysensorgroupId: BASE_URL + 'api/DeviationPlotController/getplotssensorlist_bysensorgroupId/', //Sensor Dropdown
+    getplotsdeviationgraph_byassetid: BASE_URL + 'api/DeviationPlotController/getplotsdeviationgraph_byassetid/', //deviation chart
+    getplotsstatusgraph_byassetid: BASE_URL + 'api/DeviationPlotController/getplotsstatusgraph_byassetid/',//sensor chart
+    // Plot screen Ends
+
 
 }
 

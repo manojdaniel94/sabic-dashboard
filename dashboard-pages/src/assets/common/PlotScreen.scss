@@ -1,0 +1,197 @@
+// @import url("../css/variables.scss");
+//sensor plot
+//old
+$header_logo_color: #939598;
+$header_menu_color: #4d4d4d;
+$header_menu_background_active: #FBFAFA;
+$blue: #009FDF;
+$font_headline_lt: SabicHeadlineLight;
+$font_headline_rg: SabicHeadlineRegular;
+$font_lt: SabicLight;
+$font_rg: SabicRegular;
+
+#sensor {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+
+    #sensor-plot-left {
+        flex-basis: 73%;
+        display: flex;
+        justify-content: flex-start;
+        border-radius: 5px;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: 0px 0px 18px #eaeaea;
+
+        .title {
+            font-size: 16px;
+            display: flex;
+            color: $header_menu_color;
+            font-family: $font_headline_rg;
+        }
+
+        .asset-name {
+            padding: 10px 0 10px 0;
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: $header_logo_color
+        }
+
+        #sensor-plot {
+            padding: 30px 20px;
+
+            .sensor-filter {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .sensor-time {
+                    font-size: 14px;
+                    flex-basis: 36%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .sensor-stamp {
+                        span:first-child {
+                            padding-right: 10px;
+                        }
+
+                        span:last-child {
+                            color: #009FDF;
+                        }
+                    }
+
+                    .sensor-deviation {
+                        margin-left: 2%;
+
+                        span {
+                            color: #939598;
+                        }
+                    }
+
+                }
+
+                .sensor-options {
+                    select {
+                        border: 0px;
+                        font-size: 14px;
+                        letter-spacing: 1px;
+                        color: #939598;
+                        padding: 0 10px;
+                        font-family: inherit;
+                    }
+                }
+            }
+        }
+
+        #deviation-plot {
+            padding: 30px 20px;
+        }
+
+        .sensor-plot-graph {
+            text-align: center;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+    }
+
+    #sensor-plot-right {
+        flex-basis: calc(27% - 25px);
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        background: #fff;
+        box-shadow: 0px 0px 18px #eaeaea;
+
+        .right-title {
+            font-size: 16px;
+            display: flex;
+            color: $header_menu_color;
+            font-family: $font_headline_rg;
+        }
+
+        .sensor-calendar {
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            color: #939598;
+            margin: 0 0 0 7px;
+            border-radius: 5px;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 2s;
+            font-family: $font_rg;
+
+            span {
+                color: #58595B;
+                margin: 0 5px;
+            }
+
+            span.calen-date {
+                color: #009FDF
+            }
+
+            span.calen-icon {
+                width: 20px;
+                height: 20px;
+                display: flex;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+
+        .sensor-calendar:hover {
+            color: #009fdf;
+            transition: 0.5s;
+
+            span:first-child {
+                color: #58595B
+            }
+
+            span {
+                color: #009fdf
+            }
+        }
+
+        #sensor-names {
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        #measure-names {
+            background: #fff;
+            box-shadow: 0px 0px 18px #eaeaea;
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        .sensor-plot-list {
+            padding: 20px 0 0 0;
+
+            div {
+                padding: 10px 0;
+                color: #58595B;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                span:first-child {
+                    width: 25px;
+                    height: 10px;
+                    margin-right: 10px;
+                    border-radius: 50px;
+                }
+            }
+        }
+    }
+}

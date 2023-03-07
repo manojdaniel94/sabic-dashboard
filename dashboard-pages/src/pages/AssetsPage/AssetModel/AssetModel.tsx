@@ -1,8 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import GraphicalOverview from "charts/GraphicalOverview";
 import LiveModel from "table/LiveModel";
 import "./AssetModel.scss"
 import Graph from "../../../assets/images/Graph.png";
+import { useDispatch, useSelector } from "react-redux";
+import { getassetlistOfAssetModelByplantid, getAnomalyModelbyAssetId, getFailurepreDictionByAssetId, getGraphicalImageByAssetId } from "../../../redux/reducers/CommonReducer";
 
 
 interface Props {
@@ -11,6 +13,28 @@ interface Props {
 }
 
 const AssetModel = () => {
+    let dispatch = useDispatch();
+
+    const { assetlistOfAssetModelByplantid, AnomalyModelbyAssetId, FailurepreDictionByAssetId, GraphicalImageByAssetId } = useSelector((state: any) => ({
+        assetlistOfAssetModelByplantid: state.Common.assetlistOfAssetModelByplantid,
+        AnomalyModelbyAssetId: state.Common.AnomalyModelbyAssetId,
+        FailurepreDictionByAssetId: state.Common.FailurepreDictionByAssetId,
+        GraphicalImageByAssetId: state.Common.GraphicalImageByAssetId,
+    }));
+
+    useEffect(() => {
+        
+        dispatch(getassetlistOfAssetModelByplantid("18"));    //selectedPlant.value
+        dispatch(getAnomalyModelbyAssetId("18"));    //selectedPlant.value
+        dispatch(getFailurepreDictionByAssetId("18"));    //selectedPlant.value
+        dispatch(getGraphicalImageByAssetId("18"));    //selectedPlant.value
+       
+    }, []);
+
+    // console.log("assetlistOfAssetModelByplantid",assetlistOfAssetModelByplantid);
+    // console.log(" AnomalyModelbyAssetId", AnomalyModelbyAssetId);
+    // console.log(" FailurepreDictionByAssetId", FailurepreDictionByAssetId);
+
     return (
         <div id="asset-model">
             <div id="asset-model-left">
@@ -18,11 +42,19 @@ const AssetModel = () => {
                     <div className="sensor-filter">
                         <div className="title">SENSOR PLOT</div>
                         <div className="sensor-options">
-                            <select><option>Model</option></select></div>
+                            <select>
+                                <option>Select Asset</option>
+                            {assetlistOfAssetModelByplantid.map((item:any) => (
+                                <option>{item.assetId}</option>
+                            ))}
+                            </select>
+                        </div>
                     </div>
                     <div className="asset-name">K-1701</div>
                     <div className="asset-plot-graph">
-                        <GraphicalOverview />
+                        <GraphicalOverview 
+                         GraphicalImageByAssetId = {GraphicalImageByAssetId}
+                        />
                     </div>
                 </div>
                 <div className="asset-plot-status">
@@ -33,7 +65,10 @@ const AssetModel = () => {
                 </div>
             </div>
             <div id="asset-model-right">
-                <LiveModel />
+                <LiveModel 
+                   FailurepreDictionByAssetId={FailurepreDictionByAssetId}
+                   AnomalyModelbyAssetId={AnomalyModelbyAssetId}
+                />
             </div>
         </div>
 
