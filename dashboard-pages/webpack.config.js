@@ -27,7 +27,7 @@ module.exports = {
       },
       {
         test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
@@ -52,7 +52,6 @@ module.exports = {
         components: "components@http://localhost:3001/remoteEntry.js",
         table: "table@http://localhost:3002/remoteEntry.js",
         charts: "charts@http://localhost:3003/remoteEntry.js",
-
       },
       exposes: {},
       shared: {
