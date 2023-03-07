@@ -558,7 +558,7 @@ function* getPlotAssetDropDown(action: any) {
     }
     else {
         yield put({
-            type: "Common/getPlotModelDropDownSuccess",
+            type: "Common/getPlotAssetDropDownSuccess",
             payload: getAssetDropdownData
 
         });

@@ -1,3 +1,28 @@
+//status
+@font-face {
+  font-family: 'SabicRegular';
+  src: url('./assets/fonts/SABICTypefaceText_W_Rg.woff') format('woff'),
+    url('./assets/fonts/SABICTypefaceText_Rg.ttf') format('truetype'),
+}
+
+@font-face {
+  font-family: 'SabicLight';
+  src: url('./assets/fonts/SABICTypefaceText_W_Lt.woff') format('woff'),
+    url('./assets/fonts/SABICTypefaceText_Lt.ttf') format('truetype'),
+}
+
+@font-face {
+  font-family: 'SabicHeadlineLight';
+  src: url('./assets/fonts/SABICTypefaceHeadline_W_Lt.woff') format('woff'),
+    url('./assets/fonts/SABICTypefaceHeadline_Lt.ttf') format('truetype'),
+}
+
+@font-face {
+  font-family: 'SabicHeadlineRegular';
+  src: url('./assets/fonts/SABICTypefaceHeadline_W_Rg.woff') format('woff'),
+    url('./assets/fonts/SABICTypefaceHeadline_Rg.ttf') format('truetype'),
+}
+
 @font-face {
   font-family: 'SabicRegular';
   src: local('SabicRegular'), url(./assets/fonts/SABICTypefaceText_W_Lt.woff) format('woff');
