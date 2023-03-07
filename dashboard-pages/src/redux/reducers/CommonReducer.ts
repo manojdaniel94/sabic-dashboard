@@ -25,6 +25,15 @@ const CommonSlice = createSlice({
         loadingHeatMapToolTipbyAssetStatus: false,
         topBarToolTipbyPlantId: [],
         loadingTopBarToolTipbyPlantId: false,
+        // Asset Model Start
+        assetlistOfAssetModelByplantid:[],
+        loadingassetlistOfAssetModelByplantid: false,
+        AnomalyModelbyAssetId:[],
+        loadinggetAnomalyModelbyAssetId: false,
+        FailurepreDictionByAssetId:[],
+        loadingFailurepreDictionByAssetId: false,
+        GraphicalImageByAssetId:[],
+        loadingGraphicalImageByAssetId: false,
         //PlotScreen
         plotModelDropDown: [],
         loadingPlotModelDropDown: false,
@@ -147,6 +156,51 @@ const CommonSlice = createSlice({
             state.message = action.payload
             state.loadingTopBarToolTipbyPlantId = false
         },
+        // Asset Model Start
+        getassetlistOfAssetModelByplantid: (state, action) => {
+            state.loadingassetlistOfAssetModelByplantid = true
+        },
+        getassetlistOfAssetModelByplantidSuccess: (state, action) => {
+            state.assetlistOfAssetModelByplantid = action.payload
+            state.loadingassetlistOfAssetModelByplantid = false
+        },
+        getassetlistOfAssetModelByplantidFailure: (state, action) => {
+            state.message = action.payload
+            state.loadingassetlistOfAssetModelByplantid = false
+        },
+        getAnomalyModelbyAssetId: (state, action) => {
+            state.loadinggetAnomalyModelbyAssetId = true
+        },
+        getAnomalyModelbyAssetIdSuccess: (state, action) => {
+            state.AnomalyModelbyAssetId = action.payload
+            state.loadinggetAnomalyModelbyAssetId = false
+        },
+        getAnomalyModelbyAssetIdFailure: (state, action) => {
+            state.message = action.payload
+            state.loadinggetAnomalyModelbyAssetId = false
+        },
+        getFailurepreDictionByAssetId: (state, action) => {
+            state.loadingFailurepreDictionByAssetId = true
+        },
+        getFailurepreDictionByAssetIdSuccess: (state, action) => {
+            state.FailurepreDictionByAssetId = action.payload
+            state.loadingFailurepreDictionByAssetId = false
+        },
+        getFailurepreDictionByAssetIdFailure: (state, action) => {
+            state.message = action.payload
+            state.loadingFailurepreDictionByAssetId = false
+        },
+        getGraphicalImageByAssetId: (state, action) => {
+            state.loadingGraphicalImageByAssetId = true
+        },
+        getGraphicalImageByAssetIdSuccess: (state, action) => {
+            state.GraphicalImageByAssetId = action.payload
+            state.loadingGraphicalImageByAssetId = false
+        },
+        getGraphicalImageByAssetIdFailure: (state, action) => {
+            state.message = action.payload
+            state.loadingGraphicalImageByAssetId = false
+        },
         // Plot Screen
         getPlotModelDropDown: (state, action) => {
             state.loadingPlotModelDropDown = true
@@ -233,6 +287,19 @@ export const {
     getTopBarToolTipbyPlantId,
     getTopBarToolTipbyPlantIdSuccess,
     getTopBarToolTipbyPlantIdFailure,
+    // Asset Model Start
+    getassetlistOfAssetModelByplantid,
+    getassetlistOfAssetModelByplantidSuccess,
+    getassetlistOfAssetModelByplantidFailure,
+    getAnomalyModelbyAssetId,
+    getAnomalyModelbyAssetIdSuccess,
+    getAnomalyModelbyAssetIdFailure,
+    getFailurepreDictionByAssetId,
+    getFailurepreDictionByAssetIdSuccess,
+    getFailurepreDictionByAssetIdFailure,
+    getGraphicalImageByAssetId,
+    getGraphicalImageByAssetIdSuccess,
+    getGraphicalImageByAssetIdFailure,
     // Plot Screen
     getPlotModelDropDown,
     getPlotModelDropDownSuccess,
