@@ -4,6 +4,7 @@ import { getRequest, postRequest } from '../../utility/request';
 import { Api } from '../../utility/api';
 import { HTTP_CALL } from '../../constant/constants';
 import { getassetlistByplantid, getplantAlertspmt, getassetcardpmtByplantid, getassetcardpmtByassetid, gettopbarsummaryAssetpmtByplantid, getassetstatuspmtByplantid, getJsonAssetStatusListbyPlantId, getJsonHeatMapToolTipbyAssetStatus, getJsonTopBarToolTipbyPlantId } from '../../DataModel/PMT/PmtList';
+import { getassetlistByplantidOfAssetModel, getAnomalyModelbyassetidinAssetModel, getFailurepredictionbyassetidAssetModel, getGraphicalImageForAssetModel } from '../../DataModel/Assets/AssetModel';
 
 
 
@@ -345,6 +346,138 @@ function* getTopBarToolTipbyPlantId(action: any) {
     }
 
 }
+function* getassetlistOfAssetModelByplantid(action: any) {
+    if (HTTP_CALL) {
+        try {
+            const response = yield getRequest(`${Api.getApiAssetlistOfAssetModelByplantid}${action.payload}`);
+            if (response.status == 200) {
+                console.log('GET POST RESPONSE DATA', response.data);
+                yield put({
+                    type: "Common/getassetlistOfAssetModelByplantidSuccess",
+                    payload: response.data
+
+                });
+            } else {
+                yield put({
+                    type: "Common/getassetlistOfAssetModelByplantidFailure",
+                    payload: "not 200",
+                });
+            }
+        } catch (error) {
+            yield put({
+                type: "Common/getassetlistOfAssetModelByplantidFailure",
+                payload: error,
+            });
+        }
+    }
+    else {
+        yield put({
+            type: "Common/getassetlistOfAssetModelByplantidSuccess",
+            payload: getassetlistByplantidOfAssetModel
+
+        });
+    }
+
+}
+function* getAnomalyModelbyAssetId(action: any) {
+    if (HTTP_CALL) {
+        try {
+            const response = yield getRequest(`${Api.getApiAnomalyModelbyAssetId}${action.payload}`);
+            if (response.status == 200) {
+                console.log('GET POST RESPONSE DATA', response.data);
+                yield put({
+                    type: "Common/getAnomalyModelbyAssetIdSuccess",
+                    payload: response.data
+
+                });
+            } else {
+                yield put({
+                    type: "Common/getAnomalyModelbyAssetIdFailure",
+                    payload: "not 200",
+                });
+            }
+        } catch (error) {
+            yield put({
+                type: "Common/getAnomalyModelbyAssetIdFailure",
+                payload: error,
+            });
+        }
+    }
+    else {
+        yield put({
+            type: "Common/getAnomalyModelbyAssetIdSuccess",
+            payload: getAnomalyModelbyassetidinAssetModel
+
+        });
+    }
+
+}
+function* getFailurepreDictionByAssetId(action: any) {
+    if (HTTP_CALL) {
+        try {
+            const response = yield getRequest(`${Api.getApiFailurepreDictionByAssetId}${action.payload}`);
+            if (response.status == 200) {
+                console.log('GET POST RESPONSE DATA', response.data);
+                yield put({
+                    type: "Common/getFailurepreDictionByAssetIdSuccess",
+                    payload: response.data
+
+                });
+            } else {
+                yield put({
+                    type: "Common/getFailurepreDictionByAssetIdFailure",
+                    payload: "not 200",
+                });
+            }
+        } catch (error) {
+            yield put({
+                type: "Common/getFailurepreDictionByAssetIdFailure",
+                payload: error,
+            });
+        }
+    }
+    else {
+        yield put({
+            type: "Common/getFailurepreDictionByAssetIdSuccess",
+            payload: getFailurepredictionbyassetidAssetModel
+
+        });
+    }
+
+}
+function* getGraphicalImageByAssetId(action: any) {
+    if (HTTP_CALL) {
+        try {
+            const response = yield getRequest(`${Api.getApiGraphicalImageByAssetId}${action.payload}`);
+            if (response.status == 200) {
+                console.log('GET POST RESPONSE DATA', response.data);
+                yield put({
+                    type: "Common/getGraphicalImageByAssetIdSuccess",
+                    payload: response.data
+
+                });
+            } else {
+                yield put({
+                    type: "Common/getGraphicalImageByAssetIdFailure",
+                    payload: "not 200",
+                });
+            }
+        } catch (error) {
+            yield put({
+                type: "Common/getGraphicalImageByAssetIdFailure",
+                payload: error,
+            });
+        }
+    }
+    else {
+        yield put({
+            type: "Common/getGraphicalImageByAssetIdSuccess",
+            payload: getGraphicalImageForAssetModel
+
+        });
+    }
+
+}
 
 
 
@@ -359,4 +492,8 @@ export default function* mySaga() {
     yield takeEvery('Common/getssetStatusListbyPlantId', getssetStatusListbyPlantId);
     yield takeEvery('Common/getHeatMapToolTipbyAssetStatus', getHeatMapToolTipbyAssetStatus);
     yield takeEvery('Common/getTopBarToolTipbyPlantId', getTopBarToolTipbyPlantId);
+    yield takeEvery('Common/getassetlistOfAssetModelByplantid', getassetlistOfAssetModelByplantid);
+    yield takeEvery('Common/getAnomalyModelbyAssetId', getAnomalyModelbyAssetId);
+    yield takeEvery('Common/getFailurepreDictionByAssetId', getFailurepreDictionByAssetId);
+    yield takeEvery('Common/getGraphicalImageByAssetId', getGraphicalImageByAssetId);
 }
