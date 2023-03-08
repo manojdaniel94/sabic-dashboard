@@ -26,13 +26,13 @@ const CommonSlice = createSlice({
         topBarToolTipbyPlantId: [],
         loadingTopBarToolTipbyPlantId: false,
         // Asset Model Start
-        assetlistOfAssetModelByplantid:[],
+        assetlistOfAssetModelByplantid: [],
         loadingassetlistOfAssetModelByplantid: false,
-        AnomalyModelbyAssetId:[],
+        AnomalyModelbyAssetId: [],
         loadinggetAnomalyModelbyAssetId: false,
-        FailurepreDictionByAssetId:[],
+        FailurepreDictionByAssetId: [],
         loadingFailurepreDictionByAssetId: false,
-        GraphicalImageByAssetId:[],
+        GraphicalImageByAssetId: [],
         loadingGraphicalImageByAssetId: false,
         AssetKPIForAssetModel:[],
         loadingAssetKPIForAssetModel: false,
@@ -48,6 +48,9 @@ const CommonSlice = createSlice({
         plotStatusData: [],
         loadingPlotStatusData: false,
         //PlotScreen End
+        // Dates
+        measureFromDate: "",
+        measureToDate: ""
     },
     reducers: {
         getRegions: (state, action) => {
@@ -265,6 +268,12 @@ const CommonSlice = createSlice({
         getPlotStatusDataFailure: (state, action) => {
             state.loadingPlotStatusData = false
         },
+        getMeasureFromDate: (state, action) => {
+            state.measureFromDate = action.payload
+        },
+        getMeasureToDate: (state, action) => {
+            state.measureToDate = action.payload
+        },
         // Plot Screen Ends
     }
 })
@@ -330,9 +339,11 @@ export const {
     getPlotDeviationDataSuccess,
     getPlotStatusData,
     getPlotStatusDataSuccess,
-    getPlotStatusDataFailure
+    getPlotStatusDataFailure,
     // Plot Screen Ends
-
+    // Dates
+    getMeasureFromDate,
+    getMeasureToDate,
 } = CommonSlice.actions
 
 export default CommonSlice.reducer
