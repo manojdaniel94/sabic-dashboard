@@ -1,4 +1,4 @@
-import React, { useRef,useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Status.scss"
 
 import iconAffiliates from "../../assets/images/icon_Affiliates.svg";
@@ -28,24 +28,24 @@ const Status = ({ data, page, healthIndex }: Props) => {
                             <div className="common">
                                 <div><div><img src={iconAffiliates} title="Affiliates" /></div><div><span id="value">{data[0].affiliateCount}</span><span>AFFILIATES</span></div></div>
                                 <div><div><img src={iconAssets} title="Assets" /></div><div><span id="value2">{data[0].assetCount}</span><span>ASSETS</span></div></div>
-                                <div  onMouseOver={() => setMouseHoverTooltip(true)}><div><img src={iconHealthIndex} title="Health_Index" /></div><div><span>{data[0].healthIndex}%</span><span>HEALTH INDEX</span></div>
-                                { mouseHoverTooltip === true ?
-                                    <div className="status-tooltip"><a href="#" onClick={()=>setMouseHoverTooltip(false)} className="status-tooltip-close">X</a>
-                                        <div className="status-tooltip-head"><span>HEALTH INDEX</span><span>{healthIndex[0].PlantHealth}%</span></div>
+                                <div onMouseOver={() => setMouseHoverTooltip(true)} onMouseLeave={() => setMouseHoverTooltip(false)}><div><img src={iconHealthIndex} title="Health_Index" /></div><div><span>{data[0].healthIndex}%</span><span>HEALTH INDEX</span></div>
+                                    {mouseHoverTooltip === true ?
+                                        <div className="status-tooltip">
+                                            <div className="status-tooltip-head"><span>HEALTH INDEX</span><span>{healthIndex[0].PlantHealth}%</span></div>
                                             <div className="status-tooltip-box">
-                                            {healthIndex.map((item) => (
-                                            <div className="status-tooltiprow"><span>{item.AssetId}</span><span className="st-u">{item.PlantHealth}%</span></div>
-                                            ))}
-                                            {/* <div className="status-tooltiprow"><span>K-18022</span><span className="st-d">50%</span></div>
+                                                {healthIndex.map((item) => (
+                                                    <div className="status-tooltiprow"><span>{item.AssetId}</span><span className="st-u">{item.PlantHealth}%</span></div>
+                                                ))}
+                                                {/* <div className="status-tooltiprow"><span>K-18022</span><span className="st-d">50%</span></div>
                                             <div className="status-tooltiprow"><span>K-16033</span><span className="st-u">90%</span></div>
                                             <div className="status-tooltiprow"><span>K-16033</span><span className="st-u">90%</span></div>
                                             <div className="status-tooltiprow"><span>K-16040</span><span className="st-u">30%</span></div>
                                             <div className="status-tooltiprow"><span>K-18022</span><span className="st-d">50%</span></div>
                                             <div className="status-tooltiprow"><span>K-16033</span><span className="st-d">90%</span></div>
                                             <div className="status-tooltiprow"><span>K-16033</span><span className="st-d">90%</span></div> */}
-                                        </div>
-                                    </div> : ""
-                                }
+                                            </div>
+                                        </div> : ""
+                                    }
 
                                 </div>
                                 <div><div><img src={iconProfile} title="PM_Compliance" /></div><div><span id="value4">{data[0].pmCompliance}</span><span>PM COMPLIANCE</span></div></div>

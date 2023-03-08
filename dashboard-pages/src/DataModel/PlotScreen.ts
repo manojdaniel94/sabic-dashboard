@@ -1,26 +1,26 @@
 export const getModelDropdownData = [
     {
-        "assetSapId": "112233441110",
+        "assetSapId": "1122334411101",
         "sensorGroupName": "lo system cond_135"
     },
     {
-        "assetSapId": "112233441110",
+        "assetSapId": "1122334411102",
         "sensorGroupName": "lo system cond_136"
     },
     {
-        "assetSapId": "112233441110",
+        "assetSapId": "1122334411103",
         "sensorGroupName": "lo system cond_137"
     },
     {
-        "assetSapId": "112233441110",
+        "assetSapId": "1122334411104",
         "sensorGroupName": "lo system cond_138"
     },
     {
-        "assetSapId": "112233441110",
+        "assetSapId": "1122334411105",
         "sensorGroupName": "lo system cond_139"
     },
     {
-        "assetSapId": "112233441110",
+        "assetSapId": "1122334411106",
         "sensorGroupName": "lo system cond_140"
     }
 ]
