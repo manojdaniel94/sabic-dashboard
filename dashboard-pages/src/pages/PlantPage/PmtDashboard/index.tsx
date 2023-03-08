@@ -17,6 +17,7 @@ import {
     getHeatMapToolTipbyAssetStatus,
     getTopBarToolTipbyPlantId
 } from '../../../redux/reducers/CommonReducer';
+import Autocomplete from 'react-autocomplete'
 
 
 
@@ -54,6 +55,8 @@ const PmtDashboard = () => {
         statusName: ""
     })
 
+    const [autocompleteData, setAutocompleteData] = useState<any>();
+
 
     useEffect(() => {
         dispatch(getRegions("1"));
@@ -73,7 +76,15 @@ const PmtDashboard = () => {
             return { value: item.assetId, label: item.assetName };
         });
         setAssetIdDropList(data);
+
+        let autoData = assetListByPlant.map(function (item: any) {
+            return { label: item.assetId };
+
+        });
+        setAutocompleteData(autoData);
     }, [assetListByPlant]);
+
+
 
     useEffect(() => {
         let data = setStatusListbyPlantId.map(function (item: any, index: number) {
@@ -149,6 +160,18 @@ const PmtDashboard = () => {
                     <div className="pmt-filter">
                         <div className="pmt-asset-name">{selectedAssetId === "" ? "Polly 2" : selectedAssetId.label}</div>
                         <div className={`pmt-time`}><span>Asset ID</span>
+                            <Autocomplete
+                                getItemValue={(item: any) => item.label}
+                                items={autocompleteData}
+                                renderItem={(item: any, isHighlighted: any) =>
+                                    <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+                                        {item.label}
+                                    </div>
+                                }
+                            //  value={value}
+                            // onChange={(e) => value = e.target.value}
+                            // onSelect={(val) => value = val}
+                            />
                             <input type="text" value={selectedAssetId.value} />
                         </div>
                         <div className="pmt-options"><Dropdown
