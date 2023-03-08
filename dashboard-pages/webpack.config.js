@@ -32,7 +32,7 @@ module.exports = {
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
         exclude: /(node_modules)/,
-        use: ["url-loader", "file-loader"],
+        use: ["url-loader"],
       },
       {
         test: /\.(ts|tsx|js|jsx)$/,

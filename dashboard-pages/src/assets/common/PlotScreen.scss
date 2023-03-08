@@ -9,6 +9,9 @@ $font_headline_lt: SabicHeadlineLight;
 $font_headline_rg: SabicHeadlineRegular;
 $font_lt: SabicLight;
 $font_rg: SabicRegular;
+$dark_grey: #58595B;
+$light_grey: #D4D4D4;
+$blue: #009FDF;
 
 #sensor {
     display: flex;
@@ -194,4 +197,108 @@ $font_rg: SabicRegular;
             }
         }
     }
+}
+
+.cal-show {
+    display: block
+}
+
+.cal-hide {
+    display: none
+}
+
+#calendar-popup {
+    background: #EDEFF3;
+    color: #58595B;
+    width: 380px;
+    padding: 25px;
+    border-radius: 3px;
+    position: absolute;
+    top: 50px;
+    left: -200px;
+    z-index: 999;
+    box-shadow: 0 5px 5px $light_grey;
+
+    .calendar-filter {
+        display: flex;
+        width: 100%;
+        margin-bottom: 25px;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .cf-left,
+        .cf-right {
+            display: flex;
+            flex-basis: 50%;
+            justify-content: flex-start;
+        }
+
+        .cf-right {
+            justify-content: flex-end;
+        }
+
+        span {
+            flex-basis: 17%;
+            padding-right: 3%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            width: 60%;
+            height: 30px;
+            border-radius: 2px;
+            border: 0px;
+            padding: 0 3%
+        }
+    }
+
+    .calendar-others {
+        display: none;
+        margin-bottom: 10px;
+
+        a {
+            background: #fff;
+            padding: 1%;
+            width: 17%;
+            margin: 0 0 0 1%;
+            border-radius: 5px;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        a:first-child {
+            padding: 1%;
+        }
+    }
+
+    .calendar-date {
+        background: #fff;
+        color: $blue;
+        border-radius: 2px;
+        margin-bottom: 25px;
+        height: 25px;
+        line-height: 25px;
+        padding: 5px;
+    }
+
+    .calendar-box {
+        background: #fff;
+        border-radius: 10px;
+        min-height: 140px;
+    }
+}
+
+#calendar-popup::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 15px;
+    margin-left: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #EDEFF3 transparent;
 }

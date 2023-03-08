@@ -5,11 +5,12 @@ interface Props {
   options?: any;
   handleChange?: any;
   value?: any
-  defaultValue?: any
+  defaultValue?: any,
+  multi?: any
 }
 
 // initial
-const Dropdown = ({ options, handleChange, value, defaultValue }: Props) => {
+const Dropdown = ({ options, handleChange, value, defaultValue, multi }: Props) => {
   return (
     <>
       <Select
@@ -24,6 +25,7 @@ const Dropdown = ({ options, handleChange, value, defaultValue }: Props) => {
         data-testid="select"
         value={value}
         defaultValue={defaultValue}
+        isMulti={multi}
       />
     </>
   );
