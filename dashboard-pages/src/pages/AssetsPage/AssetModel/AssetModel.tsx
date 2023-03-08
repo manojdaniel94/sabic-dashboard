@@ -43,7 +43,7 @@ const AssetModel = () => {
     }, [selectedAssetId]);
 
     // console.log("assetlistOfAssetModelByplantid",assetlistOfAssetModelByplantid);
-    // console.log(" AnomalyModelbyAssetId", AnomalyModelbyAssetId);
+    // console.log(" GraphicalImageByAssetId=========", GraphicalImageByAssetId[0]);
     // console.log(" selected in dropdown", selected);
 
     return (
