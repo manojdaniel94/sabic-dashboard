@@ -25,6 +25,7 @@ export const Api = {
     getApiAnomalyModelbyAssetId: BASE_URL + 'PlantPmt/getassetcardpmt_byplantid/',
     getApiFailurepreDictionByAssetId: BASE_URL + 'PlantPmt/getassetcardpmt_byplantid/',
     getApiGraphicalImageByAssetId: BASE_URL + 'PlantPmt/getassetcardpmt_byplantid/',
+    getApiAssetKPIForAssetModel: BASE_URL + 'PlantPmt/getassetcardpmt_byplantid/',
     // Asset Model End
     // plot Screen Start
     getplotsmodel_byassetid: BASE_URL + 'api/DeviationPlotController/getplotsmodel_byassetid/',//Model Dropdown

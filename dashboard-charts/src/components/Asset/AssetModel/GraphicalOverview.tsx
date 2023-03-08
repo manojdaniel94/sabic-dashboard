@@ -55,11 +55,11 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
             text: null
         },
         xAxis: {
-            visible: true,
+            visible: false,
             min: 0, max: 100
         },
         yAxis: {
-            visible: true,
+            visible: false,
             min: 0, max: 100
         },
         navigation: {
@@ -123,11 +123,18 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
                 //      </span>`;
                 //     }
                 //   }
-                tooltip: {
-                    pointFormat: "{point.custom.extraInformation}",
-                    backgroundColor: "black",
-                    // "The value for <b>{point.x}</b> is <b>{point.y}</b><br>{point.custom.extraInformation}",
-                },
+                // tooltip: {
+                //     pointFormat: "{point.custom.extraInformation}",
+                //     backgroundColor: "black",
+                //     // "The value for <b>{point.x}</b> is <b>{point.y}</b><br>{point.custom.extraInformation}",
+                // },
+              //   tooltip: {
+              //     useHTML: true,
+              //     formatter: () => {
+              //         console.log(this); // just to see , what data you can access
+              //         return 'The value for';
+              //     }
+              // }
                 
             },
             // series: {
@@ -142,14 +149,15 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
             // }
         },
         series: [{
-            name: 'Series 1',
-            color: 'rgba(118, 189, 34, .7)',
+            // name: 'Series 1',
+            // color: 'rgba(118, 189, 34, .7)',
              // 1st model data-km-S206
              data: [
                 {
                   x: 19.5,
                   y: 19.7,
                   color: "#FF0000",
+                  name: "Point1",
                   custom: {
                     extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
                   },
@@ -158,6 +166,7 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
                   x: 42.7,
                   y: 38,
                   color: "yellow",
+                  name: "Point2",
                   custom: {
                     extraInformation: "Go to Devaition Plot.",
                   },
@@ -165,6 +174,7 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
                 {
                   x: 74.7,
                   y: 66.5,
+                  name: "Point3",
                   custom: {
                     extraInformation: "Go toAlertList<br>Go to Devaition Plot.",
                   },
@@ -172,6 +182,7 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
                 {
                   x: 56.2,
                   y: 66.5,
+                  name: "Point4",
                   custom: {
                     extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
                   },
@@ -179,6 +190,7 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
                 {
                   x: 58.7,
                   y: 66.5,
+                  name: "Point5",
                   custom: {
                     extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
                   },
@@ -186,6 +198,7 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
                 {
                   x: 63.5,
                   y: 66.5,
+                  name: "Point6",
                   custom: {
                     extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
                   },
@@ -193,6 +206,7 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
                 {
                   x: 40.5,
                   y: 79.5,
+                  name: "Point7",
                   custom: {
                     extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
                   },
@@ -200,6 +214,7 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
                 {
                   x: 82.5,
                   y: 26,
+                  name: "Point8",
                   custom: {
                     extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
                   },
@@ -207,6 +222,7 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
                 {
                   x: 65,
                   y: 88.5,
+                  name: "Point9",
                   custom: {
                     extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
                   },
@@ -214,6 +230,7 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
                 {
                   x: 79,
                   y: 66.5,
+                  name: "Point10",
                   custom: {
                     extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
                   },

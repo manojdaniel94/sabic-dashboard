@@ -3,7 +3,7 @@ import { put, takeEvery, debounce, select } from '@redux-saga/core/effects';
 import { getRequest, postRequest } from '../../utility/request';
 import { Api } from '../../utility/api';
 import { HTTP_CALL } from '../../constant/constants';
-import { getassetlistByplantidOfAssetModel, getAnomalyModelbyassetidinAssetModel, getFailurepredictionbyassetidAssetModel, getGraphicalImageForAssetModel } from '../../DataModel/Assets/AssetModel';
+import { getassetlistByplantidOfAssetModel, getAnomalyModelbyassetidinAssetModel, getFailurepredictionbyassetidAssetModel, getGraphicalImageForAssetModel, getAssetKPIForAssetModel } from '../../DataModel/Assets/AssetModel';
 import {
     getassetlistByplantid,
     getplantAlertspmt,
@@ -496,6 +496,39 @@ function* getGraphicalImageByAssetId(action: any) {
     }
 
 }
+function* getAssetKPI(action: any) {
+    if (HTTP_CALL) {
+        try {
+            const response = yield getRequest(`${Api.getApiAssetKPIForAssetModel}${action.payload}`);
+            if (response.status == 200) {
+                console.log('GET POST RESPONSE DATA', response.data);
+                yield put({
+                    type: "Common/getAssetKPISuccess",
+                    payload: response.data
+
+                });
+            } else {
+                yield put({
+                    type: "Common/getAssetKPIFailure",
+                    payload: "not 200",
+                });
+            }
+        } catch (error) {
+            yield put({
+                type: "Common/getAssetKPIFailure",
+                payload: error,
+            });
+        }
+    }
+    else {
+        yield put({
+            type: "Common/getAssetKPISuccess",
+            payload: getAssetKPIForAssetModel
+
+        });
+    }
+
+}
 
 // Plot Screen
 function* getPlotModelDropDown(action: any) {
@@ -689,6 +722,7 @@ export default function* mySaga() {
     yield takeEvery('Common/getAnomalyModelbyAssetId', getAnomalyModelbyAssetId);
     yield takeEvery('Common/getFailurepreDictionByAssetId', getFailurepreDictionByAssetId);
     yield takeEvery('Common/getGraphicalImageByAssetId', getGraphicalImageByAssetId);
+    yield takeEvery('Common/getAssetKPI', getAssetKPI);
     // Plot Screen
     yield takeEvery('Common/getPlotModelDropDown', getPlotModelDropDown);
     yield takeEvery('Common/getPlotAssetDropDown', getPlotAssetDropDown);
