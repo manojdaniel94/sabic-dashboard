@@ -158,7 +158,7 @@ export const getFailurepredictionbyassetidAssetModel = [
     },
     {
       "modelName": "Test Model 5",
-      "rul": 10,
+      "rul": 5,
       "confidenceFactor": 2.3,
       "maxRange": 8,
       "minRange": 4
@@ -209,7 +209,7 @@ export const getGraphicalImageForAssetModel = [
     {
       "assetId": "2Y-3001A",
       "assetSapId": "310060739",
-      "kpi": "",
+      "kpi": "PERFORMANCE",
       "kpiValue": 59.45,
       "kpiTrend": true,
       "kpiOrder": 1,

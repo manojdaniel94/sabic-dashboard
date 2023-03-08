@@ -1,13 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="626.317" height="230.395" viewBox="0 0 626.317 230.395">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="640.732" height="303.946" viewBox="0 0 640.732 303.946">
   <defs>
     <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
-      <stop offset="0" stop-color="#0047bb"/>
-      <stop offset="0.33" stop-color="#3bb44a"/>
-      <stop offset="0.66" stop-color="#ffa300"/>
-      <stop offset="1" stop-color="#e35205"/>
+      <stop offset="0" stop-color="#ffa300"/>
+      <stop offset="0.13" stop-color="#ff9d00"/>
+      <stop offset="0.291" stop-color="#ff8e00"/>
+      <stop offset="0.467" stop-color="#ff7500"/>
+      <stop offset="0.656" stop-color="#ff5200"/>
+      <stop offset="0.851" stop-color="#ff2500"/>
+      <stop offset="0.996" stop-color="red"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0.001" stop-color="#ffcd00"/>
+      <stop offset="0.293" stop-color="#ffc600"/>
+      <stop offset="0.694" stop-color="#ffb500"/>
+      <stop offset="1" stop-color="#ffa300"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0ca948"/>
+      <stop offset="0.172" stop-color="#43b137"/>
+      <stop offset="0.395" stop-color="#85bb23"/>
+      <stop offset="0.597" stop-color="#b9c214"/>
+      <stop offset="0.772" stop-color="#dfc809"/>
+      <stop offset="0.912" stop-color="#f6cb02"/>
+      <stop offset="1" stop-color="#ffcd00"/>
     </linearGradient>
   </defs>
-  <g id="image_Heatmap" transform="translate(313.159 115.198)">
-    <path id="Path_218" data-name="Path 218" d="M626.317,230.4C552.389,92.778,412.922,0,253.044,0H0V230.4Z" transform="translate(-313.159 -115.198)" fill="url(#linear-gradient)"/>
+  <g id="image_Heatmap" transform="translate(8700.577 3642.365)">
+    <g id="Artwork_5" data-name="Artwork 5" transform="translate(-8412.438 -3498.147)">
+      <g id="Group_740" data-name="Group 740" transform="translate(-352.592 -159.728)">
+        <rect id="Rectangle_726" data-name="Rectangle 726" width="213.577" height="35.797" transform="translate(491.607 283.659)" fill="url(#linear-gradient)"/>
+        <rect id="Rectangle_727" data-name="Rectangle 727" width="213.577" height="35.797" transform="translate(278.03 283.659)" fill="url(#linear-gradient-2)"/>
+        <rect id="Rectangle_728" data-name="Rectangle 728" width="213.577" height="35.797" transform="translate(64.452 283.659)" fill="url(#linear-gradient-3)"/>
+        <path id="Path_576" data-name="Path 576" d="M277.971,24.986A739.364,739.364,0,0,0,161.345,15.76H64.394V256.747H277.971Z" transform="translate(0.058 -0.25)" fill="url(#linear-gradient-3)"/>
+        <path id="Path_577" data-name="Path 577" d="M277.971,256.747H491.549V94.066a728.765,728.765,0,0,0-213.578-69.08Z" transform="translate(0.058 -0.25)" fill="url(#linear-gradient-2)"/>
+        <path id="Path_578" data-name="Path 578" d="M491.549,94.066V256.747H705.126A736.6,736.6,0,0,0,491.549,94.066Z" transform="translate(0.058 -0.25)" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
   </g>
 </svg>

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import GraphicalOverview from "charts/GraphicalOverview";
 import LiveModel from "table/LiveModel";
 import "./AssetModel.scss"
@@ -14,6 +14,9 @@ interface Props {
 }
 
 const AssetModel = () => {
+
+    const [selectedAssetId, setSelectedAssetId] = useState<any>(18);
+
     let dispatch = useDispatch();
 
     const { assetlistOfAssetModelByplantid, AnomalyModelbyAssetId, FailurepreDictionByAssetId, GraphicalImageByAssetId, AssetKPIForAssetModel } = useSelector((state: any) => ({
@@ -24,31 +27,38 @@ const AssetModel = () => {
         AssetKPIForAssetModel: state.Common.AssetKPIForAssetModel,
     }));
 
+    // useEffect(() => {
+    //     dispatch(getassetlistOfAssetModelByplantid("18"));    //selectedPlant.value
+    //     dispatch(getAnomalyModelbyAssetId("18"));             //selectedAssetId.value
+    //     dispatch(getFailurepreDictionByAssetId("18"));        //selectedAssetId.value
+    //     dispatch(getGraphicalImageByAssetId("18"));           //selectedAssetId.value
+    //     dispatch(getAssetKPI("18"));                          //selectedAssetId.value
+    // }, []);
     useEffect(() => {
-
-        dispatch(getassetlistOfAssetModelByplantid("18"));    //selectedPlant.value
-        dispatch(getAnomalyModelbyAssetId("18"));    //selectedPlant.value
-        dispatch(getFailurepreDictionByAssetId("18"));    //selectedPlant.value
-        dispatch(getGraphicalImageByAssetId("18"));    //selectedPlant.value
-        dispatch(getAssetKPI("18"));    //selectedPlant.value
-
-    }, []);
+        dispatch(getassetlistOfAssetModelByplantid(selectedAssetId));    //selectedPlant.value
+        dispatch(getAnomalyModelbyAssetId(selectedAssetId));             //selectedAssetId.value
+        dispatch(getFailurepreDictionByAssetId(selectedAssetId));        //selectedAssetId.value
+        dispatch(getGraphicalImageByAssetId(selectedAssetId));           //selectedAssetId.value
+        dispatch(getAssetKPI(selectedAssetId));                          //selectedAssetId.value
+    }, [selectedAssetId]);
 
     // console.log("assetlistOfAssetModelByplantid",assetlistOfAssetModelByplantid);
     // console.log(" AnomalyModelbyAssetId", AnomalyModelbyAssetId);
-    console.log(" AssetKPIForAssetModel", AssetKPIForAssetModel);
+    // console.log(" selected in dropdown", selected);
 
     return (
         <div id="asset-model">
             <div id="asset-model-left">
                 <div className="asset-model-left-inner">
                     <div className="sensor-filter">
-                        <div className="title">SENSOR PLOT</div>
+                        <div className="title">GRAPHICAL OVERVIEW</div>
                         <div className="sensor-options">
-                            <select>
-                                <option>Select Asset</option>
+                            <select
+                              onChange={(e) => setSelectedAssetId(e.target.value)}
+                            >
+                                <option>Select Asset ID</option>
                                 {assetlistOfAssetModelByplantid.map((item: any) => (
-                                    <option>{item.assetId}</option>
+                                    <option value={item.assetId}>{item.assetId}</option>
                                 ))}
                             </select>
                         </div>
@@ -75,25 +85,6 @@ const AssetModel = () => {
                     </div>
                     
                 </div>
-                {/* <div className="asset-plot-status">
-                    <div>
-                        {AssetKPIForAssetModel.map((item: any) => (
-                            <div>
-                                <div className="hover-text">
-                                    <div><span className={item.kpiTrend === true ? "uparrow greeny" : "downarrow redy"}></span><span>{item.kpi}</span> <span className="amhi-slider"><i className="aafter" style={{ left: `${item.kpiPercent - 5}%` }}>{item.kpiPercent}%</i></span></div>
-                                    <span className="tooltip-text" id="top">
-                                        <span>{`What is ${item.kpi}?`}</span>
-                                        <span>Description Here</span>
-                                    </span>
-                                </div>
-                            </div>
-                            
-                        ))}
-                    </div>
-
-
-                    <div className="asset-status-graph"><img src={Graph} /></div>
-                </div> */}
             </div>
             <div id="asset-model-right">
                 <LiveModel
