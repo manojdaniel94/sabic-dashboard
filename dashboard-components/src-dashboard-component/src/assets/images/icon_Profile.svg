@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-  <g id="icon_Profile" data-name="icon+Profile" transform="translate(-1465.056 -46.404)">
-    <path id="Path_41" data-name="Path 41" d="M1513.056,70.4a24,24,0,1,1-24-24,24,24,0,0,1,24,24" transform="translate(0 0)" fill="#dbdfe8"/>
-    <g id="Group_255" data-name="Group 255" transform="translate(1473.215 53.156)">
-      <path id="Path_42" data-name="Path 42" d="M1499.61,63.681a8.724,8.724,0,1,1-8.724-8.724,8.724,8.724,0,0,1,8.724,8.724" transform="translate(-1475.043 -54.957)" fill="#9fa1ae"/>
-      <path id="Path_121" data-name="Path 121" d="M1505.978,78.186a17.506,17.506,0,0,0-5.244-3.893,8.718,8.718,0,0,0-2.719-.815,12.066,12.066,0,0,1-14.268-.008,8.763,8.763,0,0,0-2.758.821,17.545,17.545,0,0,0-5.213,3.858,2.8,2.8,0,0,0-.173,3.565,19.286,19.286,0,0,0,30.538.037,2.8,2.8,0,0,0-.163-3.565" transform="translate(-1475.043 -54.957)" fill="#9fa1ae"/>
-    </g>
-  </g>
-</svg>
