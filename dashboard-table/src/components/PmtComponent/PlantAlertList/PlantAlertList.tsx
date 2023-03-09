@@ -35,7 +35,7 @@ const PlantAlertList = ({ data }: Props) => {
             width: "20%",
 
             render: (status: any) => (
-                <span style={{ color: status === "Active" ? "red" : "green" }}>
+                <span style={{ color: status === "Active" ? "red" : "inherit" }}>
                     {status}
                 </span>
             ),

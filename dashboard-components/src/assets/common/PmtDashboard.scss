@@ -1,26 +1,17 @@
+//old
+$dark_grey:#58595B;
+$light_grey:#D4D4D4;
+$blue:#009FDF;
+$header_menu_color:#4d4d4d;
+$font_headline_lt:SabicHeadlineLight;
+$font_headline_rg:SabicHeadlineRegular;
+$font_lt:SabicLight;
+$font_rg:SabicRegular;
 //PMT PAGE
 
-*::-webkit-scrollbar {
-    width: 2px;
-    scrollbar-width: 2px;
-    width: 2px;
-    scrollbar-width: 2px;
-}
-
-*::-webkit-scrollbar-track {
-    background-color: transparent;
-    box-shadow: none;
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: #777777;
-    outline: 1px solid #FBFCFD;
-    background-color: #ccc;
-    border-radius: 8px;
-    outline: 1px solid #EAEBEC;
-    background-clip: padding-box;
-}
-
+*::-webkit-scrollbar {width: 2px;scrollbar-width: 2px;width: 2px;scrollbar-width: 2px;}
+*::-webkit-scrollbar-track {background-color:transparent;box-shadow:none;}
+*::-webkit-scrollbar-thumb {background-color:#777777;outline: 1px solid #FBFCFD;background-color: #ccc;border-radius: 8px;outline: 1px solid #EAEBEC; background-clip: padding-box;}
 #pmt {
     display: flex;
     justify-content: space-between;
@@ -32,12 +23,10 @@
         justify-content: flex-start;
         border-radius: 5px;
         flex-direction: column;
-
         #pmt-asset-card {
             background: #fff;
             box-shadow: 0px 0px 18px #eaeaea;
             padding: 30px;
-
             .pmt-title {
                 font-size: 20px;
                 display: flex;
@@ -45,90 +34,62 @@
                 font: normal 600 16px 'SABIC Typeface Text Regular', arial, helvetica;
                 letter-spacing: 1px;
             }
-
             .pmt-filter {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 10px;
-
+                margin:10px 0 25px 0;
                 .pmt-asset-name {
-                    padding: 10px;
                     font-size: 14px;
                     letter-spacing: 1px;
                     color: #939598;
-                    padding: 15px 0 15px 0;
-                }
-
-                .pmt-time {
-                    color: #009FDF;
-                    font-size: 16px;
                     flex-basis: 30%;
-                    display: flex;
-
-                    span {
-                        color: #939598;
-                        padding: 0 15px;
-                        flex-basis: 40%;
-                        font-size: 14px;
+                }
+                .pmt-fills{flex-basis: 70%;display: flex;justify-content:flex-end;align-items: center;gap:2%;
+                    .pmt-time {
+                        color: #009FDF;
+                        font-size: 16px;
+                        display:flex;
+                        span {
+                            color: #939598;
+                            padding: 0 15px;
+                            flex-basis: 40%;
+                            font-size: 14px;display:flex;
+                            justify-content: flex-end;
+                            white-space: nowrap;
+                        }
+                        input {
+                            background: #FBFAFA;
+                            border: 0px;
+                            font-size: 14px;
+                            height: 25px;
+                            border-radius: 3px;
+                            width:100px;
+                            color:#FBFAFA;
+                            padding:0 5px;font-family: inherit;
+                        }
+                        input:focus-visible {
+                            outline: 1px solid #58595B;}
                     }
+                    .pmt-gobtn{background:#FBFAFA;border-radius: 3px;padding:5px 10px;color:#666;font-size: 14px;cursor:pointer}
+                    .pmt-gobtn:hover{background:#c5E7F7;color:#009FDF}
 
-                    input {
-                        background: #EAEBEC;
-                        border: 0px;
-                        font-size: 14px;
-                        height: 25px;
-                        border-radius: 5px;
-                        width: 60%;
-                        color: #58595B;
-                        padding: 0 5px;
-                        font-family: inherit;
+                    .pmt-options {flex-basis:30%;
+                        select {
+                            border: 0px;
+                            font-size: 17px;
+                            letter-spacing: 1px;
+                            color: #939598;
+                            padding: 0 10px;
+                            border-radius: 3px;
+                        }
+                        .css-13cymwt-control{border: 0px solid #58595B;outline: 1px solid #58595B;}
                     }
+                    .css-13cymwt-control{border:0px;font-size: 14px;min-height:25px;}
+                    .css-1fdsijx-ValueContainer{padding:2px 8px;}
+                    .css-1u9des2-indicatorSeparator{display:none;}
+                    .css-1xc3v61-indicatorContainer{padding:0 5px;}
                 }
-
-                .pmt-gobtn {
-                    background: #EAEBEC;
-                    border-radius: 5px;
-                    padding: 5px 10px;
-                    color: #666;
-                    font-size: 14px;
-                }
-
-                .pmt-options {
-                    flex-basis: 30%;
-
-                    select {
-                        border: 0px;
-                        font-size: 17px;
-                        letter-spacing: 1px;
-                        color: #939598;
-                        padding: 0 10px;
-                        border-radius: 5px;
-                    }
-                }
-
-                .css-13cymwt-control {
-                    border: 0px;
-                    font-size: 14px;
-                    background: #eaebec;
-                    min-height: 25px;
-                }
-
-                .css-1u9des2-indicatorSeparator {
-                    display: none;
-                }
-
-                .css-1xc3v61-indicatorContainer {
-                    padding: 0 5px;
-                }
-            }
-
-            .pmt-asset-name {
-                padding: 10px;
-                font-size: 16px;
-                letter-spacing: 1px;
-                color: #939598;
-                padding: 15px 0 15px 0;
             }
 
         }
@@ -136,7 +97,7 @@
         #pmt-alert-list {
             background: #fff;
             box-shadow: 0px 0px 18px #eaeaea;
-            margin-top: 2vh;
+            margin-top: 25px;
             padding: 30px;
 
             .pmt-filter {
@@ -166,7 +127,7 @@
                         border: 0px;
                         font-size: 14px;
                         height: 25px;
-                        border-radius: 5px;
+                        border-radius: 2px;
                     }
                 }
 
@@ -184,48 +145,23 @@
 
             .pmt-asset-name {
                 padding: 10px 0 10px 30px;
-                font-size: 16px;
+                font-size: 14px;
                 letter-spacing: 1px;
                 color: #939598;
-                padding: 5px 0 10px 0;
+                padding:10px 0 25px 0;
             }
 
         }
-
-        .ant-table-body {
-            .status-tooltip-box::-webkit-scrollbar {
-                width: 2px;
-                scrollbar-width: 2px;
-                width: 2px;
-                scrollbar-width: 2px;
-            }
-
-            .status-tooltip-box::-webkit-scrollbar-track {
-                background-color: transparent;
-                box-shadow: none;
-            }
-
-            .status-tooltip-box::-webkit-scrollbar-thumb {
-                background-color: #777777;
-                outline: 1px solid #FBFCFD;
-                background-color: #EAEBEC;
-                border-radius: 8px;
-                outline: 1px solid #EAEBEC;
-                background-clip: padding-box;
-            }
+        .ant-table-body{font-family:inherit;
+            .status-tooltip-box::-webkit-scrollbar {width: 2px;scrollbar-width: 2px;width: 2px;scrollbar-width: 2px;}
+            .status-tooltip-box::-webkit-scrollbar-track {background-color:transparent;box-shadow:none;}
+            .status-tooltip-box::-webkit-scrollbar-thumb {background-color:#777777;outline: 1px solid #FBFCFD;background-color: #EAEBEC;border-radius: 8px;outline: 1px solid #EAEBEC; background-clip: padding-box;}
         }
+        .ant-table-cell{padding:5px;font-family:inherit;}
+        .ant-table-thead th.ant-table-cell{background:transparent;font-size:12px;color:#58595B;font-family: $font_rg;}
+        .ant-table-thead th.ant-table-cell::before{display:none}
 
-        .ant-table-cell {
-            padding: 5px;
-        }
-
-        .ant-table-thead th.ant-table-cell {
-            background: transparent
-        }
-
-        :where(.css-dev-only-do-not-override-10ed4xt).ant-table-wrapper .ant-table {
-            color: #9395a5
-        }
+        :where(.css-dev-only-do-not-override-10ed4xt).ant-table-wrapper .ant-table{color:#9395a5}
 
     }
 
@@ -242,17 +178,13 @@
         .pmt-right-dropdown {
             position: absolute;
             right: 10px;
-            top: 20px;
+            top: 46px;
             width: 200px;
-
-            .css-13cymwt-control {
-                border: 0px;
-                font-size: 12px;
+            .css-13cymwt-control{
+                border:0px;
+                font-size:12px;
             }
-
-            .css-1u9des2-indicatorSeparator {
-                display: none
-            }
+            .css-1u9des2-indicatorSeparator{display:none}
         }
 
         .pmt-right-title {
@@ -262,7 +194,11 @@
             font: normal 600 17px 'SABIC Typeface Text Regular', arial, helvetica;
             letter-spacing: 1px;
         }
-
+        .pmt-right-name{
+            color:#939598;
+            font-size:14px;
+            padding:15px 0;
+        }
         .pmt-health-index {
             padding-left: 50px;
             position: relative;
@@ -428,6 +364,15 @@
                         border-style: solid;
                         border-color: #242424 transparent transparent transparent;
                     }
+                    
+                    .hi-popup::before {
+                        content: "";
+                        position: absolute;
+                        width:100%;
+                        height:20px;
+                        bottom:-20px;
+                        left: 0;
+                    }
 
                     span.hi-numbers {
                         background: #fff;
@@ -454,7 +399,7 @@
                     }
 
                     span.hi-name {
-                        background: #939598;
+                        background: #929292;
                         color: #fff;
                         font-size: 15px;
                         border-bottom: 10px #fff solid;
@@ -471,6 +416,7 @@
                         justify-content: center;
                         padding: 10px 0;
                         font-size: 11px;
+                        color:#58595B;
                     }
                 }
 
@@ -498,19 +444,19 @@
 
                 div.hi-value2 {
                     span.hi-name {
-                        background: #b9babc;
+                        background: #9a9a9a;
                     }
                 }
 
                 div.hi-value3 {
                     span.hi-name {
-                        background: #cbccce;
+                        background: #A2A2A2;
                     }
                 }
 
                 div.hi-value4 {
                     span.hi-name {
-                        background: #e2e2e2;
+                        background: #AAAAAA;
                     }
                 }
 
@@ -521,11 +467,12 @@
             content: '';
             width: 50px;
             height: 100%;
-            background: transparent url(../images/image_Resistance.svg) no-repeat top center;
+            background: transparent url(../images/image_Resistance2.svg) no-repeat top center;
             position: absolute;
             top: 30px;
             left: 0px;
             max-height: 90%;
+            background-size: 50px 100%;
         }
 
         .pmt-plot-list {
@@ -576,7 +523,6 @@
                 #pmt-left {
                     flex-basis: 55%
                 }
-
                 #pmt-right {
                     .pmt-health-index {
                         .pmt-heatmapvalues {
@@ -596,20 +542,10 @@
         .content-inner {
             #pmt {
                 margin: 2vh 0;
-
                 #pmt-left {
                     flex-basis: 50%;
-
                     #pmt-asset-card {
                         padding: 20px;
-
-                        .pmt-filter {
-                            .pmt-time {
-                                input {
-                                    width: 50%
-                                }
-                            }
-                        }
                     }
 
                     #pmt-alert-list {
@@ -618,7 +554,7 @@
                 }
 
                 #pmt-right {
-                    flex-basis: calc(50% - 55px);
+                    flex-basis: calc(50% - 65px);
                     padding: 20px;
 
                     .pmt-health-index {
@@ -693,23 +629,14 @@
     #container {
         #content {
             .content-inner {
-
                 //breadcrumb
-                #breadcrumb {
-                    .breadcrumb-left {
-                        flex-basis: 90% !important
-                    }
-
-                    .breadcrumb-right {
-                        flex-basis: 10% !important
-                    }
+                #breadcrumb{
+                    .breadcrumb-left{flex-basis:90% !important}
+                    .breadcrumb-right{flex-basis:10% !important}
                 }
-
                 // PMT
                 #pmt {
-                    #pmt-left {
-                        padding: 0px;
-
+                    #pmt-left {padding:0px;
                         .pmt-filter {
                             flex-wrap: wrap;
 
@@ -719,14 +646,8 @@
                                 justify-content: flex-start;
                                 align-items: center;
                             }
-
-                            .pmt-asset-name {
-                                flex-basis: 20%;
-                            }
-
-                            .pmt-time {
-                                flex-basis: 30%;
-
+                            .pmt-asset-name{flex-basis: 20%;}
+                            .pmt-time {flex-basis: 30%;
                                 span {
                                     padding: 0px;
                                     width: 40%
@@ -740,9 +661,7 @@
                                 }
                             }
 
-                            .pmt-options {
-                                flex-basis: 35%;
-
+                            .pmt-options {flex-basis: 35%;
                                 select {
                                     padding: 0px;
                                     border: 1px #ccc solid;
@@ -750,18 +669,9 @@
                                     border-radius: 5px;
                                     height: 25px;
                                 }
-
-                                .css-qbdosj-Input {
-                                    position: absolute;
-                                }
+                                .css-qbdosj-Input{position:absolute;}
                             }
-
-                            .pmt-gobtn {
-                                flex-basis: 5%;
-                                text-align: center;
-                                padding: auto 15px;
-                                height: 21px;
-                            }
+                            .pmt-gobtn{flex-basis:5%;text-align: center;padding:auto 15px;height:21px;}
                         }
 
                         .pmt-asset-name {
@@ -817,13 +727,11 @@
                     }
                 }
 
-
+                
                 // PMT
                 #pmt {
                     #pmt-left {
-                        #pmt-asset-card {
-                            padding: 10px;
-
+                        #pmt-asset-card{padding:10px;
                             .pmt-filter {
                                 flex-wrap: wrap;
 
@@ -833,31 +741,21 @@
                                     justify-content: flex-start;
                                     align-items: center;
                                 }
-
-                                .pmt-asset-name {
-                                    flex-basis: 100%;
-                                }
-
-                                .pmt-time {
-                                    flex-basis: 47%;
-                                    margin-right: 1%;
-
+                                .pmt-asset-name{flex-basis:100%;}
+                                .pmt-time {flex-basis:47%;margin-right:1%;
                                     span {
                                         padding: 0px;
                                         flex-basis: 50%;
                                     }
 
                                     input {
-                                        flex-basis: 50%;
+                                        flex-basis:50%;
                                         border-radius: 5px;
                                         height: 25px;
                                     }
                                 }
 
-                                .pmt-options {
-                                    flex-basis: 40%;
-                                    margin-right: 2%;
-
+                                .pmt-options {flex-basis:40%;margin-right:2%;
                                     select {
                                         padding: 0px;
                                         border: 1px #ccc solid;
@@ -865,35 +763,20 @@
                                         border-radius: 5px;
                                         height: 25px;
                                     }
-
-                                    .css-qbdosj-Input {
-                                        position: absolute;
-                                    }
+                                    .css-qbdosj-Input{position:absolute;}
                                 }
-
-                                .pmt-gobtn {
-                                    flex-basis: 10%;
-                                    text-align: center;
-                                }
+                                .pmt-gobtn{flex-basis:10%;text-align: center;}
                             }
                         }
                     }
-
-                    #pmt-right {
-                        .pmt-right-title {
-                            font: normal 600 15px "SABIC Typeface Text Regular", arial, helvetica;
-                        }
-
-                        >div:nth-child(2) {
-                            font-size: 11px
-                        }
-
-                        .pmt-right-dropdown {
-                            width: 150px;
-                        }
+                    #pmt-right{
+                        .pmt-right-title{font: normal 600 15px "SABIC Typeface Text Regular", arial, helvetica;}
+                        >div:nth-child(2){font-size:11px}
+                        .pmt-right-dropdown{width:150px;}
                     }
                 }
             }
         }
     }
 }
+
