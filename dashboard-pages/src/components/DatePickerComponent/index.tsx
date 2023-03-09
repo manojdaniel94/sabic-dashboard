@@ -1,6 +1,9 @@
 import React, { useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { Calendar } from 'react-date-range';
 
 interface Props {
     handleDateChange: any;
@@ -16,7 +19,7 @@ const DatePickerComponent = ({ selectedDate, handleDateChange }: Props) => {
     //     setFromDate(date);
     // };
     return (
-        <DatePicker dateFormat={"dd/M/yyyy"} selected={selectedDate} onChange={handleDateChange} />
+        <DatePicker dateFormat={"dd/M/yyyy"} selected={selectedDate} onChange={handleDateChange} inline />
 
     );
 };

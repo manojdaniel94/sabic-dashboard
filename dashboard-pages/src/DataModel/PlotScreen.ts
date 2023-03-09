@@ -92,7 +92,7 @@ export const getDeviationGraphData = [
         "localTime": "2020-11-05T01:27:00",
         "assetSapId": "310061373",
         "sensorGroupName": "Mixer Bearing",
-        "distance": 0,
+        "distance": 0.6,
         "alertThreshold": 5.160532832,
         "warningThreshold": 4.635647507,
         "status": "Pi Data Disconnection",
