@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
-import '../../../assets/common/PmtDashboard.scss'
+import '../../../assets/common/PmtDashboard.scss';
 import imageHeatmap from "../../../assets/images/image_Heatmap.svg";
+import icon_health_index_up_arrow from "../../../assets/images/icon_health_index_up_arrow.svg";
+import icon_health_index_down_arrow from "../../../assets/images/icon_health_index_down_arrow.svg";
 
 
 interface Props {
@@ -37,7 +39,7 @@ const ReliablityHeatMap = ({ statusData,
                             <h3>HEALTH INDEX </h3>
                             <div className="hi-popbox">
                                 {toolTipData.map((item) => (
-                                    <div className="hi-popuprow"><span>{item.assetId}</span><span><i></i>{item.assetHealthIndex}%</span></div>
+                                    <div className="hi-popuprow"><span>{item.assetId}</span><span><i><img src={icon_health_index_down_arrow} /></i>{item.assetHealthIndex}%</span></div>
                                 ))}
                             </div>
                         </div>
@@ -56,7 +58,7 @@ const ReliablityHeatMap = ({ statusData,
                             <h3>HEALTH INDEX </h3>
                             <div className="hi-popbox">
                                 {toolTipData.map((item) => (
-                                    <div className="hi-popuprow"><span>{item.assetId}</span><span><i></i>{item.assetHealthIndex}%</span></div>
+                                    <div className="hi-popuprow"><span>{item.assetId}</span><span><i><img src={icon_health_index_up_arrow} /></i>{item.assetHealthIndex}%</span></div>
                                 ))}
                             </div>
                         </div> {selectedHeatStatus === "Normal" || selectedHeatStatus === "" || selectedHeatStatus === "All" ? statusData.warning.value : 0}</span><span className="hi-name">Normal</span><span className="hi-status">Health Index &gt; 70%</span></div>
@@ -72,7 +74,7 @@ const ReliablityHeatMap = ({ statusData,
                         <h3>HEALTH INDEX </h3>
                         <div className="hi-popbox">
                             {toolTipData.map((item) => (
-                                <div className="hi-popuprow"><span>{item.assetId}</span><span><i></i>{item.assetHealthIndex}%</span></div>
+                                <div className="hi-popuprow"><span>{item.assetId}</span><span><i><img src={icon_health_index_up_arrow} /></i>{item.assetHealthIndex}%</span></div>
                             ))}
                         </div>
                     </div>  {selectedHeatStatus === "Warning" || selectedHeatStatus === "" || selectedHeatStatus === "All" ? statusData.normal.value : 0}</span><span className="hi-name">Warning</span><span className="hi-status">Health Index &lt; 70%</span></div>
@@ -88,7 +90,7 @@ const ReliablityHeatMap = ({ statusData,
                         <h3>HEALTH INDEX </h3>
                         <div className="hi-popbox">
                             {toolTipData.map((item) => (
-                                <div className="hi-popuprow"><span>{item.assetId}</span><span><i></i>{item.assetHealthIndex}%</span></div>
+                                <div className="hi-popuprow"><span>{item.assetId}</span><span><i><img src={icon_health_index_down_arrow} /></i>{item.assetHealthIndex}%</span></div>
                             ))}
                         </div>
                     </div>

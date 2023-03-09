@@ -1,175 +1,262 @@
 //old
-$dark_grey:#58595B;
-$light_grey:#D4D4D4;
-$blue:#009FDF;
-$header_menu_color:#4d4d4d;
-$font_headline_lt:SabicHeadlineLight;
-$font_headline_rg:SabicHeadlineRegular;
-$font_lt:SabicLight;
-$font_rg:SabicRegular;
+$dark_grey: #58595B;
+$light_grey: #D4D4D4;
+$blue: #009FDF;
+$header_menu_color: #4d4d4d;
+$font_headline_lt: SabicHeadlineLight;
+$font_headline_rg: SabicHeadlineRegular;
+$font_lt: SabicLight;
+$font_rg: SabicRegular;
 
 //new
 
-    #breadcrumb {
-        width: 100%;
-        display: flex;
-        padding:15px 0 25px 0;
+#breadcrumb {
+    width: 100%;
+    display: flex;
+    padding: 15px 0 25px 0;
 
-        .breadcrumb-left {
-            flex-basis: 50%;
+    .breadcrumb-left {
+        flex-basis: 50%;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        a {
+            font-family: $font_rg;
+            padding: 0 10px;
+            color: $header_menu_color;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        a:first-child {
+            padding-left: 0px;
+        }
+
+        a.active {
+            color: #939598;
+        }
+
+        span {
+            color: #58595B;
+        }
+
+        span.active {
+            color: #939598;
+        }
+    }
+
+    .breadcrumb-right {
+        flex-basis: 50%;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+
+        #calendar {
             display: flex;
-            justify-content: left;
-            align-items: center;
+            position: relative;
 
             a {
-                font-family:$font_rg;
-                padding: 0 10px;
-                color: $header_menu_color;
-                font-size:14px;
-                letter-spacing: 1px;
-            }
-
-            a:first-child {
-                padding-left: 0px;
-            }
-
-            a.active {
+                background: #EAEBEC;
                 color: #939598;
-            }
+                margin: 0 0 0 7px;
+                padding: 1.5% 0;
+                border-radius: 5px;
+                font-size: 0.9em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
 
-            span {
-                color: #58595B;
-            }
+                span {
+                    color: #58595B;
+                }
 
-            span.active {
-                color: #939598;
-            }
-        }
+                span.calen-date {
+                    color: #009FDF
+                }
 
-        .breadcrumb-right {
-            flex-basis: 50%;
-            display: flex;
-            justify-content: right;
-            align-items: center;
-
-            #calendar {
-                display: flex;position:relative;
-
-                a {
-                    background: #EAEBEC;
-                    color: #939598;
-                    margin: 0 0 0 7px;
-                    border-radius: 5px;
-                    font-size: 14px;
+                span.calen-icon {
+                    width: 18px;
+                    height: 18px;
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width:40px;
-                    height:40px;
+                    padding-left:5px;
+                    img {
+                        max-width: 100%;
+                    }
+                }
+            }
+
+            >a.customdate {
+                width: 140px;
+                display: flex;
+                justify-content: space-between;
+                padding: 1.5% 15px;
+                position: relative;
+                font-size: 0.9em;
+            }
+
+            a.customdate:Hover {
+                background: C5
+            }
+
+            a.mobile-calendar {
+                display: none
+            }
+
+            #calendar-popup {
+                display: none;
+                background: #EDEFF3;
+                color: #58595B;
+                width: 380px;
+                padding: 25px;
+                border-radius: 3px;
+                position: absolute;
+                top: 50px;
+                left: -200px;
+                z-index: 999;
+                box-shadow: 0 5px 5px $light_grey;
+
+                .calendar-filter {
+                    display: flex;
+                    width: 100%;
+                    margin-bottom: 25px;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .cf-left,
+                    .cf-right {
+                        display: flex;
+                        flex-basis: 50%;
+                        justify-content: flex-start;
+                    }
+
+                    .cf-right {
+                        justify-content: flex-end;
+                    }
 
                     span {
-                        color: #58595B;
-                    }
-
-                    span.calen-date {
-                        color: #009FDF
-                    }
-
-                    span.calen-icon {
-                        width: 18px;
-                        height: 18px;
+                        flex-basis: 17%;
+                        padding-right: 3%;
                         display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
 
-                        img {
-                            max-width: 100%;
-                        }
+                    input {
+                        width: 60%;
+                        height: 30px;
+                        border-radius: 2px;
+                        border: 0px;
+                        padding: 0 3%
                     }
-                } 
+                }
 
-                > a.customdate{
-                    width:180px;
-                    display: flex;
-                    justify-content: space-between;
-                    padding:0 20px;
-                    position:relative;
-                    font-size:16px;
-                }
-                a.customdate:Hover{background:C5} 
-                a.mobile-calendar {
-                    display: none
-                }
-                #calendar-popup{display:none;
-                    background:#EDEFF3;color:#58595B;width:380px;padding:25px;border-radius:3px;position:absolute;top:50px;left:-200px;z-index:999;box-shadow:0 5px 5px $light_grey;
-                    .calendar-filter{display:flex;width:100%;margin-bottom:25px;flex-direction:row;justify-content:space-between;
-                        .cf-left,.cf-right{display:flex;flex-basis:50%;justify-content: flex-start;}
-                        .cf-right{justify-content: flex-end;}
-                        span{flex-basis:17%;padding-right:3%;display:flex;justify-content: center;align-items: center;}
-                        input{width:60%;height:30px;border-radius:2px;border:0px;padding:0 3%}
+                .calendar-others {
+                    display: none;
+                    margin-bottom: 10px;
+
+                    a {
+                        background: #fff;
+                        padding: 1%;
+                        width: 17%;
+                        margin: 0 0 0 1%;
+                        border-radius: 5px;
+                        font-size: 12px;
+                        letter-spacing: 0.5px;
+                        text-align: center;
+                        line-height: 20px;
                     }
-                    .calendar-others{display:none;margin-bottom:10px;
-                        a{background:#fff;padding:1%;width:17%;margin:0 0 0 1%;border-radius:5px;font-size:12px;letter-spacing:0.5px;text-align: center;line-height: 20px;}
-                        a:first-child{padding:1%;}
+
+                    a:first-child {
+                        padding: 1%;
                     }
-                    .calendar-date{background:#fff;color:$blue;border-radius: 2px;margin-bottom:25px;height:25px;line-height:25px;padding:5px;}
-                    .calendar-box{background:#fff;border-radius:10px;min-height:140px;}
                 }
-                #calendar-popup::after{content: "";position: absolute;bottom: 100%;right:15px;margin-left: -5px;border-width: 10px;border-style: solid;border-color:  transparent transparent #EDEFF3 transparent;}
+
+                .calendar-date {
+                    background: #fff;
+                    color: $blue;
+                    border-radius: 2px;
+                    margin-bottom: 25px;
+                    height: 25px;
+                    line-height: 25px;
+                    padding: 5px;
+                }
+
+                .calendar-box {
+                    background: #fff;
+                    border-radius: 10px;
+                    min-height: 140px;
+                }
+            }
+
+            #calendar-popup::after {
+                content: "";
+                position: absolute;
+                bottom: 100%;
+                right: 15px;
+                margin-left: -5px;
+                border-width: 10px;
+                border-style: solid;
+                border-color: transparent transparent #EDEFF3 transparent;
             }
         }
     }
+}
 
-    // responsive design
-    @media screen and (max-width:1700px) {
-        #content {
-            .content-inner {
-                #breadcrumb {
-                    .breadcrumb-left {
-                        flex-basis: 45%;
-                    }
+// responsive design
+@media screen and (max-width:1700px) {
+    #content {
+        .content-inner {
+            #breadcrumb {
+                padding: 15px 0;
 
-                    .breadcrumb-right {
-                        flex-basis: 55%;
-                    }
-                }
+            .breadcrumb-left {
+                flex-basis: 45%;
+            }
+
+            .breadcrumb-right {
+                flex-basis: 55%;
             }
         }
     }
+}
+}
 
-    @media screen and (max-width:1280px) {
-        #content {
-            .content-inner {
-                #breadcrumb {
-                    width: 100%;
-                    display: flex;
-                    padding: 10px 0 20px 0;
+@media screen and (max-width:1280px) {
+    #content {
+        .content-inner {
+            #breadcrumb {
+                width: 100%;
+                display: flex;
+                padding: 10px 0 20px 0;
 
-                    .breadcrumb-left {
-                        flex-basis: 90%;
-                        flex-wrap: wrap;
+                .breadcrumb-left {
+                    flex-basis: 90%;
+                    flex-wrap: wrap;
 
+                    a {
+                        font-size: 12px;
+                        padding: 0 7px;
+                    }
+                }
+
+                .breadcrumb-right {
+                    flex-basis: 10%;
+
+                    #calendar {
                         a {
-                            font-size: 12px;
-                            padding: 0 7px;
+                            display: none
                         }
-                    }
 
-                    .breadcrumb-right {
-                        flex-basis: 10%;
+                        a.mobile-calendar {
+                            display: block;
+                            width: 13px;
+                            height: 13px;
+                            display: flex;
 
-                        #calendar {
-                            a {
-                                display: none
-                            }
-
-                            a.mobile-calendar {
-                                display: block;
-                                width: 13px;
-                                height: 13px;
-                                display: flex;
-
-                                img {
-                                    max-width: 100%;
-                                }
+                            img {
+                                max-width: 100%;
                             }
                         }
                     }
@@ -177,3 +264,4 @@ $font_rg:SabicRegular;
             }
         }
     }
+}
