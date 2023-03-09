@@ -39,6 +39,8 @@ const PmtDashboard = () => {
 
     const [assetIdDropList, setAssetIdDropList] = useState<any>();
     const [selectedAssetId, setSelectedAssetId] = useState<any>("")
+    const [assetIdDropList1, setAssetIdDropList1] = useState<any>();
+    const [selectedAssetId1, setSelectedAssetId1] = useState<any>("")
     const [heatStatusList, setHeatStatusList] = useState<any>();
     const [selectedHeatStatus, setSelectedHeatStatus] = useState<any>("All")
     const [heatMapData, setheatMapData] = useState({
@@ -73,6 +75,11 @@ const PmtDashboard = () => {
             return { value: item.assetId, label: item.assetName };
         });
         setAssetIdDropList(data);
+
+        let data1 = assetListByPlant.map(function (item: any) {
+            return { value: item.assetId, label: item.assetId };
+        });
+        setAssetIdDropList1(data1);
     }, [assetListByPlant]);
 
     useEffect(() => {
@@ -106,9 +113,26 @@ const PmtDashboard = () => {
     const handleAssetIdDropChange = (e: any) => {
         // console.log(e.value)
         setSelectedAssetId(e)
+        setSelectedAssetId1({ label: e.value, value: e.value })
         dispatch(getAssetCardPmtByAssetId(e.value)); //selectedAssetId.value
         setErrorMag(false);
     };
+
+    const handleAssetIdDropChange1 = (e: any) => {
+        // console.log(e.value)
+        try {
+            let filtervalue = assetListByPlant.filter((item: any) => item.assetId === e.value)
+            // console.log(filtervalue)
+            setSelectedAssetId({ label: filtervalue[0].assetName, value: e.value })
+            setSelectedAssetId1(e)
+            dispatch(getAssetCardPmtByAssetId(e.value)); //selectedAssetId.value
+            setErrorMag(false);
+        } catch (error) {
+            console.log(error)
+        }
+
+    };
+
 
     const handleHeatStatusDropChange = (e: any) => {
         //  console.log(e.value)
@@ -150,13 +174,24 @@ const PmtDashboard = () => {
                         <div className="pmt-asset-name">{selectedAssetId === "" ? "Poly 2" : selectedAssetId.label}</div>
                         <div className="pmt-fills">
                             <div className={`pmt-time`}><span>Asset ID</span>
-                                <input type="text" value={selectedAssetId.value} />
+                                <div style={{ width: '100px' }}>
+                                    <Dropdown
+                                        options={assetIdDropList1}
+                                        // defaultValue={selectedRegion}
+                                        value={selectedAssetId1}
+                                        multi={true}
+                                        handleChange={handleAssetIdDropChange1}
+                                    />
+                                </div>
+
                             </div>
-                            <div className="pmt-options"><Dropdown
-                                options={assetIdDropList}
-                                // defaultValue={selectedRegion}
-                                handleChange={handleAssetIdDropChange}
-                            /></div>
+                            <div className="pmt-options">
+                                <Dropdown
+                                    options={assetIdDropList}
+                                    // defaultValue={selectedRegion}
+                                    value={selectedAssetId}
+                                    handleChange={handleAssetIdDropChange}
+                                /></div>
                             <div className="pmt-gobtn" onClick={() => handleNavigation(selectedAssetId)} >Go</div>
                         </div>
                         <div className="pmt-error">{getErrorMag === true ? <span className="PmtErrorMsg">Need to select AssetID</span> : ""}</div>

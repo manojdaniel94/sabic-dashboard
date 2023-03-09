@@ -19,13 +19,19 @@ const Dropdown = ({ options, handleChange, value, defaultValue, multi }: Props) 
             ...provided,
             color: "black",
           }),
+          valueContainer: (provided, state) => ({
+            ...provided,
+            height: '30px',
+            padding: '0 6px'
+          }),
         }}
         options={options}
         onChange={handleChange}
         data-testid="select"
         value={value}
         defaultValue={defaultValue}
-        isMulti={multi}
+        // isMulti={multi}
+        components={multi && { DropdownIndicator: () => null, IndicatorSeparator: () => null }}
       />
     </>
   );
