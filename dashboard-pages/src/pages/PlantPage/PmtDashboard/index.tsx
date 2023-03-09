@@ -174,13 +174,16 @@ const PmtDashboard = () => {
                         <div className="pmt-asset-name">{selectedAssetId === "" ? "Poly 2" : selectedAssetId.label}</div>
                         <div className="pmt-fills">
                             <div className={`pmt-time`}><span>Asset ID</span>
-                                <Dropdown
-                                    options={assetIdDropList1}
-                                    // defaultValue={selectedRegion}
-                                    value={selectedAssetId1}
-                                    multi={true}
-                                    handleChange={handleAssetIdDropChange1}
-                                />
+                                <div style={{ width: '100px' }}>
+                                    <Dropdown
+                                        options={assetIdDropList1}
+                                        // defaultValue={selectedRegion}
+                                        value={selectedAssetId1}
+                                        multi={true}
+                                        handleChange={handleAssetIdDropChange1}
+                                    />
+                                </div>
+
                             </div>
                             <div className="pmt-options">
                                 <Dropdown

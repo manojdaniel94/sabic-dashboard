@@ -49,6 +49,7 @@ $blue: #009FDF;
                 justify-content: space-between;
                 align-items: center;
                 flex-wrap: wrap;
+
                 .sensor-time {
                     font-size: 14px;
                     flex-basis: 36%;
@@ -61,7 +62,8 @@ $blue: #009FDF;
                         }
 
                         span:last-child {
-                            color: #009FDF;white-space: nowrap;
+                            color: #009FDF;
+                            white-space: nowrap;
                         }
                     }
 
@@ -75,7 +77,13 @@ $blue: #009FDF;
 
                 }
 
-                .sensor-options {display:flex;flex-basis:100%;gap:1%;justify-content:flex-end;margin: 15px 0;
+                .sensor-options {
+                    display: flex;
+                    flex-basis: 100%;
+                    gap: 1%;
+                    justify-content: flex-end;
+                    margin: 15px 0;
+
                     select {
                         border: 0px;
                         font-size: 14px;
@@ -85,9 +93,23 @@ $blue: #009FDF;
                         border-radius: 3px;
                         font-family: inherit;
                     }
-                    .css-b62m3t-container{min-height: 25px;background: #FBFAFA;flex-basis:25%;
-                    .css-13cymwt-control{border:0px;font-size: 14px;min-height:25px;background: #FBFAFA;border-radius:3px}
-                    .css-1u9des2-indicatorSeparator{display:none;}
+
+                    .css-b62m3t-container {
+                        min-height: 25px;
+                        background: #FBFAFA;
+                        flex-basis: 25%;
+
+                        .css-13cymwt-control {
+                            border: 0px;
+                            font-size: 14px;
+                            min-height: 25px;
+                            background: #FBFAFA;
+                            border-radius: 3px
+                        }
+
+                        .css-1u9des2-indicatorSeparator {
+                            display: none;
+                        }
                     }
                 }
             }
@@ -197,8 +219,10 @@ $blue: #009FDF;
                     margin-right: 10px;
                     border-radius: 50px;
                 }
+
                 span:last-child {
-                    width: 80%;font-size:12px;
+                    width: 80%;
+                    font-size: 12px;
                 }
             }
         }
@@ -216,7 +240,7 @@ $blue: #009FDF;
 #calendar-popup {
     background: #EDEFF3;
     color: #58595B;
-    width: 380px;
+    width: 245px;
     padding: 25px;
     border-radius: 3px;
     position: absolute;
@@ -309,16 +333,21 @@ $blue: #009FDF;
     border-color: transparent transparent #EDEFF3 transparent;
 }
 
-@media screen and (max-width:1700px){
+@media screen and (max-width:1700px) {
     #sensor {
         #sensor-plot-left {
             #sensor-plot {
-                .sensor-filter {flex-wrap:wrap;
-                    .sensor-time{flex-basis: 44%;}
+                .sensor-filter {
+                    flex-wrap: wrap;
+
+                    .sensor-time {
+                        flex-basis: 44%;
+                    }
                 }
             }
         }
-        #sensor-plot-right{
+
+        #sensor-plot-right {
             .sensor-calendar {
                 position: static;
                 padding: 10px 0 0 0;
@@ -334,9 +363,10 @@ $blue: #009FDF;
                 transition: 2s;
                 gap: 5%;
                 font-family: SabicRegular;
-                span{
+
+                span {
                     color: #0a0e16;
-                    margin:0;
+                    margin: 0;
                 }
             }
         }

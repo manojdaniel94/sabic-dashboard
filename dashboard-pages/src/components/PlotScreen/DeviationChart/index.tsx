@@ -65,7 +65,7 @@ const DeviationChart = ({ plotData }: Props) => {
 
             // let Topdata = [...deviation]
 
-            //let Topdata = []
+            // let Topdata = []
             // plotData.forEach((device, index) => {
             //     Topdata[index] = { ...device }
             // })
@@ -99,10 +99,9 @@ const DeviationChart = ({ plotData }: Props) => {
                 am5.color(0xFFCD00),//yellow
                 //am5.color(0x0047bb),//blue
                 am5.color(0x009fdf),//sky blue
-                am5.color(0x939598),//Gray
                 am5.color(0x2eb541), //green
                 am5.color(0x4e79a7),//Light sky blue
-
+                am5.color(0x939598),//Gray
 
 
             ]);
@@ -184,7 +183,7 @@ const DeviationChart = ({ plotData }: Props) => {
                 shadowColor: am5.color(0x4e79a7),//Light sky blue
 
             });
-            let status = ["Poor data/State Change/Pi Data disconnection", "Normal", "Asset off",];
+            let status = ["Normal", "Asset off", "Poor data/State Change/Pi Data disconnection"];
             for (let i = 0; i < status.length; i++) {
                 var series = chart1.series.push(
                     am5xy.ColumnSeries.new(root, {
@@ -215,46 +214,45 @@ const DeviationChart = ({ plotData }: Props) => {
             var seri = chart1.series.values;
             legend1.data.setAll(seri.slice(0, 2).concat(seri.slice(3, 6)));
 
-            // var legend = chart1.rightAxesContainer.children.push(am5.Legend.new(root, {
-            //     background: am5.Rectangle.new(root, {
-            //         stroke: am5.color(0x555555),
-            //         fill: am5.color(0xFFFFFF),//Light sky blue
-            //         strokeWidth: 1,
-            //         maxWidth: 1,
-            //     }),
-            //     centerX: am5.percent(8),
-            //     x: am5.percent(50),
-            //     marginRight: 0,
-            //     position: "absolute"
-            // }));
-            // // When legend item container is unhovered, make all series as they are
-            // legend.itemContainers.template.events.on("pointerout", function (e) {
-            //     var itemContainer = e.target;
-            //     var series = itemContainer.dataItem.dataContext;
-            // })
-            // legend.itemContainers.template.set("width", am5.percent(40));
-            // legend.valueLabels.template.setAll({
-            //     width: am5.percent(100),
-            //     textAlign: "right",
-            //     height: 46,
-            //     marginRight: 20,
-            //     shadowColor: am5.color(0x4e79a7),//Light sky blue
+            var legend = chart1.rightAxesContainer.children.push(am5.Legend.new(root, {
+                background: am5.Rectangle.new(root, {
+                    stroke: am5.color(0x555555),
+                    fill: am5.color(0xFFFFFF),//Light sky blue
+                    strokeWidth: 1,
+                    maxWidth: 1,
+                }),
+                centerX: am5.percent(8),
+                x: am5.percent(50),
+                marginRight: 0,
+                position: "absolute"
+            }));
+            // When legend item container is unhovered, make all series as they are
+            legend.itemContainers.template.events.on("pointerout", function (e) {
+                var itemContainer = e.target;
+                var series = itemContainer.dataItem.dataContext;
+            })
+            legend.itemContainers.template.set("width", am5.percent(40));
+            legend.valueLabels.template.setAll({
+                width: am5.percent(100),
+                textAlign: "right",
+                height: 46,
+                marginRight: 20,
+                shadowColor: am5.color(0x4e79a7),//Light sky blue
 
-            // });
+            });
 
-            // legend.data.setAll(chart1.series.values.slice(0, 3));
+            legend.data.setAll(chart1.series.values.slice(0, 3));
 
             let Chart2 = container.children.push(am5xy.XYChart.new(root, {
                 width: am5.percent(93),
                 marginBottom: 90,
-                marginTop: -140,
+                marginTop: -190
                 // panX: true,
                 // panY: true,     
                 // wheelX: "panX",
                 // wheelY: "zoomX",
                 // pinchZoomX: true,
                 // layout: root.verticalLayout,
-                x: -20
             }));
             var xRenderer = am5xy.AxisRendererX.new(root, {
                 minGridDistance: 50,
@@ -341,7 +339,6 @@ const DeviationChart = ({ plotData }: Props) => {
                 }
 
             }
-
             let YAxis2 = Chart2.yAxes.push(am5xy.CategoryAxis.new(root, {
                 categoryField: "category",
                 marginLeft: YscalePositionSet(10),
@@ -378,9 +375,9 @@ const DeviationChart = ({ plotData }: Props) => {
 
             let XAxis2 = chart1.xAxes.push(am5xy.DateAxis.new(root, {
                 groupData: true,
-                height: am5.percent(40),
+                //height:am5.percent(40),
                 width: am5.percent(80),
-                marginBottom: 20,
+                // marginBottom: 20,
                 startLocation: 1,
                 endLocation: 3,
                 marginTop: 0,
@@ -389,6 +386,32 @@ const DeviationChart = ({ plotData }: Props) => {
                 renderer: xRenderer,
             }));
             XAxis2.get("renderer").labels.template.set("forceHidden", true);
+
+            let Series2 = Chart2.series.push(am5xy.ColumnSeries.new(root,
+                {
+                    name: "displayName",
+                    xAxis: XAxis2,
+                    width: am5.percent(100),
+                    // height:am5.percent(40),
+                    marginBottom: 0,
+                    yAxis: YAxis2,
+                    valueXField: "to",
+                    openValueXField: "from",
+                    categoryYField: "category",
+                    position: "absolute"
+                }));
+
+
+            Series2.columns.template.setAll({
+                strokeWidth: 0,
+                strokeOpacity: 0,
+                height: am5.percent(20),
+                templateField: "columnSettings",
+                position: "absolute"
+            });
+            //legend.data.push(Series2);
+
+            Series2.data.setAll(data);
 
 
 
@@ -402,7 +425,6 @@ const DeviationChart = ({ plotData }: Props) => {
             };
         }
     }, [plotData]);
-
     return (
         <div id="sensor-plot-left">
             <div id="deviation-plot">
