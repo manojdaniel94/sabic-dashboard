@@ -147,17 +147,17 @@ const PmtDashboard = () => {
                 <div id="pmt-asset-card">
                     <div className="pmt-title">ASSET CARD</div>
                     <div className="pmt-filter">
-                        <div className="pmt-asset-name">{selectedAssetId === "" ? "Polly 2" : selectedAssetId.label}</div>
+                        <div className="pmt-asset-name">{selectedAssetId === "" ? "Poly 2" : selectedAssetId.label}</div>
                         <div className="pmt-fills">
-                        <div className={`pmt-time`}><span>Asset ID</span>
-                            <input type="text" value={selectedAssetId.value} />
-                        </div>
-                        <div className="pmt-options"><Dropdown
-                            options={assetIdDropList}
-                            // defaultValue={selectedRegion}
-                            handleChange={handleAssetIdDropChange}
-                        /></div>
-                        <div className="pmt-gobtn" onClick={() => handleNavigation(selectedAssetId)} >Go</div>
+                            <div className={`pmt-time`}><span>Asset ID</span>
+                                <input type="text" value={selectedAssetId.value} />
+                            </div>
+                            <div className="pmt-options"><Dropdown
+                                options={assetIdDropList}
+                                // defaultValue={selectedRegion}
+                                handleChange={handleAssetIdDropChange}
+                            /></div>
+                            <div className="pmt-gobtn" onClick={() => handleNavigation(selectedAssetId)} >Go</div>
                         </div>
                         <div className="pmt-error">{getErrorMag === true ? <span className="PmtErrorMsg">Need to select AssetID</span> : ""}</div>
                     </div>

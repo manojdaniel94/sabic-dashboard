@@ -39,9 +39,9 @@ const Header = () => {
 
             </div>
             <div className="mobile-menu-links">
-              <a href="#" className="active"><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>HOME</a>
+              <a href="#" ><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>HOME</a>
               <a href="#"><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>AFFILIATES</a>
-              <a href="#"><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>PLANTS</a>
+              <a href="#" className="active"><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>PLANTS</a>
               <a href="#"><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>ASSETS</a>
               <a href="#"><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>EXECUTIVE</a>
               <a href="#"><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>INFO</a>

@@ -35,8 +35,8 @@ $font_rg:SabicRegular;
         .asset-model-left-inner{
             background:#fff;box-shadow: 0px 0px 18px #eaeaea;padding:25px;
        
-        .asset-sensor-filter{display:flex;justify-content:space-between;align-items: center;margin-top:20px;
-            .title{font-size:18px;display:flex;color:#58595B;padding:0 0 0 30px;font: normal 600 16px 'SABIC Typeface Text Regular',arial, helvetica;letter-spacing: 1px;}
+        .asset-sensor-filter{display:flex;justify-content:space-between;align-items: center;
+            .title{font-size:18px;display:flex;color:#58595B;font: normal 600 16px 'SABIC Typeface Text Regular',arial, helvetica;letter-spacing: 1px;}
             .sensor-time{color:#009FDF;font-size:16px;
                 span{color:#939598;padding:0 15px 0 30px;}}
             .sensor-options{padding:0 30px;
@@ -192,9 +192,8 @@ $font_rg:SabicRegular;
     #asset-model {
         margin: 25px 0;
         #asset-model-left{
-            flex-basis:calc(70% - 50px);
             .asset-plot-status{gap:0px;justify-content: space-between;
-                .asset-plot-status-left{justify-content: space-around;    flex-basis: 82%;
+                .asset-plot-status-left{justify-content: space-around;    flex-basis: 87%;
                     .asset-efficiency{padding:unset;flex-basis: 50%;}
                     div {
                         span.amhi-slider{width:80%;}
@@ -236,13 +235,11 @@ $font_rg:SabicRegular;
                         bottom: 0px;
                     }
                 }
-                .asset-plot-status-right{flex-basis: 10%;}
+                .asset-plot-status-right{flex-basis: 10%;padding:20px 0}
             }
         }
 
         #asset-model-right {
-            padding: 10px;
-            flex-basis:30%;
 
             .asset-model-health-index {
                 .amhi-row {
