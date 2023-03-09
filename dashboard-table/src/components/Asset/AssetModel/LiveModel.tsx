@@ -103,6 +103,7 @@ const LiveModel = ({ FailurepreDictionByAssetId, AnomalyModelbyAssetId }: Props)
                                         <select
                                             onChange={(e) => setSelected(e.target.value)}
                                         >
+                                            <option value={showPopupData.modelName}>{showPopupData.modelName}</option>
                                            
                                             {FailurepreDictionByAssetId.map((item: any) => (
                                                 <option value={item.modelName}>{item.modelName}</option>
@@ -110,7 +111,7 @@ const LiveModel = ({ FailurepreDictionByAssetId, AnomalyModelbyAssetId }: Props)
                                         </select>
                                     </div>
                                 </div>
-                                <div className="ap-asset-name">Bearing 1</div>
+                                <div className="ap-asset-name">{showPopupData.modelName}</div>
                                 <div id="ap-heatmap">
                                     <span className="ap-heatmap-label"><img src={pucurve} /></span>
                                     <span className="ap-heatmap-img"><img src={Heatmap} className="ahmi" />
