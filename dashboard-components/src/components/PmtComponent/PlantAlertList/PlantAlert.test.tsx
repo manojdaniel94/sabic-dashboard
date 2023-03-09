@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import PlantAlertList from "./PlantAlertList";
+import "@testing-library/jest-dom/extend-expect";
 
 describe("PlantAlertList", () => {
   const data = [
