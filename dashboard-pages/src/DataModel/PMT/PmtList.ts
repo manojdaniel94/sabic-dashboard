@@ -499,12 +499,12 @@ export const getassetcardpmtByassetid = [
 export const gettopbarsummaryAssetpmtByplantid = [
     {
         "affiliateCount": 1,
-        "assetCount": 111,
+        "assetCount": 25,
         "healthIndex": 28,
         "pmCompliance": 0,
         "spare": "NA",
-        "active": 0,
-        "overdueInvestigation": 0,
+        "active": 16,
+        "overdueInvestigation": 1,
         "underInvestigation": 0
     }
 ]

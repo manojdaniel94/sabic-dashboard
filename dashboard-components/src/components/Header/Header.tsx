@@ -50,7 +50,7 @@ const Header = () => {
         </div>
         <div className="logoname">ASSET HEALTH CARE</div>
         <div className="middle">
-          <div className="navigation"><a href="#" className="active">HOME</a><a href="#">AFFILIATES</a><a href="#">PLANTS</a><a href="#">ASSETS</a><a href="#">EXECUTIVE</a><a href="#">INFO</a>
+          <div className="navigation"><a href="#">HOME</a><a href="#">AFFILIATES</a><a href="#" className="active">PLANTS</a><a href="#">ASSETS</a><a href="#">EXECUTIVE</a><a href="#">INFO</a>
 
           </div>
         </div>

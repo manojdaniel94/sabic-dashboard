@@ -50,9 +50,15 @@ const Status = ({ data, page, healthIndex }: Props) => {
                                 </div>
                                 <div><div><img src={iconProfile} title="PM_Compliance" /></div><div><span id="value4">{data[0].pmCompliance}<i> PM</i></span><span>COMPLIANCE</span></div></div>
                                 <div><div><img src={imagePMCompliance} title="Spares_Availability" /></div><div><span id="value4">{data[0].spare} <i>SPARES</i></span><span>AVAILABILITY</span></div></div>
-                                <div><div><img src={imageActive} title="Active" /></div><div><span id="value2">{data[0].active}</span><span>ACTIVE</span></div></div>
+                                <div><div><img src={imageActive} title="Active" /></div><div><span id="value2" style={{
+                                    color
+                                        : 'red'
+                                }}>{data[0].active}</span><span>ACTIVE</span></div></div>
                                 <div><div><img src={imageUnderInvestigate} title="Under_Investigate" /></div><div><span id="value2">{data[0].underInvestigation}<i> UNDER</i></span><span>INVESTIGATION</span></div></div>
-                                <div><div><img src={imageOverdue} title="Overdue_Investigate" /></div><div><span id="value2">{data[0].overdueInvestigation}<i> OVERDUE</i></span><span>INVESTIGATION</span></div></div>
+                                <div><div><img src={imageOverdue} title="Overdue_Investigate" /></div><div><span id="value2" style={{
+                                    color
+                                        : 'red'
+                                }}> {data[0].overdueInvestigation}<i> OVERDUE</i></span><span>INVESTIGATION</span></div></div>
                             </div>
                         </div>
                         : null

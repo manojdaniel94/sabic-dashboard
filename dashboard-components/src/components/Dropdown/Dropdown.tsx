@@ -25,7 +25,8 @@ const Dropdown = ({ options, handleChange, value, defaultValue, multi }: Props) 
         data-testid="select"
         value={value}
         defaultValue={defaultValue}
-        isMulti={multi}
+        //   isMulti={multi}
+        components={multi && { DropdownIndicator: () => null, IndicatorSeparator: () => null }}
       />
     </>
   );

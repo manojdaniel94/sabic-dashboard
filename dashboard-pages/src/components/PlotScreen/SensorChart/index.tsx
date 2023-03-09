@@ -88,7 +88,7 @@ const SensorChart = () => {
             })
         );
 
-        xAxis.get("renderer").labels.template.set("forceHidden", true);
+        xAxis.get("renderer").labels.template.set("forceHidden", false);
 
         function createAxisAndSeries(startValue, opposite, field, name) {
             let yRenderer = am5xy.AxisRendererY.new(root, {
