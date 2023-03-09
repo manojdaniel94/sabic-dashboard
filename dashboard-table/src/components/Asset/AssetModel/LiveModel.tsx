@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState,useEffect } from "react";
 import pucurve from "../../../assets/images/pucurve.png";
 import Heatmap from "../../../assets/images/image_Heatmap.svg";
 import ImgGraphYellow from "../../../assets/images/img_graph_yellow_circle.svg";
@@ -23,8 +23,26 @@ const LiveModel = ({ FailurepreDictionByAssetId, AnomalyModelbyAssetId }: Props)
     const openAssetPopup = (data: any) => {
         setShowPopup(true);
         setShowPopupData(data)
-        console.log("setShowPopupData", setShowPopupData);
+        console.log("showPopupData", showPopupData);
     }
+
+    const openFailureDictionPopupDropdown = (data:any)=>{
+        const getData = FailurepreDictionByAssetId.filter(({ modelName }) => modelName === data);
+        setShowPopup(true);
+        setShowPopupData(getData[0]);
+    }
+
+    // useEffect(() => {
+    //     [].slice.call(country.options)
+    //     .map(function(a){
+    //       if(this[a.innerText]){ 
+    //         country.removeChild(a); 
+    //       } else { 
+    //         this[a.innerText]=1; 
+    //       } 
+    //     },{});  
+    // }, []);
+    
 
     const getTopPosition = (data: any) => {
         if (data >= 0 && data <= 30) {
@@ -100,8 +118,8 @@ const LiveModel = ({ FailurepreDictionByAssetId, AnomalyModelbyAssetId }: Props)
                                 <div className="ap-filter">
                                     <div className="ap-title">P-F-CURVE</div>
                                     <div className="ap-dropdown">
-                                        <select
-                                            onChange={(e) => setSelected(e.target.value)}
+                                        <select id="ap-dropdown"
+                                            onChange={(e) => openFailureDictionPopupDropdown(e.target.value)}
                                         >
                                             <option value={showPopupData.modelName}>{showPopupData.modelName}</option>
                                            

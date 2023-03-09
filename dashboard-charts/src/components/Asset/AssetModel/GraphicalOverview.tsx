@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import HighchartsExporting from 'highcharts/modules/exporting';
+import AlertList from "../../../../../dashboard-pages/src/pages/AssetsPage/AlertList/AlertList";
 HighchartsExporting(Highcharts);
 Highcharts.AST.allowedAttributes.push('onclick');
 
@@ -16,6 +17,24 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
 
   // console.log("GraphicalImageByAssetId",GraphicalImageByAssetId);
   const [selectedAssetId, setSelectedAssetId] = useState<any>(18);
+
+  const [goToAlertList, setToAlertList] = useState<any>();
+  const [goToPlot, setToPlot] = useState<any>();
+  const [gotoFailurePredication, setToFailurePredication] = useState<any>();
+
+  console.log("goToAlertList",goToAlertList);
+  console.log("goToPlot",goToPlot);
+  console.log("gotoFailurePredication",gotoFailurePredication);
+
+  const mynewfunction = (data:any)=>{
+    alert("amit");
+  }
+
+  // useEffect(() => {
+  //   const element = document.querySelector("#AlertList");
+  //   element.addEventListener("click", () => alert("hi"));
+
+  // }, []);
   
   // const [series, setAssetlist] = useState<any>();
   // useEffect(() => {
@@ -173,9 +192,23 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
         const {
           point
         } = this;
-        return `<div className="asset-status-tooltip centerarr"><div className="asset-tooltip-text2"><h3 style="font-size:12px;border-bottom:1px solid white;margin-bottom:10px;width:100%;text-align:center;padding-bottom:5px">${point.name}</h3><button class="toolbtt" type="button" onclick="function myFunction(){ console.log('${point.name}');} myFunction();">Go to Alert List</button><br><button class="toolbtt" type="button" onclick="function  ploatListFunction(){ console.log('${point.name}');} ploatListFunction();">Go to Plot</button><br><button class="toolbtt" type="button" onclick="function  failureFunction(){ console.log('${point.name}');} failureFunction();">Go to Failure Predication</button></div></div>`
+        return `<div className="asset-status-tooltip centerarr"><div className="asset-tooltip-text2"><h3 style="font-size:12px;border-bottom:1px solid white;margin-bottom:10px;width:100%;text-align:center;padding-bottom:5px">${point.name}</h3><button id="AlertList" class="toolbtt" type="button"  
+        onClick="(function(){
+          alert('Hey i am Alert List');
+          return false;
+        })();return false;">Go to Alert List</button><br><button class="toolbtt" type="button" 
+        onClick="(function(){
+          alert('Hey i am Go to Plot');
+          return false;
+        })();return false;">Go to Plot</button><br><button class="toolbtt" type="button" 
+        onClick="(function(){
+        alert('Hey i am Failure Predication');
+        return false;
+    })();return false;">Go to Failure Predication</button></div></div>`
       }
     },
+
+    // onclick="(() => {${setToAlertList(point.assetId)}})()"
 
     series: [{
       showInLegend: false, 
@@ -185,6 +218,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
           y: 19.7,
           color: "#FF0000",
           name: "Compressor Performance Stage 1",
+          assetId: "2Y-3001A",
+          sensorGroupId: 1338,
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
@@ -194,6 +229,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
           y: 38,
           color: "yellow",
           name: "Compressor Performance Stage 2",
+          assetId: "2Y-3001A",
+          sensorGroupId: 1339,
           custom: {
             extraInformation: "Go to Devaition Plot.",
           },
@@ -203,6 +240,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
           y: 66.5,
           color:"#2EB541",
           name: "Compressor Performance Stage 1_FE",
+          assetId: "2Y-3001A",
+          sensorGroupId: 7694,
           custom: {
             extraInformation: "Go toAlertList<br>Go to Devaition Plot.",
           },
@@ -212,6 +251,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
           y: 66.5,
           color:"#2EB541",
           name: "Compressor Performance Stage 2_FE",
+          assetId: "2Y-3001A",
+          sensorGroupId: 7695,
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
@@ -221,6 +262,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
           y: 66.5,
           color:"#2EB541",
           name: "Compressor Performance Stage 3_FE",
+          assetId: "2Y-3001A",
+          sensorGroupId: 7695,
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
@@ -230,6 +273,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
           y: 66.5,
           color:"#2EB541",
           name: "Compressor Performance Stage 4_FE",
+          assetId: "2Y-3001A",
+          sensorGroupId: 7695,
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
@@ -239,6 +284,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
           y: 79.5,
           color:"#2EB541",
           name: "Compressor Performance Stage 5_FE",
+          assetId: "2Y-3001A",
+          sensorGroupId: 7695,
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
@@ -248,6 +295,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
           y: 26,
           color:"#2EB541",
           name: "Compressor Performance Stage 6_FE",
+          assetId: "2Y-3001A",
+          sensorGroupId: 7695,
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
@@ -257,6 +306,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
           y: 88.5,
           color:"#2EB541",
           name: "Compressor Performance Stage 7_FE",
+          assetId: "2Y-3001A",
+          sensorGroupId: 7695,
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
@@ -266,6 +317,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
           y: 66.5,
           color:"#2EB541",
           name: "Compressor Performance Stage 8_FE",
+          assetId: "2Y-3001A",
+          sensorGroupId: 7695,
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
