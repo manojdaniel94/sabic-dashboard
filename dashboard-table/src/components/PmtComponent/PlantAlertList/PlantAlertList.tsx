@@ -46,9 +46,9 @@ const PlantAlertList = ({ data }: Props) => {
     return (
         <div id="pmt-alert-list">
             <div className="pmt-filter">
-                <div className="pmt-title">PMT ALERT LIST</div>
+                <div className="pmt-title">PLANT ALERT LIST</div>
             </div>
-            <div className="pmt-asset-name">Polly 2</div>
+            <div className="pmt-asset-name">Poly 2</div>
             <Table
                 columns={columns}
                 dataSource={data}
