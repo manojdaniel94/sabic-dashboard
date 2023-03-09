@@ -61,6 +61,7 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
       visible: false,
       min: 0, max: 100
     },
+   
     navigation: {
       buttonOptions: {
         theme: {
@@ -177,12 +178,13 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
     },
 
     series: [{
+      showInLegend: false, 
       data: [
         {
           x: 19.5,
           y: 19.7,
           color: "#FF0000",
-          name: "Point1",
+          name: "Compressor Performance Stage 1",
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
@@ -191,7 +193,7 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
           x: 42.7,
           y: 38,
           color: "yellow",
-          name: "Point2",
+          name: "Compressor Performance Stage 2",
           custom: {
             extraInformation: "Go to Devaition Plot.",
           },
@@ -199,7 +201,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
         {
           x: 74.7,
           y: 66.5,
-          name: "Point3",
+          color:"#2EB541",
+          name: "Compressor Performance Stage 1_FE",
           custom: {
             extraInformation: "Go toAlertList<br>Go to Devaition Plot.",
           },
@@ -207,7 +210,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
         {
           x: 56.2,
           y: 66.5,
-          name: "Point4",
+          color:"#2EB541",
+          name: "Compressor Performance Stage 2_FE",
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
@@ -215,7 +219,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
         {
           x: 58.7,
           y: 66.5,
-          name: "Point5",
+          color:"#2EB541",
+          name: "Compressor Performance Stage 3_FE",
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
@@ -223,7 +228,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
         {
           x: 63.5,
           y: 66.5,
-          name: "Point6",
+          color:"#2EB541",
+          name: "Compressor Performance Stage 4_FE",
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
@@ -231,7 +237,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
         {
           x: 40.5,
           y: 79.5,
-          name: "Point7",
+          color:"#2EB541",
+          name: "Compressor Performance Stage 5_FE",
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
@@ -239,7 +246,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
         {
           x: 82.5,
           y: 26,
-          name: "Point8",
+          color:"#2EB541",
+          name: "Compressor Performance Stage 6_FE",
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
@@ -247,7 +255,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
         {
           x: 65,
           y: 88.5,
-          name: "Point9",
+          color:"#2EB541",
+          name: "Compressor Performance Stage 7_FE",
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },
@@ -255,7 +264,8 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
         {
           x: 79,
           y: 66.5,
-          name: "Point10",
+          color:"#2EB541",
+          name: "Compressor Performance Stage 8_FE",
           custom: {
             extraInformation: "Go to AlertList<br>Go to Devaition Plot.",
           },

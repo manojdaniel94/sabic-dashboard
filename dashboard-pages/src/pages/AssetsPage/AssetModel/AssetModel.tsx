@@ -73,7 +73,7 @@ const AssetModel = () => {
                 <div className="asset-plot-status">
                     <div className="asset-plot-status-left">
                     {AssetKPIForAssetModel.map((item: any) => (
-                        <div className="asset-efficiency hovermeyaar"><span className={item.kpiTrend === true ? "uparrow greeny" : "downarrow redy"}></span><span>{item.kpi}</span> <span className="amhi-slider"><i className="aafter" style={{ left: `${item.kpiPercent - 5}%` }}>{item.kpiPercent}%</i></span>
+                        <div className="asset-efficiency hovermeyaar"><span className={item.kpiTrend === true ? "uparrow greeny" : "downarrow redy"}></span><span>{item.kpi}</span> <span className="amhi-slider"><i className="aafter" style={{ left: `${item.kpiPercent - 5}%` }}></i></span>
                             <div className="asset-status-tooltip centerarr"><div className="asset-tooltip-text"><h3>What is {item.kpi}?</h3><p>Description Here</p></div></div>
                         </div>
                     ))}
