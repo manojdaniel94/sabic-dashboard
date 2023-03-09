@@ -194,7 +194,11 @@ $font_rg:SabicRegular;
         margin: 25px 0;
         #asset-model-left{
             .asset-plot-status{gap:0px;justify-content: space-between;
+<<<<<<< HEAD
                 .asset-plot-status-left{justify-content: space-around;flex-basis: 86%;padding:0 1%;
+=======
+                .asset-plot-status-left{justify-content: space-around;    flex-basis: 87%;
+>>>>>>> 94bc52fb3c14afc650f115289dfc449d5269880f
                     .asset-efficiency{padding:unset;flex-basis: 50%;}
                     div {
                         span.amhi-slider{width:80%;}
@@ -478,6 +482,11 @@ $font_rg:SabicRegular;
         }
 
     }
+}
+
+.asset-model-health-index {
+    overflow-y: scroll;
+    height: 306px;
 }
 
 
