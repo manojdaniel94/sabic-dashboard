@@ -42,13 +42,13 @@ $blue: #009FDF;
         }
 
         #sensor-plot {
-            padding: 30px 20px;
+            padding: 30px 20px 20px 20px;
 
             .sensor-filter {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-
+                flex-wrap: wrap;
                 .sensor-time {
                     font-size: 14px;
                     flex-basis: 36%;
@@ -61,7 +61,7 @@ $blue: #009FDF;
                         }
 
                         span:last-child {
-                            color: #009FDF;
+                            color: #009FDF;white-space: nowrap;
                         }
                     }
 
@@ -75,14 +75,19 @@ $blue: #009FDF;
 
                 }
 
-                .sensor-options {
+                .sensor-options {display:flex;flex-basis:100%;gap:1%;justify-content:flex-end;margin: 15px 0;
                     select {
                         border: 0px;
                         font-size: 14px;
                         letter-spacing: 1px;
                         color: #939598;
                         padding: 0 10px;
+                        border-radius: 3px;
                         font-family: inherit;
+                    }
+                    .css-b62m3t-container{min-height: 25px;background: #FBFAFA;flex-basis:25%;
+                    .css-13cymwt-control{border:0px;font-size: 14px;min-height:25px;background: #FBFAFA;border-radius:3px}
+                    .css-1u9des2-indicatorSeparator{display:none;}
                     }
                 }
             }
@@ -172,8 +177,6 @@ $blue: #009FDF;
         }
 
         #measure-names {
-            background: #fff;
-            box-shadow: 0px 0px 18px #eaeaea;
             padding: 30px 20px;
             position: relative;
         }
@@ -193,6 +196,9 @@ $blue: #009FDF;
                     height: 10px;
                     margin-right: 10px;
                     border-radius: 50px;
+                }
+                span:last-child {
+                    width: 80%;font-size:12px;
                 }
             }
         }
@@ -301,4 +307,39 @@ $blue: #009FDF;
     border-width: 10px;
     border-style: solid;
     border-color: transparent transparent #EDEFF3 transparent;
+}
+
+@media screen and (max-width:1700px){
+    #sensor {
+        #sensor-plot-left {
+            #sensor-plot {
+                .sensor-filter {flex-wrap:wrap;
+                    .sensor-time{flex-basis: 44%;}
+                }
+            }
+        }
+        #sensor-plot-right{
+            .sensor-calendar {
+                position: static;
+                padding: 10px 0 0 0;
+                text-align: left;
+                color: #939598;
+                margin: 0;
+                border-radius: 5px;
+                font-size: 16px;
+                letter-spacing: 0.5px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                transition: 2s;
+                gap: 5%;
+                font-family: SabicRegular;
+                span{
+                    color: #0a0e16;
+                    margin:0;
+                }
+            }
+        }
+
+    }
 }

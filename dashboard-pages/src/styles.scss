@@ -1,43 +1,40 @@
+//old
+$header_logo_color:#939598;
+$header_menu_color:#4d4d4d;
+$header_menu_background_active:#FBFAFA;
+$blue:#009FDF;
+$font_headline_lt:SabicHeadlineLight;
+$font_headline_rg:SabicHeadlineRegular;
+$font_lt:SabicLight;
+$font_rg:SabicRegular;
 //status
 @font-face {
   font-family: 'SabicRegular';
   src: url('./assets/fonts/SABICTypefaceText_W_Rg.woff') format('woff'),
-    url('./assets/fonts/SABICTypefaceText_Rg.ttf') format('truetype'),
+       url('./assets/fonts/SABICTypefaceText_Rg.ttf')  format('truetype'),
 }
-
 @font-face {
   font-family: 'SabicLight';
   src: url('./assets/fonts/SABICTypefaceText_W_Lt.woff') format('woff'),
-    url('./assets/fonts/SABICTypefaceText_Lt.ttf') format('truetype'),
+       url('./assets/fonts/SABICTypefaceText_Lt.ttf')  format('truetype'),
 }
-
 @font-face {
   font-family: 'SabicHeadlineLight';
   src: url('./assets/fonts/SABICTypefaceHeadline_W_Lt.woff') format('woff'),
-    url('./assets/fonts/SABICTypefaceHeadline_Lt.ttf') format('truetype'),
+       url('./assets/fonts/SABICTypefaceHeadline_Lt.ttf')  format('truetype'),
 }
-
 @font-face {
   font-family: 'SabicHeadlineRegular';
   src: url('./assets/fonts/SABICTypefaceHeadline_W_Rg.woff') format('woff'),
-    url('./assets/fonts/SABICTypefaceHeadline_Rg.ttf') format('truetype'),
+       url('./assets/fonts/SABICTypefaceHeadline_Rg.ttf')  format('truetype'),
 }
-
-@font-face {
-  font-family: 'SabicRegular';
-  src: local('SabicRegular'), url(./assets/fonts/SABICTypefaceText_W_Lt.woff) format('woff');
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
-}
-
 body {
   margin: 0px;
   padding: 0px;
-  font: normal normal 13px 'SabicRegular', arial, helvetica;
+  font: normal normal 14px $font_rg, arial, helvetica;
   background-color: #FBFCFD;
   height: 100vh;
 }
-
 html {
   overflow: hidden;
 }
@@ -76,12 +73,12 @@ a {
   #content {
     width: 99%;
     height: calc(83vh - 10px);
-    margin: calc(13vh + 10px) auto 0 auto;
+    margin: 0 auto 0 auto;
     overflow-y: scroll;
-
+    display:block;
     .content-inner {
       width: 87%;
-      margin: 0 auto 20px auto;
+      margin:auto;
     }
 
     &::-webkit-scrollbar {
@@ -125,14 +122,30 @@ a {
 @media screen and (max-width:1700px) {
   #container {
     #content {
+      height:74vh;
       .content-inner {
-        width: 98%;
-
+        width: 90%;
         #breadcrumb {
           .breadcrumb-left {
             flex-basis: 45%;
           }
-
+          .breadcrumb-right {
+            flex-basis: 55%;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:1440px) {
+  #container {
+    #content {
+      .content-inner {
+        width: 92%;
+        #breadcrumb {
+          .breadcrumb-left {
+            flex-basis: 45%;
+          }
           .breadcrumb-right {
             flex-basis: 55%;
           }

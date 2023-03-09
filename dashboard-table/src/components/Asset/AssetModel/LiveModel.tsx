@@ -96,7 +96,7 @@ const LiveModel = ({ FailurepreDictionByAssetId, AnomalyModelbyAssetId }: Props)
                     {showPopup === true && showPopupData !== null ?
                         <div id="asset-popup">
                             <div id="ap-content">
-                                <span onClick={() => setShowPopup(false)} style={{ float: "right", fontSize: "20px", padding: "10px" }}>x</span>
+                                <span onClick={() => setShowPopup(false)} style={{ float: "right", fontSize: "50px",cursor: "pointer"}}>x</span>
                                 <div className="ap-filter">
                                     <div className="ap-title">P-F-CURVE</div>
                                     <div className="ap-dropdown">

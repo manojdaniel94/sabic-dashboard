@@ -1,35 +1,39 @@
 
     //status start
     #status{
-        display: flex;height: 10vh;margin-bottom: 2vh;
+        display: flex;margin:0 0 25px 0;
         div.common {
             width: 100%;
             display: flex;
             flex-direction: row;
             >div {
-                flex-basis:11.1%;
+                flex-basis: 11.1%;
+                width: 11.1%;
+                padding: 0 1%;
                 background: #fff;
                 display: flex;
                 border-radius:5px;
                 margin: 0 1% 0 0;
-                padding:0.5%;
                 display: flex;
                 flex-direction: row;
                 justify-content:center;
                 align-items: center;
-                box-shadow: 0px 0px 18px #eaeaea;
+                box-shadow:0px 0px 9px #e5e5e5;;
                 transition:1s;
                 position:relative;z-index:8;
-                >div:first-child{width:40px;height:40px;flex-basis:30%;text-align: center;margin-right:5%;}
+                height:83px;
+                >div:first-child{width:38px;height:38px;flex-basis:38px;text-align: center;margin-right:20px;
+                img{width:38px;height:38px;}}
                 >div:nth-child(2){flex-basis:65%;display: flex;flex-direction:column;justify-content:center;
-                    span:first-child{color:#009FDF;font-size:18px;text-align: center;}
-                    span:last-child{color:#939598;font-size:11px;font-family:'SABIC Typeface Text Regular',arial, helvetica;text-align: center;}
+                    span:first-child{color:#009FDF;font-size:12px;line-height:20px;
+                        i{color:#58595B;font-style: normal;}}
+                    span:last-child{color:#58595B;font-size:12px;font-family:'SABIC Typeface Text Regular',arial, helvetica;white-space: nowrap;}
                 }
 
                 div.showtooltip{display:block} 
                 div.closetooltip{display:none}
                 div.status-tooltip{
-                    background:#2f2f2fe4;color:#58595B;width:200px !important;border-radius:10px;position:absolute;bottom:-150px;left:0px;z-index:999; padding:15px 30px;z-index:9;
+                    background:#2f2f2fe4;color:#58595B;width:200px !important;border-radius:10px;position:absolute;bottom:-150px;left:0px;z-index:9999999999999 !important; padding:15px 30px;z-index:9;margin:15px 0 0 0;
                     .status-tooltip-close{position:absolute;top:-10px;right:-10px;background:#009FDF;color:#fff;font-size:14px;width:30px;height:30px;line-height:30px;border-radius: 50%;text-align: center;}
                     .status-tooltip-head{border-bottom:1px #ccc solid;width:100%;display:flex;margin:0 0 10px 0;height:auto;position:static;padding-bottom:5px;
                             span:first-child{flex-basis:64%;font-size:16px;color:#fff;text-align: left;display:flex;justify-content: flex-start;align-items: center;}
@@ -64,47 +68,35 @@
                     }
 
                 }
-                div.status-tooltip:hover{box-shadow:none;transition:0;transform: scale(1);}
+                div.status-tooltip:hover{box-shadow:none;}
                 div.status-tooltip::after{content: "";position: absolute;bottom: 100%;left:16%;margin-left: -5px;border-width: 10px;border-style: solid;border-color:  transparent transparent #2f2f2fe4 transparent;}
-
-
-
-
+                div.status-tooltip::before{content: "";position: absolute;top: -15px;left: 0;height: 15px;width: 100%;background: transparent;}
 
             }
             >div:hover{
-                box-shadow: 0px 0px 18px #ccc;transition:0.5s;transform: scale(1.02);border-radius:10px;}
+                box-shadow: 0px 0px 9px #ccc;}
             div:last-child{margin-right:0px;}
         }
     }
 
     // responsive design
-@media screen and (max-width:1700px){
+@media screen and (max-width:1800px){
     #content{
         .content-inner{  
                 #status {
                     div.common{
-                        div{
+                        > div{
+                            flex-basis: 11.1%;
+                            width: 11.1%;
                             div:last-child{
                                 span:last-child{font-size:11px;}
-                            } 
+                            }
+                            > div:first-child{margin-right:10px;}
                         }
+                        > div:last-child{margin: 0 0 0 0;
+                            } 
                     }
                 }
-        }
-    }
-    #pmt{
-        #pmt-left{flex-basis:55%}
-        #pmt-right{
-            .pmt-health-index{
-                .pmt-heatmapvalues{
-                    .hi-pos-off{left:-15% !important;}
-                    .hi-pos-normal{left:5% !important}
-                    .hi-pos-warning{left:25% !important}
-                    .hi-pos-risk{left:30% !important}
-                    .hi-pos-risk::after{left:77%}
-                }
-            } 
         }
     }
 }
@@ -113,8 +105,8 @@
     //status
     #status {height:auto;
         div.common{
-            div{margin: 0 0.5% 0 0;
-                div:first-child{flex-basis:40%;img{max-width: 100%;width:65%}}
+            div{
+                div:first-child{flex-basis:40%;img{max-width: 100%;}}
                 div:last-child{
                     span:last-child{font-size:11px;}
                 } 

@@ -1,3 +1,4 @@
+
 // @ts-nocheck
 import React, { useRef, useLayoutEffect } from "react";
 import * as am5 from "@amcharts/amcharts5";
@@ -7,6 +8,55 @@ import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 interface Props {
     plotData: any;
 }
+
+let Topdata = [
+    {
+        "localTime": "2020-10-12T01:27:00",
+        "assetSapId": "310061001",
+        "sensorGroupName": "Main Motor Bearing",
+        "distance": 3.134,
+        "alertThreshold": 41.955,
+        "warningThreshold": 27.97,
+        "status": "Normal"
+    },
+    {
+        "localTime": "2020-10-13T01:27:00",
+        "assetSapId": "310061001",
+        "sensorGroupName": "Main Motor Performance",
+        "distance": 6.664,
+        "alertThreshold": 55.955,
+        "warningThreshold": 46.97,
+        "status": "Poor data"
+    },
+    {
+        "localTime": "2020-10-14T01:27:00",
+        "assetSapId": "310061001",
+        "sensorGroupName": "Mixer Gearbox Bearing",
+        "distance": 3.569,
+        "alertThreshold": 28.955,
+        "status": "warning"
+    },
+    {
+        "localTime": "2021-10-15T01:27:00",
+        "assetSapId": "310061001",
+        "sensorGroupName": "Mixer Bearing",
+        "distance": 7.653,
+        "alertThreshold": 66.955,
+        "warningThreshold": 45.97,
+        "status": "AssetOff"
+    },
+    {
+        "localTime": "2022-10-16T01:27:00",
+        "assetSapId": "310061001",
+        "sensorGroupName": "Gear Pump Motor Bearing",
+        "distance": 10.186,
+        "alertThreshold": 22.955,
+        "warningThreshold": 27.97,
+        "status": "Pi disconnection"
+    },
+
+
+]
 const DeviationChart = ({ plotData }: Props) => {
 
     useLayoutEffect(() => {
@@ -15,10 +65,10 @@ const DeviationChart = ({ plotData }: Props) => {
 
             // let Topdata = [...deviation]
 
-            let Topdata = []
-            plotData.forEach((device, index) => {
-                Topdata[index] = { ...device }
-            })
+            //let Topdata = []
+            // plotData.forEach((device, index) => {
+            //     Topdata[index] = { ...device }
+            // })
 
             const root = am5.Root.new("chartdiv");
 
@@ -197,13 +247,14 @@ const DeviationChart = ({ plotData }: Props) => {
             let Chart2 = container.children.push(am5xy.XYChart.new(root, {
                 width: am5.percent(93),
                 marginBottom: 90,
-                marginTop: -190
+                marginTop: -140,
                 // panX: true,
                 // panY: true,     
                 // wheelX: "panX",
                 // wheelY: "zoomX",
                 // pinchZoomX: true,
                 // layout: root.verticalLayout,
+                x: -20
             }));
             var xRenderer = am5xy.AxisRendererX.new(root, {
                 minGridDistance: 50,
@@ -327,7 +378,7 @@ const DeviationChart = ({ plotData }: Props) => {
 
             let XAxis2 = chart1.xAxes.push(am5xy.DateAxis.new(root, {
                 groupData: true,
-                //height:am5.percent(40),
+                height: am5.percent(40),
                 width: am5.percent(80),
                 marginBottom: 20,
                 startLocation: 1,
@@ -338,10 +389,6 @@ const DeviationChart = ({ plotData }: Props) => {
                 renderer: xRenderer,
             }));
             XAxis2.get("renderer").labels.template.set("forceHidden", true);
-
-
-
-
 
 
 

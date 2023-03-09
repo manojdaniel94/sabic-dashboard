@@ -24,10 +24,6 @@ const Plant = () => {
         topBarToolTipbyPlantId: state.Common.topBarToolTipbyPlantId,
     }));
 
-    console.log(statusAssetPmtByPlantId);
-    console.log(topBarToolTipbyPlantId);
-    debugger;
-
     // useEffect(() => {
     //     dispatch(getStatusAssetPmtByPlantId("18")); //selectedPlant.value
     //     dispatch(getTopBarToolTipbyPlantId("18/1")); //{plantId}/{userid}

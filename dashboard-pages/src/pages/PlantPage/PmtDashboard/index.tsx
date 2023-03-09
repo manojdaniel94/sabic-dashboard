@@ -17,7 +17,6 @@ import {
     getHeatMapToolTipbyAssetStatus,
     getTopBarToolTipbyPlantId
 } from '../../../redux/reducers/CommonReducer';
-import { AutoComplete } from 'antd';
 
 
 
@@ -49,14 +48,11 @@ const PmtDashboard = () => {
         assetUnderRisk: ""
     })
     const [getErrorMag, setErrorMag] = useState(false);
-    const [currentValue, setCurrentValue] = useState('')
 
     const [mouseHover, setMouseHover] = useState({
         over: false,
         statusName: ""
     })
-
-    const [autocompleteData, setAutocompleteData] = useState<any>();
 
 
     useEffect(() => {
@@ -77,15 +73,7 @@ const PmtDashboard = () => {
             return { value: item.assetId, label: item.assetName };
         });
         setAssetIdDropList(data);
-
-        let autoData = assetListByPlant.map(function (item: any) {
-            return { label: item.assetId };
-
-        });
-        setAutocompleteData(autoData);
     }, [assetListByPlant]);
-
-
 
     useEffect(() => {
         let data = setStatusListbyPlantId.map(function (item: any, index: number) {
@@ -160,17 +148,17 @@ const PmtDashboard = () => {
                     <div className="pmt-title">ASSET CARD</div>
                     <div className="pmt-filter">
                         <div className="pmt-asset-name">{selectedAssetId === "" ? "Polly 2" : selectedAssetId.label}</div>
+                        <div className="pmt-fills">
                         <div className={`pmt-time`}><span>Asset ID</span>
-
                             <input type="text" value={selectedAssetId.value} />
                         </div>
-                        <div className="pmt-options">
-                            <Dropdown
-                                options={assetIdDropList}
-                                // defaultValue={selectedRegion}
-                                handleChange={handleAssetIdDropChange}
-                            /></div>
+                        <div className="pmt-options"><Dropdown
+                            options={assetIdDropList}
+                            // defaultValue={selectedRegion}
+                            handleChange={handleAssetIdDropChange}
+                        /></div>
                         <div className="pmt-gobtn" onClick={() => handleNavigation(selectedAssetId)} >Go</div>
+                        </div>
                         <div className="pmt-error">{getErrorMag === true ? <span className="PmtErrorMsg">Need to select AssetID</span> : ""}</div>
                     </div>
 
@@ -185,7 +173,7 @@ const PmtDashboard = () => {
             <div id="pmt-right">
                 <>
                     <div className="pmt-right-title">RELIABILITY HEAT MAP</div>
-                    <div>Click on the map to get more details</div>
+                    <div className="pmt-right-name">Click on the map to get more details</div>
                     <div className="pmt-right-dropdown"><Dropdown
                         options={heatStatusList}
                         // defaultValue={selectedHeatStatus}
