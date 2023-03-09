@@ -35,15 +35,15 @@ $font_rg:SabicRegular;
         .asset-model-left-inner{
             background:#fff;box-shadow: 0px 0px 18px #eaeaea;padding:25px;
        
-        .asset-sensor-filter{display:flex;justify-content:space-between;align-items: center;margin-top:20px;
-            .title{font-size:18px;display:flex;color:#58595B;padding:0 0 0 30px;font: normal 600 16px 'SABIC Typeface Text Regular',arial, helvetica;letter-spacing: 1px;}
+        .asset-sensor-filter{display:flex;justify-content:space-between;align-items: center;
+            .title{font-size:18px;display:flex;color:#58595B;font: normal 600 16px 'SABIC Typeface Text Regular',arial, helvetica;letter-spacing: 1px;}
             .sensor-time{color:#009FDF;font-size:16px;
                 span{color:#939598;padding:0 15px 0 30px;}}
-            .sensor-options{padding:0 30px;
+            .sensor-options{
                 select{border:0px;font-size:17px;letter-spacing:1px;color:#939598;padding:0 10px;border:0px;font-size:14px;padding:0 10px;}
             }
         }
-        .asset-name{padding:10px 0 10px 30px;font-size:16px;letter-spacing:1px;color:#939598}
+        .asset-name{padding:10px 0 10px 0;font-size:16px;letter-spacing:1px;color:#939598}
         .asset-plot-graph{text-align: center;
             img{max-width:100%;}}
         }
@@ -66,7 +66,7 @@ $font_rg:SabicRegular;
                         div span.greeny:before{border-bottom-color:#2EB541}
                         div span.redy:before{border-top-color:#E35205}
                         div span.amhi-slider{
-                            background: rgb(255,16,0);width:200px;height:22px;border-radius:2px;background: linear-gradient(90deg, rgba(255,16,0,1) 0%, rgba(255,205,0,1) 51%, rgba(48,182,64,1) 100%);position: relative;margin-right:20px;
+                            background: rgb(255,16,0);width:200px;height:22px;border-radius:2px;background: linear-gradient(90deg, rgba(255,16,0,1) 0%, rgba(255,205,0,1) 51%, rgba(48,182,64,1) 100%);position: relative;
                                 i{color:#fff;font-size:9px;letter-spacing: 1px;font-weight: bold;font-style:normal;position:absolute;top:-3px;width:30px;height:30px;padding-right:5px;display:flex;justify-content: center;align-items: center;z-index: 99;
                                 -webkit-animation: fadeIn 1s ease-in-out 3s forwards;-webkit-animation-name: run;-webkit-animation-duration: 5s;
                                 animation:3s forwards;animation-name:run;animation-duration:6s;
@@ -116,6 +116,7 @@ $font_rg:SabicRegular;
         .accordian-title,.accordian-title-active{font-size:20px;background:#EAEBEC;font: normal 500 17px 'SABIC Typeface Text Regular',arial, helvetica;padding:20px 30px;margin-bottom:1px;position:relative;
                 span{display:flex;position:absolute;right:20px;top:15px;font-size:30px;}
         }
+        .accordian-title:hover{background:#C5E7F7;}
         .accordian-body{margin-bottom:20px;}
         .accordian-title-active{background:#C5E7F7;}
         .sensor-plot-list{padding:0 30px;
@@ -124,28 +125,28 @@ $font_rg:SabicRegular;
                 span.red{background:red;}
                     }    
         }
-        .asset-model-health-index{
+        .asset-model-health-index{overflow-y:scroll;height:306px;
             .amhi-row-title{display:flex;width:100%;
-                div{flex-basis:60%;padding:8px 20px;border:1px #fff solid;background:#f5f5f5;font-size:12px;letter-spacing: 1px;font-weight:600;}
-                div:first-child{flex-basis:40%;}
+                div{flex-basis:59%;border:1px #fff solid;background:#f5f5f5;font-size:12px;letter-spacing: 1px;padding:10px}
+                div:first-child{flex-basis:41%;}
                 }
             .amhi-row{display:flex;width:100%;
-                div{flex-basis:60%;padding:8px 20px;border:1px #fff solid;display:flex;align-items: center;font-size:11px;color:#58595B}
-                div:first-child{flex-basis:40%;}
+                div{flex-basis:59%;border:1px #fff solid;display:flex;align-items: center;font-size:11px;color:#58595B;padding:10px}
+                div:first-child{flex-basis:41%;}
                 div:last-child span.uparrow{
-                    display: block;overflow: hidden;position: relative;height:10px;width:26px;margin:0 20px 0 0;}
+                   display: block;overflow: hidden;position: relative;height:10px;width:29px;margin:0 20px 0 0;}
                 div:last-child span.uparrow:before{
                         border: 10px solid transparent;content: ' ';display: block;position: absolute;z-index: 2;border-bottom-color: #aaa;left: 2px;bottom: 0;
                       }
                 div:last-child span.downarrow{
-                          display: block;overflow: hidden;position: relative;height:10px;width:26px;margin:0 20px 0 0;}
+                          display: block;overflow: hidden;position: relative;height:10px;width:29px;margin:0 20px 0 0;}
                 div:last-child span.downarrow:before{
                               border: 10px solid transparent;content: ' ';display: block;position: absolute;z-index: 2;border-top-color: #aaa;left:2px;top: 0;
                             }
                 div:last-child span.greeny:before{border-bottom-color:#2EB541}
                 div:last-child span.redy:before{border-top-color:#E35205}
                 span.amhi-slider{
-                    background: rgb(255,16,0);width:90%;height:15px;border-radius:2px;background: linear-gradient(90deg, rgba(255,16,0,1) 0%, rgba(255,205,0,1) 51%, rgba(48,182,64,1) 100%);position: relative;margin-right:20px;
+                    background: rgb(255,16,0);width:90%;height:15px;border-radius:2px;background: linear-gradient(90deg, rgba(255,16,0,1) 0%, rgba(255,205,0,1) 51%, rgba(48,182,64,1) 100%);position: relative;
                         i{color:#fff;font-size:9px;height:15px;letter-spacing: 1px;font-weight: bold;font-style:normal;position:absolute;top:0px;width:30px;padding-right:5px;display:flex;justify-content: center;align-items: center;z-index: 99;-webkit-animation: fadeIn 1s ease-in-out 3s forwards;-webkit-animation-name: run;-webkit-animation-duration: 5s;animation:3s forwards;animation-name:run;animation-duration:6s;
                   }
                     i::after{content:'';width:5px;height:21px;border-radius:10px;position:absolute;top:-3px;right:0px;background:#58595B;}
@@ -159,7 +160,7 @@ $font_rg:SabicRegular;
         .asset-model-health-index>div:nth-child(2n){background:#F7F7F7;}
         .asset-model-failure-prediction{
             .amfp-row-title{display:flex;width:100%;
-                div{flex-basis:50%;padding:5px;border:1px #fff solid;background:#f5f5f5;font-size:11px;letter-spacing: 1px;font-weight:600;}
+                div{flex-basis:50%;padding:5px;border:1px #fff solid;background:#f5f5f5;font-size:11px;letter-spacing: 1px;font-family:$font_headline_rg}
                 
                 div:first-child{flex-basis:30%;font-size:11px;color:#58595B;padding:8px 20px;}
                 div:nth-child(2){flex-basis:20%;font-size:11px;color:#58595B;padding:8px 20px;text-align:center;cursor:pointer;}
@@ -175,7 +176,7 @@ $font_rg:SabicRegular;
                 div:nth-child(2){flex-basis:20%;font-size:11px;color:#009FDF;padding:8px 20px;text-align:center;cursor:pointer;}
                 div:last-child{flex-basis:30%;font-size:11px;color:#58595B;padding:8px 20px;cursor:pointer;}
             }
-            .amfp-row:hover{background:#009FDF;color:#fff !important}
+            .amfp-row:hover{background:#C5E7F7;color:#fff !important;}
         }
         .asset-model-failure-prediction>div:nth-child(2n){background:#F7F7F7;}
         
@@ -192,9 +193,8 @@ $font_rg:SabicRegular;
     #asset-model {
         margin: 25px 0;
         #asset-model-left{
-            flex-basis:calc(70% - 50px);
             .asset-plot-status{gap:0px;justify-content: space-between;
-                .asset-plot-status-left{justify-content: space-around;    flex-basis: 82%;
+                .asset-plot-status-left{justify-content: space-around;flex-basis: 86%;padding:0 1%;
                     .asset-efficiency{padding:unset;flex-basis: 50%;}
                     div {
                         span.amhi-slider{width:80%;}
@@ -215,7 +215,6 @@ $font_rg:SabicRegular;
                         position: relative;
                         height:10px;
                         width: 35px;
-                        margin: 0 10px;
                     }
                     div span.uparrow {
                         display: block;
@@ -223,7 +222,6 @@ $font_rg:SabicRegular;
                         position: relative;
                         height: 12px;
                         width: 35px;
-                        margin: 0 10px;
                     }
                     div span.uparrow:before {
                         border: 10px solid transparent;
@@ -236,22 +234,20 @@ $font_rg:SabicRegular;
                         bottom: 0px;
                     }
                 }
-                .asset-plot-status-right{flex-basis: 10%;}
+                .asset-plot-status-right{flex-basis: 10%;padding:20px 0}
             }
         }
 
         #asset-model-right {
-            padding: 10px;
-            flex-basis:30%;
 
             .asset-model-health-index {
                 .amhi-row {
                     div:last-child span.uparrow {
-                        margin: 0 10px
+                        margin: 0 10px 0 0;
                     }
 
                     div:last-child span.downarrow {
-                        margin: 0 10px
+                        margin: 0 10px 0 0;
                     }
                 }
             }

@@ -39,9 +39,9 @@ const Header = () => {
 
             </div>
             <div className="mobile-menu-links">
-              <a href="#" className="active"><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>HOME</a>
+              <a href="#" ><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>HOME</a>
               <a href="#"><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>AFFILIATES</a>
-              <a href="#"><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>PLANTS</a>
+              <a href="#" className="active"><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>PLANTS</a>
               <a href="#"><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>ASSETS</a>
               <a href="#"><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>EXECUTIVE</a>
               <a href="#"><span><img src={componentAppBasePath + "iconSettingsWhite.svg"} /></span>INFO</a>
@@ -50,7 +50,7 @@ const Header = () => {
         </div>
         <div className="logoname">ASSET HEALTH CARE</div>
         <div className="middle">
-          <div className="navigation"><a href="#" className="active">HOME</a><a href="#">AFFILIATES</a><a href="#">PLANTS</a><a href="#">ASSETS</a><a href="#">EXECUTIVE</a><a href="#">INFO</a>
+          <div className="navigation"><a href="#">HOME</a><a href="#">AFFILIATES</a><a href="#" className="active">PLANTS</a><a href="#">ASSETS</a><a href="#">EXECUTIVE</a><a href="#">INFO</a>
 
           </div>
         </div>
