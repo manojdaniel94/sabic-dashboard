@@ -204,7 +204,7 @@ const SensorChart = () => {
     }, []);
     return (
         <div className="sensor-plot-graph">
-            <div id="chartdiv1" style={{ width: "85%", height: "250px", }}></div>
+            <div id="chartdiv1" style={{ width: "100%", height: "250px", }}></div>
         </div>
     );
 };

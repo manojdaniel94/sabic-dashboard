@@ -148,6 +148,7 @@ const PmtDashboard = () => {
                     <div className="pmt-title">ASSET CARD</div>
                     <div className="pmt-filter">
                         <div className="pmt-asset-name">{selectedAssetId === "" ? "Polly 2" : selectedAssetId.label}</div>
+                        <div className="pmt-fills">
                         <div className={`pmt-time`}><span>Asset ID</span>
                             <input type="text" value={selectedAssetId.value} />
                         </div>
@@ -157,6 +158,7 @@ const PmtDashboard = () => {
                             handleChange={handleAssetIdDropChange}
                         /></div>
                         <div className="pmt-gobtn" onClick={() => handleNavigation(selectedAssetId)} >Go</div>
+                        </div>
                         <div className="pmt-error">{getErrorMag === true ? <span className="PmtErrorMsg">Need to select AssetID</span> : ""}</div>
                     </div>
 
@@ -171,7 +173,7 @@ const PmtDashboard = () => {
             <div id="pmt-right">
                 <>
                     <div className="pmt-right-title">RELIABILITY HEAT MAP</div>
-                    <div>Click on the map to get more details</div>
+                    <div className="pmt-right-name">Click on the map to get more details</div>
                     <div className="pmt-right-dropdown"><Dropdown
                         options={heatStatusList}
                         // defaultValue={selectedHeatStatus}

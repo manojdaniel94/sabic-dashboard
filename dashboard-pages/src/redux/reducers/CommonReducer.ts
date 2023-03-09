@@ -34,7 +34,7 @@ const CommonSlice = createSlice({
         loadingFailurepreDictionByAssetId: false,
         GraphicalImageByAssetId: [],
         loadingGraphicalImageByAssetId: false,
-        AssetKPIForAssetModel:[],
+        AssetKPIForAssetModel: [],
         loadingAssetKPIForAssetModel: false,
         //PlotScreen
         plotModelDropDown: [],
@@ -50,7 +50,11 @@ const CommonSlice = createSlice({
         //PlotScreen End
         // Dates
         measureFromDate: "",
-        measureToDate: ""
+        measureToDate: "",
+        sensorFromDate: "",
+        sensorToDate: "",
+        commonFromDate: "",
+        commonToDate: ""
     },
     reducers: {
         getRegions: (state, action) => {
@@ -268,13 +272,26 @@ const CommonSlice = createSlice({
         getPlotStatusDataFailure: (state, action) => {
             state.loadingPlotStatusData = false
         },
+        // Plot Screen Ends
+        // Date
         getMeasureFromDate: (state, action) => {
             state.measureFromDate = action.payload
         },
         getMeasureToDate: (state, action) => {
             state.measureToDate = action.payload
         },
-        // Plot Screen Ends
+        getSensorFromDate: (state, action) => {
+            state.sensorFromDate = action.payload
+        },
+        getSensorToDate: (state, action) => {
+            state.sensorToDate = action.payload
+        },
+        getCommonFromDate: (state, action) => {
+            state.commonFromDate = action.payload
+        },
+        getCommonToDate: (state, action) => {
+            state.commonToDate = action.payload
+        },
     }
 })
 
@@ -344,6 +361,10 @@ export const {
     // Dates
     getMeasureFromDate,
     getMeasureToDate,
+    getSensorFromDate,
+    getSensorToDate,
+    getCommonFromDate,
+    getCommonToDate
 } = CommonSlice.actions
 
 export default CommonSlice.reducer

@@ -24,7 +24,7 @@ const DeviationNames = () => {
                     <div><span style={{ background: "rgb(255, 174, 33)" }}></span><span>Warning Level</span></div>
                     <div><span style={{ background: "rgb(253, 52, 52)" }}></span><span>Alert Level</span></div>
                 </div>
-                {showPicker ? <CalendarPopup /> : null}
+                {showPicker ? <CalendarPopup title={"Deviation"} /> : null}
             </div>
         </div>
     );

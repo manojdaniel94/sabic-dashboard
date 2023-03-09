@@ -50,7 +50,7 @@ const AssetModel = () => {
         <div id="asset-model">
             <div id="asset-model-left">
                 <div className="asset-model-left-inner">
-                    <div className="sensor-filter">
+                    <div className="asset-sensor-filter">
                         <div className="title">GRAPHICAL OVERVIEW</div>
                         <div className="sensor-options">
                             <select

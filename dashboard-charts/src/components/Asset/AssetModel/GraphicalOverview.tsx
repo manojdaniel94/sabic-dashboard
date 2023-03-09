@@ -172,7 +172,7 @@ const GraphicalOverview = ({ GraphicalImageByAssetId }: Props) => {
         const {
           point
         } = this;
-        return `<div className="asset-status-tooltip centerarr"><div className="asset-tooltip-text"><b style="font-size:12px;border-bottom: 2px solid white;">${point.name}</b><br><button type="button" onclick="function myFunction(){ console.log('${point.name}');} myFunction();">Go to Devation</button><br><button type="button" onclick="function  ploatListFunction(){ console.log('${point.name}');} ploatListFunction();">Go to Ploat List</button></div></div>`
+        return `<div className="asset-status-tooltip centerarr"><div className="asset-tooltip-text2"><h3 style="font-size:12px;border-bottom:1px solid white;margin-bottom:10px;width:100%;text-align:center;padding-bottom:5px">${point.name}</h3><button class="toolbtt" type="button" onclick="function myFunction(){ console.log('${point.name}');} myFunction();">Go to Alert List</button><br><button class="toolbtt" type="button" onclick="function  ploatListFunction(){ console.log('${point.name}');} ploatListFunction();">Go to Plot</button><br><button class="toolbtt" type="button" onclick="function  failureFunction(){ console.log('${point.name}');} failureFunction();">Go to Failure Predication</button></div></div>`
       }
     },
 
