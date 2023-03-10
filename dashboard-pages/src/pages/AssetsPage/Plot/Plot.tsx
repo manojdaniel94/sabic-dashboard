@@ -189,7 +189,7 @@ const Plot = () => {
                                 <select><option>Sensor</option></select> */}
                             </div>
                         </div>
-                        <div className="asset-name">K-1701</div>
+                        <div className="asset-name">2Y-3001A</div>
                         <SensorChart />
                     </div>
                 </div>
