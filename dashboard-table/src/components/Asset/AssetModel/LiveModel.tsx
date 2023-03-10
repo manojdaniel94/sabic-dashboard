@@ -64,7 +64,7 @@ const LiveModel = ({ FailurepreDictionByAssetId, AnomalyModelbyAssetId }: Props)
         } else if (data === 56 || data === 60 || data === 61 || data === 62 || data === 63 || data === 64 || data === 65 || data === 66) {
             return 0;
         } else {
-            return -10;
+            return 0;
         }
     }
 
@@ -114,7 +114,7 @@ const LiveModel = ({ FailurepreDictionByAssetId, AnomalyModelbyAssetId }: Props)
                     {showPopup === true && showPopupData !== null ?
                         <div id="asset-popup">
                             <div id="ap-content">
-                                <span onClick={() => setShowPopup(false)} style={{ float: "right", fontSize: "50px",cursor: "pointer"}}>x</span>
+                                <span className="ap-closePopup" onClick={() => setShowPopup(false)}>x</span>
                                 <div className="ap-filter">
                                     <div className="ap-title">P-F-CURVE</div>
                                     <div className="ap-dropdown">

@@ -31,10 +31,10 @@
   //asset model
   #asset-model{
      display:flex;justify-content:space-between;margin:25px 0;
-     #asset-model-left{flex-basis: 65%;display:flex;justify-content: flex-start;border-radius:5px;flex-direction:column;
-         .asset-model-left-inner{
-             background:#fff;box-shadow: 0px 0px 18px #eaeaea;padding:25px;
-        
+     #asset-model-left{
+        flex-basis: 66%;width:65%;display:flex;justify-content: flex-start;border-radius:5px;flex-direction:column;
+        .asset-model-left-inner{
+             background:#fff;box-shadow: 0px 0px 18px #eaeaea;padding:25px;        
          .asset-sensor-filter{display:flex;justify-content:space-between;align-items: center;
              .title{font-size:18px;display:flex;color:#58595B;font: normal 600 16px 'SABIC Typeface Text Regular',arial, helvetica;letter-spacing: 1px;}
              .sensor-time{color:#009FDF;font-size:16px;
@@ -42,31 +42,32 @@
              .sensor-options{
                  select{border:0px;font-size:17px;letter-spacing:1px;color:#939598;padding:0 10px;border:0px;font-size:14px;padding:0 10px;}
              }
-         }
-         .asset-name{padding:10px 0 10px 0;font-size:16px;letter-spacing:1px;color:#939598}
+        }
+        .asset-name{
+            padding:10px 0 10px 0;font-size:16px;letter-spacing:1px;color:#939598}
          .asset-plot-graph{text-align: center;
              img{max-width:100%;}}
          }
          .asset-plot-status{display:flex;justify-content:space-around;gap:20px;margin:20px 0 0 0;
              .asset-plot-status-left{
-                 flex-basis:90%;background:#fff;box-shadow: 0px 0px 18px #eaeaea;display:flex;justify-content: center;align-items: center;
-                     .asset-efficiency,.asset-performance{padding:25px;}
-                         div{flex-basis:40%;display:flex;justify-content: center;align-items: center;}
-                         div span{margin:0 10px;font-size:15px;}
+                 flex-basis:93%;background:#fff;box-shadow: 0px 0px 18px #eaeaea;display:flex;justify-content: space-between;align-items: center;
+                     .asset-efficiency,.asset-performance{padding:15px;}
+                         div{flex-basis:50%;display:flex;justify-content: center;align-items: center;}
+                         div span{margin:0 10px 0 0;font-size:15px;}
                          div span.uparrow{
-                             display: block;overflow: hidden;position: relative;height:7px;width:26px;margin:0 10px;}
+                             display: block;overflow: hidden;position: relative;height:7px;width:26px;margin:0 10px 0 0;}
                          div span.uparrow:before{
                                  border: 7px solid transparent;content: ' ';display: block;position: absolute;z-index: 2;border-bottom-color: #aaa;left: 0px;bottom: 0;
                              }
                          div span.downarrow{
-                                 display: block;overflow: hidden;position: relative;height:7px;width:26px;margin:0 10px;}
+                                 display: block;overflow: hidden;position: relative;height:7px;width:26px;margin:0 10px 0 0;}
                          div span.downarrow:before{
                                      border: 7px solid transparent;content: ' ';display: block;position: absolute;z-index: 2;border-top-color: #aaa;left:0px;top: 0;
                                      }
                          div span.greeny:before{border-bottom-color:#2EB541}
                          div span.redy:before{border-top-color:#E35205}
                          div span.amhi-slider{
-                             background: rgb(255,16,0);width:200px;height:22px;border-radius:2px;background: linear-gradient(90deg, rgba(255,16,0,1) 0%, rgba(255,205,0,1) 51%, rgba(48,182,64,1) 100%);position: relative;
+                             background: rgb(255,16,0);width:50%;height:22px;border-radius:2px;background: linear-gradient(90deg, rgba(255,16,0,1) 0%, rgba(255,205,0,1) 51%, rgba(48,182,64,1) 100%);position: relative;
                                  i{color:#fff;font-size:9px;letter-spacing: 1px;font-weight: bold;font-style:normal;position:absolute;top:-3px;width:30px;height:30px;padding-right:5px;display:flex;justify-content: center;align-items: center;z-index: 99;
                                  -webkit-animation: fadeIn 1s ease-in-out 3s forwards;-webkit-animation-name: run;-webkit-animation-duration: 5s;
                                  animation:3s forwards;animation-name:run;animation-duration:6s;
@@ -101,7 +102,7 @@
                      .asset-status-tooltip.leftarr:after {left:10%;right:unset;}
                      .asset-status-tooltip.rightarr:after {right:10%;left:unset;}
              }
-             .asset-plot-status-right{flex-basis:calc(10% - 20px);background:#fff;box-shadow: 0px 0px 18px #eaeaea;display:flex;justify-content: center;align-items: center;padding:20px;position:relative;}
+             .asset-plot-status-right{flex-basis:calc(8% - 20px);background:#fff;box-shadow: 0px 0px 18px #eaeaea;display:flex;justify-content: center;align-items: center;padding:20px;position:relative;}
              .asset-status-graph a img{width:40px;height:40px;}
                  div.asset-status-graph{border-radius:5px;flex-basis:5%;
                      .asp-graph img{max-width: 100%;}
@@ -110,11 +111,11 @@
          
      }
      #asset-model-right{
-         flex-basis:calc(35% - 80px);padding:25px;background:#fff;box-shadow: 0px 0px 18px #eaeaea;display:flex;flex-direction:column;border-radius:5px;
+         flex-basis:calc(35% - 80px);padding:25px;background:#fff;box-shadow: 0px 0px 18px #eaeaea;display:flex;flex-direction:column;border-radius:5px;width:35%;
          .right-title{display:flex;color:#58595B;font: normal 600 17px 'SABIC Typeface Text Regular',arial, helvetica;letter-spacing: 1px;}
          .right-asset-name{padding:0 0 10px 0;font: normal normal 17px 'SABIC Typeface Text Light',arial, helvetica;color:#939598;margin:10px 0}
-         .accordian-title,.accordian-title-active{font-size:20px;background:#EAEBEC;font: normal 500 17px 'SABIC Typeface Text Regular',arial, helvetica;padding:20px 30px;margin-bottom:1px;position:relative;
-                 span{display:flex;position:absolute;right:20px;top:15px;font-size:30px;}
+         .accordian-title,.accordian-title-active{font-size:20px;background:#EAEBEC;font: normal 500 17px 'SABIC Typeface Text Regular',arial, helvetica;padding:10px 20px;margin-bottom:1px;position:relative;line-height:20px;
+                 span{display:flex;position:absolute;right:20px;top:12px;font-size:30px;}
          }
          .accordian-title:hover{background:#C5E7F7;}
          .accordian-body{margin-bottom:20px;}
@@ -127,7 +128,7 @@
          }
          .asset-model-health-index{overflow-y:scroll;height:306px;
              .amhi-row-title{display:flex;width:100%;
-                 div{flex-basis:59%;border:1px #fff solid;background:#f5f5f5;font-size:12px;letter-spacing: 1px;padding:10px}
+                 div{flex-basis:59%;border:1px #fff solid;background:#EAEBEC;font-size:12px;letter-spacing: 1px;padding:10px}
                  div:first-child{flex-basis:41%;}
                  }
              .amhi-row{display:flex;width:100%;
@@ -160,7 +161,7 @@
          .asset-model-health-index>div:nth-child(2n){background:#F7F7F7;}
          .asset-model-failure-prediction{
              .amfp-row-title{display:flex;width:100%;
-                 div{flex-basis:50%;padding:5px;border:1px #fff solid;background:#f5f5f5;font-size:11px;letter-spacing: 1px;font-family:$font_headline_rg}
+                 div{flex-basis:50%;padding:5px;border:1px #fff solid;background:#EAEBEC;font-size:11px;letter-spacing: 1px;font-family:$font_headline_rg}
                  
                  div:first-child{flex-basis:30%;font-size:11px;color:#58595B;padding:8px 20px;}
                  div:nth-child(2){flex-basis:20%;font-size:11px;color:#58595B;padding:8px 20px;text-align:center;cursor:pointer;}
@@ -191,8 +192,9 @@
  // responsive design
  @media screen and (max-width:1700px) {
      #asset-model {
-         margin: 25px 0;
+         margin: 15px 0;
          #asset-model-left{
+            .asset-model-left-inner{padding:15px;
              .asset-plot-status{gap:0px;justify-content: space-between;
                  .asset-plot-status-left{justify-content: space-around;flex-basis: 86%;padding:0 1%;
  
@@ -237,7 +239,7 @@
                      }
                  }
                  .asset-plot-status-right{flex-basis: 10%;padding:20px 0}
-             }
+             }}
          }
  
          #asset-model-right {
@@ -446,10 +448,12 @@
  #asset-popup {
      background:#00000094;position:absolute;top:0px;left:0px;width:100%;height:100%;z-index:9999999999999999;display:flex;justify-content: center;align-items: center;
      #ap-content{flex-direction: column;
-         width:55%;background:#fff;min-height:50%;padding:0 30px;
-         .ap-filter{display:flex;flex-direction: row;width:100%;flex-basis:100%;justify-content:space-between;
+         width:55%;background:#fff;min-height:50%;padding:30px;position:relative;
+         .ap-closePopup{position:absolute;top:0px;right:20px;line-height: 50px;color:#58595B;font-size:30px;cursor: pointer;}
+         .ap-filter{
+            display:flex;flex-direction: row;width:100%;flex-basis:100%;justify-content:space-between;position:relative;
              .ap-title{font-size:18px;}
-             .ap-dropdown{select{font-size:14px;color:#58595B;border:0px;font-family: inherit;padding:0 10px}}
+             .ap-dropdown{select{font-size:14px;color:#58595B;border:0px;font-family: inherit;padding:0 10px;margin-right:50px;position:absolute;top:50px;right:-50px;}}
          }
          .ap-asset-name{font-size:14px;color:#939598}
          #ap-heatmap{

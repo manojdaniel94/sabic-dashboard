@@ -16,6 +16,7 @@ interface Props {
 const AssetModel = () => {
 
     const [selectedAssetId, setSelectedAssetId] = useState<any>(18);
+    const [sensorGroupId, setSensorGroupId] = useState<any>();
 
     let dispatch = useDispatch();
 
@@ -44,7 +45,7 @@ const AssetModel = () => {
 
     // console.log("assetlistOfAssetModelByplantid",assetlistOfAssetModelByplantid);
     // console.log(" GraphicalImageByAssetId=========", GraphicalImageByAssetId[0]);
-    // console.log(" selected in dropdown", selected);
+    // console.log(" selectedItem", selectedItem);
 
     return (
         <div id="asset-model">
@@ -56,17 +57,18 @@ const AssetModel = () => {
                             <select
                               onChange={(e) => setSelectedAssetId(e.target.value)}
                             >
-                                <option>Select Asset ID</option>
+                                {/* <option>Select Asset ID</option> */}
                                 {assetlistOfAssetModelByplantid.map((item: any) => (
                                     <option value={item.assetId}>{item.assetId}</option>
                                 ))}
                             </select>
                         </div>
                     </div>
-                    <div className="asset-name">K-1701</div>
+                    <div className="asset-name">2Y-3001A</div>
                     <div className="asset-plot-graph">
                         <GraphicalOverview
                             GraphicalImageByAssetId={GraphicalImageByAssetId}
+                            mysensorGroupId={sensorGroupId}
                         />
                     </div>
                 </div>
@@ -90,6 +92,7 @@ const AssetModel = () => {
                 <LiveModel
                     FailurepreDictionByAssetId={FailurepreDictionByAssetId}
                     AnomalyModelbyAssetId={AnomalyModelbyAssetId}
+                    setSensorGroupId={setSensorGroupId}
                 />
             </div>
         </div>

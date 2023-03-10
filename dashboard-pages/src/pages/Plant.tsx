@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 const PLANT_MENU_DATA = [
     { id: 1, value: "PMT" },
     { id: 2, value: "ALERT SATISTICS" },
-    { id: 3, value: "MODEL PERFORMNACE" },
+    { id: 3, value: "MODEL PERFORMANCE" },
     { id: 4, value: "ALERT MANAGEMENT PAGE" },
     { id: 5, value: "PM COMPLIANCE" },
 ];
