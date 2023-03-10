@@ -14,6 +14,8 @@ import DeviationChart from "../../../components/PlotScreen/DeviationChart";
 import DeviationNames from "../../../components/PlotScreen/DeviationNames";
 import Dropdown from "components/Dropdown";
 import moment from 'moment'
+import { default as ReactSelect } from "react-select";
+import { components } from "react-select";
 
 interface Props {
     buttonName: string;
@@ -107,6 +109,22 @@ const Plot = () => {
         // dispatch(getAssetCardPmtByAssetId(e.value)); //selectedAssetId.value
     };
 
+    const Option = (props: any) => {
+        return (
+            <div>
+                <components.Option {...props}>
+                    <input
+                        type="checkbox"
+                        checked={props.isSelected}
+                        onChange={() => null}
+                    />{" "}
+                    <label>{props.label}</label>
+                </components.Option>
+            </div>
+        );
+    };
+
+
 
     return (
         <div>
@@ -120,6 +138,7 @@ const Plot = () => {
                                 <div className="sensor-deviation"><span>Model Deviation</span> <span>10%</span> </div>
                             </div>
                             <div className="sensor-options">
+
                                 <Dropdown
                                     options={assetData}
                                     // defaultValue={selectedRegion}
@@ -131,13 +150,40 @@ const Plot = () => {
                                     handleChange={handlePlotModeldDropDown}
 
                                 />
-                                <Dropdown
+                                {/* <div style={{ width: '100px', maxHeight: '100px' }}>
+                                    <Dropdown
+                                        options={sensorData}
+                                        // defaultValue={selectedRegion}
+                                        value={selectedSensor}
+                                        handleChange={handlePlotSensorDropDown}
+                                        multi={true}
+                                    />
+                                </div> */}
+                                <ReactSelect
+                                    styles={{
+                                        option: (provided) => ({
+                                            ...provided,
+                                            color: "black",
+                                        }),
+                                        valueContainer: (provided, state) => ({
+                                            ...provided,
+                                            height: '30px',
+                                            width: "70px",
+                                            padding: '0 6px'
+                                        }),
+                                    }}
                                     options={sensorData}
-                                    // defaultValue={selectedRegion}
+                                    isMulti
+                                    closeMenuOnSelect={true}
+                                    hideSelectedOptions={false}
+                                    components={{
+                                        Option
+                                    }}
+                                    onChange={handlePlotSensorDropDown}
+                                    // allowSelectAll={true}
                                     value={selectedSensor}
-                                    handleChange={handlePlotSensorDropDown}
-                                    multi={true}
                                 />
+
                                 {/* <select><option>Asset ID</option></select>
                                 <select><option>Model</option></select>
                                 <select><option>Sensor</option></select> */}

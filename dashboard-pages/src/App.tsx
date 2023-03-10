@@ -6,7 +6,8 @@ import "./styles.scss";
 import Router from "./routes/Router";
 import Header from "components/Header";
 import BreadCrumb from "components/BreadCrumb";
-import CalendarComponent from "components/CalendarComponent";
+//import CalendarComponent from "components/CalendarComponent";
+import CalendarComponent from "./components/CalendarComponent/CalendarComponent";
 import Footer from "components/Footer";
 import store from "./redux";
 
