@@ -1209,3 +1209,8 @@
          }
      }
  }
+ #asset-model #asset-model-right .asset-model-health-index .amhi-row.setactive {
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: default;
+}

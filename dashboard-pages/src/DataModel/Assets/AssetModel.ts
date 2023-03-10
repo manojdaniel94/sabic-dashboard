@@ -1,8 +1,12 @@
 export const getassetlistByplantidOfAssetModel = [
-    
+          
         {
-          "assetId": "2K-3101",
-          "assetName": "Cycle Gas Compressor 4"
+          "assetId": "2Y-3001A",
+          "assetName": "JSW N2 compressors"
+        },
+        {
+          "assetId": "2Y-3003A",
+          "assetName": "JSW C2 compressors"
         },
         {
           "assetId": "2K-3201",
@@ -17,16 +21,8 @@ export const getassetlistByplantidOfAssetModel = [
           "assetName": "VRC"
         },
         {
-          "assetId": "2Y-3001A",
-          "assetName": "JSW N2 compressors"
-        },
-        {
           "assetId": "2Y-3001B",
           "assetName": "JSW N2 compressors"
-        },
-        {
-          "assetId": "2Y-3003A",
-          "assetName": "JSW C2 compressors"
         },
         {
           "assetId": "2Y-3003B",
@@ -149,7 +145,7 @@ export const getAnomalyModelbyassetidinAssetModel = [
     },
     {
       "assetId": "2Y-3001A",
-      "sensorGroupId": 7695,
+      "sensorGroupId": 7696,
       "sensorGroup": "Compressor Performance Stage 3_FE",
       "healthIndex": 71,
       "healthIndexTrend": true,
@@ -160,7 +156,7 @@ export const getAnomalyModelbyassetidinAssetModel = [
     },
     {
       "assetId": "2Y-3001A",
-      "sensorGroupId": 7695,
+      "sensorGroupId": 7697,
       "sensorGroup": "Compressor Performance Stage 4_FE",
       "healthIndex": 76,
       "healthIndexTrend": true,
@@ -171,7 +167,7 @@ export const getAnomalyModelbyassetidinAssetModel = [
     },
     {
       "assetId": "2Y-3001A",
-      "sensorGroupId": 7695,
+      "sensorGroupId": 7698,
       "sensorGroup": "Compressor Performance Stage 5_FE",
       "healthIndex": 79,
       "healthIndexTrend": true,
@@ -182,7 +178,7 @@ export const getAnomalyModelbyassetidinAssetModel = [
     },
     {
       "assetId": "2Y-3001A",
-      "sensorGroupId": 7695,
+      "sensorGroupId": 7699,
       "sensorGroup": "Compressor Performance Stage 6_FE",
       "healthIndex": 70,
       "healthIndexTrend": true,
@@ -193,7 +189,7 @@ export const getAnomalyModelbyassetidinAssetModel = [
     },
     {
       "assetId": "2Y-3001A",
-      "sensorGroupId": 7695,
+      "sensorGroupId": 7681,
       "sensorGroup": "Compressor Performance Stage 7_FE",
       "healthIndex": 72,
       "healthIndexTrend": true,
@@ -204,7 +200,7 @@ export const getAnomalyModelbyassetidinAssetModel = [
     },
     {
       "assetId": "2Y-3001A",
-      "sensorGroupId": 7695,
+      "sensorGroupId": 7682,
       "sensorGroup": "Compressor Performance Stage 8_FE",
       "healthIndex": 71,
       "healthIndexTrend": true,
