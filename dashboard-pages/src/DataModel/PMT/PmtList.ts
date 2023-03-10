@@ -529,7 +529,7 @@ export const getassetstatuspmtByplantid = [
 ]
 export const getJsonAssetStatusListbyPlantId = [
     {
-        "status": "All"
+        "status": "All Asset Status"
     },
     {
         "status": "Asset-off"

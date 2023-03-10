@@ -213,7 +213,7 @@ export const getAnomalyModelbyassetidinAssetModel = [
 export const getFailurepredictionbyassetidAssetModel = [
     {
       "modelName": "Test Model 1",
-      "rul": 2,
+      "rul": 4,
       "confidenceFactor": 1.1,
       "maxRange": 9,
       "minRange": 4
@@ -241,7 +241,7 @@ export const getFailurepredictionbyassetidAssetModel = [
     },
     {
       "modelName": "Test Model 90",
-      "rul": 1,
+      "rul": 5,
       "confidenceFactor": 3.1,
       "maxRange": 7,
       "minRange": 3
