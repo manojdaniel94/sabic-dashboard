@@ -1,17 +1,35 @@
 //old
-$dark_grey:#58595B;
-$light_grey:#D4D4D4;
-$blue:#009FDF;
-$header_menu_color:#4d4d4d;
-$font_headline_lt:SabicHeadlineLight;
-$font_headline_rg:SabicHeadlineRegular;
-$font_lt:SabicLight;
-$font_rg:SabicRegular;
+$dark_grey: #58595B;
+$light_grey: #D4D4D4;
+$blue: #009FDF;
+$header_menu_color: #4d4d4d;
+$font_headline_lt: SabicHeadlineLight;
+$font_headline_rg: SabicHeadlineRegular;
+$font_lt: SabicLight;
+$font_rg: SabicRegular;
 //PMT PAGE
 
-*::-webkit-scrollbar {width: 2px;scrollbar-width: 2px;width: 2px;scrollbar-width: 2px;}
-*::-webkit-scrollbar-track {background-color:transparent;box-shadow:none;}
-*::-webkit-scrollbar-thumb {background-color:#777777;outline: 1px solid #FBFCFD;background-color: #ccc;border-radius: 8px;outline: 1px solid #EAEBEC; background-clip: padding-box;}
+*::-webkit-scrollbar {
+    width: 2px;
+    scrollbar-width: 2px;
+    width: 2px;
+    scrollbar-width: 2px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #777777;
+    outline: 1px solid #FBFCFD;
+    background-color: #ccc;
+    border-radius: 8px;
+    outline: 1px solid #EAEBEC;
+    background-clip: padding-box;
+}
+
 #pmt {
     display: flex;
     justify-content: space-between;
@@ -23,10 +41,12 @@ $font_rg:SabicRegular;
         justify-content: flex-start;
         border-radius: 5px;
         flex-direction: column;
+
         #pmt-asset-card {
             background: #fff;
             box-shadow: 0px 0px 18px #eaeaea;
             padding: 30px;
+
             .pmt-title {
                 font-size: 20px;
                 display: flex;
@@ -34,47 +54,79 @@ $font_rg:SabicRegular;
                 font: normal 600 16px 'SABIC Typeface Text Regular', arial, helvetica;
                 letter-spacing: 1px;
             }
+
             .pmt-filter {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin:10px 0 25px 0;
+                margin: 10px 0 25px 0;
+
                 .pmt-asset-name {
                     font-size: 14px;
                     letter-spacing: 1px;
                     color: #939598;
                     flex-basis: 30%;
                 }
-                .pmt-fills{flex-basis: 70%;display: flex;justify-content:flex-end;align-items: center;gap:2%;
+
+                .pmt-fills {
+                    flex-basis: 70%;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    gap: 2%;
+
                     .pmt-time {
                         color: #009FDF;
                         font-size: 16px;
-                        display:flex;
+                        display: flex;
+                        align-items: center;
+
                         span {
                             color: #939598;
                             padding: 0 15px;
                             flex-basis: 40%;
-                            font-size: 14px;display:flex;
+                            font-size: 14px;
+                            display: flex;
                             justify-content: flex-end;
                             white-space: nowrap;
                         }
+
+                        div {font-size: 13px;color: #939598;
                         input {
                             background: #FBFAFA;
                             border: 0px;
-                            font-size: 14px;
+                            font-size: 12px;
                             height: 25px;
                             border-radius: 3px;
-                            width:100px;
-                            color:#FBFAFA;
-                            padding:0 5px;font-family: inherit;
+                            width: 100px;
+                            color: #939598;
+                            padding: 0 5px;
+                            font-family: inherit;border:1px #ccc solid;
                         }
-                        input:focus-visible {
-                            outline: 1px solid #58595B;}
-                    }
-                    .pmt-gobtn{background:#FBFAFA;border-radius: 3px;padding:5px 10px;color:#666;font-size: 14px;cursor:pointer}
-                    .pmt-gobtn:hover{background:#c5E7F7;color:#009FDF}
 
-                    .pmt-options {flex-basis:30%;
+                        input:focus-visible {
+                            outline: 1px solid #58595B;
+                        }}
+                        div.css-qsn7pb-ValueContainer{background: #FBFAFA;}
+                    }
+
+                    .pmt-gobtn {
+                        background: #FBFAFA;
+                        border-radius: 3px;
+                        padding: 5px 10px;
+                        color: #939598;
+                        font-size: 14px;
+                        cursor: pointer
+                    }
+
+                    .pmt-gobtn:hover {
+                        background: #c5E7F7;
+                        color: #009FDF
+                    }
+
+                    .pmt-options {
+                        flex-basis: 30%;
+                        div{color:#939598}
                         select {
                             border: 0px;
                             font-size: 17px;
@@ -83,12 +135,30 @@ $font_rg:SabicRegular;
                             padding: 0 10px;
                             border-radius: 3px;
                         }
-                        .css-13cymwt-control{border: 0px solid #58595B;outline: 1px solid #58595B;}
+
+                        .css-13cymwt-control {
+                            border: 0px solid #58595B;
+                            outline: 1px solid #58595B;
+                        }
                     }
-                    .css-13cymwt-control{border:0px;font-size: 14px;min-height:25px;}
-                    .css-1fdsijx-ValueContainer{padding:2px 8px;}
-                    .css-1u9des2-indicatorSeparator{display:none;}
-                    .css-1xc3v61-indicatorContainer{padding:0 5px;}
+
+                    .css-13cymwt-control {
+                        border: 0px;
+                        font-size: 14px;
+                        min-height: 25px;
+                    }
+
+                    .css-1fdsijx-ValueContainer {
+                        padding: 2px 8px;
+                    }
+
+                    .css-1u9des2-indicatorSeparator {
+                        display: none;
+                    }
+
+                    .css-1xc3v61-indicatorContainer {
+                        padding: 0 5px;
+                    }
                 }
             }
 
@@ -148,20 +218,55 @@ $font_rg:SabicRegular;
                 font-size: 14px;
                 letter-spacing: 1px;
                 color: #939598;
-                padding:10px 0 25px 0;
+                padding: 10px 0 25px 0;
             }
 
         }
-        .ant-table-body{font-family:inherit;
-            .status-tooltip-box::-webkit-scrollbar {width: 2px;scrollbar-width: 2px;width: 2px;scrollbar-width: 2px;}
-            .status-tooltip-box::-webkit-scrollbar-track {background-color:transparent;box-shadow:none;}
-            .status-tooltip-box::-webkit-scrollbar-thumb {background-color:#777777;outline: 1px solid #FBFCFD;background-color: #EAEBEC;border-radius: 8px;outline: 1px solid #EAEBEC; background-clip: padding-box;}
-        }
-        .ant-table-cell{padding:5px;font-family:inherit;}
-        .ant-table-thead th.ant-table-cell{background:transparent;font-size:12px;color:#58595B;font-family: $font_rg;}
-        .ant-table-thead th.ant-table-cell::before{display:none}
 
-        :where(.css-dev-only-do-not-override-10ed4xt).ant-table-wrapper .ant-table{color:#9395a5}
+        .ant-table-body {
+            font-family: inherit;
+
+            .status-tooltip-box::-webkit-scrollbar {
+                width: 2px;
+                scrollbar-width: 2px;
+                width: 2px;
+                scrollbar-width: 2px;
+            }
+
+            .status-tooltip-box::-webkit-scrollbar-track {
+                background-color: transparent;
+                box-shadow: none;
+            }
+
+            .status-tooltip-box::-webkit-scrollbar-thumb {
+                background-color: #777777;
+                outline: 1px solid #FBFCFD;
+                background-color: #EAEBEC;
+                border-radius: 8px;
+                outline: 1px solid #EAEBEC;
+                background-clip: padding-box;
+            }
+        }
+
+        .ant-table-cell {
+            padding: 5px;
+            font-family: inherit;
+        }
+
+        .ant-table-thead th.ant-table-cell {
+            background: transparent;
+            font-size: 12px;
+            color: #58595B;
+            font-family: $font_rg;
+        }
+
+        .ant-table-thead th.ant-table-cell::before {
+            display: none
+        }
+
+        :where(.css-dev-only-do-not-override-10ed4xt).ant-table-wrapper .ant-table {
+            color: #9395a5
+        }
 
     }
 
@@ -180,11 +285,15 @@ $font_rg:SabicRegular;
             right: 10px;
             top: 46px;
             width: 200px;
-            .css-13cymwt-control{
-                border:0px;
-                font-size:12px;
+
+            .css-13cymwt-control {
+                border: 0px;
+                font-size: 12px;
             }
-            .css-1u9des2-indicatorSeparator{display:none}
+
+            .css-1u9des2-indicatorSeparator {
+                display: none
+            }
         }
 
         .pmt-right-title {
@@ -194,11 +303,13 @@ $font_rg:SabicRegular;
             font: normal 600 17px 'SABIC Typeface Text Regular', arial, helvetica;
             letter-spacing: 1px;
         }
-        .pmt-right-name{
-            color:#939598;
-            font-size:0.8em;
-            padding:10px 0;
+
+        .pmt-right-name {
+            color: #939598;
+            font-size: 14px;
+            padding: 15px 0;
         }
+
         .pmt-health-index {
             position: relative;
             background: transparent url(../images/img_Potential_Failure.svg) no-repeat top right;
@@ -206,7 +317,7 @@ $font_rg:SabicRegular;
             background-position: 90% 20px;
 
             .pmt-heatmap {
-                margin: 30px 0 0 0;
+                margin: 40px 0 0 0;
 
                 img {
                     width: 100%
@@ -367,13 +478,13 @@ $font_rg:SabicRegular;
                         border-style: solid;
                         border-color: #242424 transparent transparent transparent;
                     }
-                    
+
                     .hi-popup::before {
                         content: "";
                         position: absolute;
-                        width:100%;
-                        height:20px;
-                        bottom:-20px;
+                        width: 100%;
+                        height: 20px;
+                        bottom: -20px;
                         left: 0;
                     }
 
@@ -383,7 +494,7 @@ $font_rg:SabicRegular;
                         height: 40px;
                         color: #000;
                         border-radius: 5px;
-                        margin-bottom: 13px;
+                        margin-bottom: 20px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -404,8 +515,8 @@ $font_rg:SabicRegular;
                     span.hi-name {
                         background: #929292;
                         color: #fff;
-                        font-size: 0.9em;
-                        border-bottom: 2px #fff solid;
+                        font-size: 15px;
+                        border-bottom: 10px #fff solid;
                         display: flex;
                         width: 100%;
                         justify-content: center;
@@ -417,9 +528,9 @@ $font_rg:SabicRegular;
                         width: 100%;
                         display: flex;
                         justify-content: center;
-                        padding: 8px 0;
+                        padding: 10px 0;
                         font-size: 11px;
-                        color:#58595B;
+                        color: #58595B;
                     }
                 }
 
@@ -526,6 +637,7 @@ $font_rg:SabicRegular;
                 #pmt-left {
                     flex-basis: 55%
                 }
+
                 #pmt-right {
                     .pmt-health-index {
                         .pmt-heatmapvalues {
@@ -545,19 +657,22 @@ $font_rg:SabicRegular;
         .content-inner {
             #pmt {
                 margin: 2vh 0;
+
                 #pmt-left {
                     flex-basis: 50%;
+
                     #pmt-asset-card {
                         padding: 20px;
                     }
 
                     #pmt-alert-list {
                         padding: 20px;
+                        margin-top:15px;
                     }
                 }
 
                 #pmt-right {
-                    flex-basis: calc(50% - 65px);
+                    flex-basis: calc(50% - 55px);
                     padding: 20px;
 
                     .pmt-health-index {
@@ -632,14 +747,23 @@ $font_rg:SabicRegular;
     #container {
         #content {
             .content-inner {
+
                 //breadcrumb
-                #breadcrumb{
-                    .breadcrumb-left{flex-basis:90% !important}
-                    .breadcrumb-right{flex-basis:10% !important}
+                #breadcrumb {
+                    .breadcrumb-left {
+                        flex-basis: 90% !important
+                    }
+
+                    .breadcrumb-right {
+                        flex-basis: 10% !important
+                    }
                 }
+
                 // PMT
                 #pmt {
-                    #pmt-left {padding:0px;
+                    #pmt-left {
+                        padding: 0px;
+
                         .pmt-filter {
                             flex-wrap: wrap;
 
@@ -649,8 +773,14 @@ $font_rg:SabicRegular;
                                 justify-content: flex-start;
                                 align-items: center;
                             }
-                            .pmt-asset-name{flex-basis: 20%;}
-                            .pmt-time {flex-basis: 30%;
+
+                            .pmt-asset-name {
+                                flex-basis: 20%;
+                            }
+
+                            .pmt-time {
+                                flex-basis: 30%;
+
                                 span {
                                     padding: 0px;
                                     width: 40%
@@ -664,7 +794,9 @@ $font_rg:SabicRegular;
                                 }
                             }
 
-                            .pmt-options {flex-basis: 35%;
+                            .pmt-options {
+                                flex-basis: 35%;
+
                                 select {
                                     padding: 0px;
                                     border: 1px #ccc solid;
@@ -672,9 +804,18 @@ $font_rg:SabicRegular;
                                     border-radius: 5px;
                                     height: 25px;
                                 }
-                                .css-qbdosj-Input{position:absolute;}
+
+                                .css-qbdosj-Input {
+                                    position: absolute;
+                                }
                             }
-                            .pmt-gobtn{flex-basis:5%;text-align: center;padding:auto 15px;height:21px;}
+
+                            .pmt-gobtn {
+                                flex-basis: 5%;
+                                text-align: center;
+                                padding: auto 15px;
+                                height: 21px;
+                            }
                         }
 
                         .pmt-asset-name {
@@ -730,11 +871,13 @@ $font_rg:SabicRegular;
                     }
                 }
 
-                
+
                 // PMT
                 #pmt {
                     #pmt-left {
-                        #pmt-asset-card{padding:10px;
+                        #pmt-asset-card {
+                            padding: 10px;
+
                             .pmt-filter {
                                 flex-wrap: wrap;
 
@@ -744,21 +887,31 @@ $font_rg:SabicRegular;
                                     justify-content: flex-start;
                                     align-items: center;
                                 }
-                                .pmt-asset-name{flex-basis:100%;}
-                                .pmt-time {flex-basis:47%;margin-right:1%;
+
+                                .pmt-asset-name {
+                                    flex-basis: 100%;
+                                }
+
+                                .pmt-time {
+                                    flex-basis: 47%;
+                                    margin-right: 1%;
+
                                     span {
                                         padding: 0px;
                                         flex-basis: 50%;
                                     }
 
                                     input {
-                                        flex-basis:50%;
+                                        flex-basis: 50%;
                                         border-radius: 5px;
                                         height: 25px;
                                     }
                                 }
 
-                                .pmt-options {flex-basis:40%;margin-right:2%;
+                                .pmt-options {
+                                    flex-basis: 40%;
+                                    margin-right: 2%;
+
                                     select {
                                         padding: 0px;
                                         border: 1px #ccc solid;
@@ -766,20 +919,35 @@ $font_rg:SabicRegular;
                                         border-radius: 5px;
                                         height: 25px;
                                     }
-                                    .css-qbdosj-Input{position:absolute;}
+
+                                    .css-qbdosj-Input {
+                                        position: absolute;
+                                    }
                                 }
-                                .pmt-gobtn{flex-basis:10%;text-align: center;}
+
+                                .pmt-gobtn {
+                                    flex-basis: 10%;
+                                    text-align: center;
+                                }
                             }
                         }
                     }
-                    #pmt-right{
-                        .pmt-right-title{font: normal 600 1em "SABIC Typeface Text Regular", arial, helvetica;}
-                        >div:nth-child(2){font-size:11px}
-                        .pmt-right-dropdown{width:150px;}
+
+                    #pmt-right {
+                        .pmt-right-title {
+                            font: normal 600 15px "SABIC Typeface Text Regular", arial, helvetica;
+                        }
+
+                        >div:nth-child(2) {
+                            font-size: 11px
+                        }
+
+                        .pmt-right-dropdown {
+                            width: 150px;
+                        }
                     }
                 }
             }
         }
     }
 }
-

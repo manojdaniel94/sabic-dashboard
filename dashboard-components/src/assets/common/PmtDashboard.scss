@@ -51,7 +51,7 @@ $font_rg: SabicRegular;
                 font-size: 20px;
                 display: flex;
                 color: #58595B;
-                font: normal 600 16px 'SABIC Typeface Text Regular', arial, helvetica;
+                font: normal 600 0.9em 'SABIC Typeface Text Regular', arial, helvetica;
                 letter-spacing: 1px;
             }
 
@@ -79,6 +79,7 @@ $font_rg: SabicRegular;
                         color: #009FDF;
                         font-size: 16px;
                         display: flex;
+                        align-items: center;
 
                         span {
                             color: #939598;
@@ -90,28 +91,30 @@ $font_rg: SabicRegular;
                             white-space: nowrap;
                         }
 
+                        div {font-size: 13px;color: #939598;
                         input {
                             background: #FBFAFA;
                             border: 0px;
-                            font-size: 14px;
+                            font-size: 12px;
                             height: 25px;
                             border-radius: 3px;
                             width: 100px;
-                            color: #FBFAFA;
+                            color: #939598;
                             padding: 0 5px;
-                            font-family: inherit;
+                            font-family: inherit;border:1px #ccc solid;
                         }
 
                         input:focus-visible {
                             outline: 1px solid #58595B;
-                        }
+                        }}
+                        div.css-qsn7pb-ValueContainer{background: #FBFAFA;}
                     }
 
                     .pmt-gobtn {
                         background: #FBFAFA;
                         border-radius: 3px;
                         padding: 5px 10px;
-                        color: #666;
+                        color: #939598;
                         font-size: 14px;
                         cursor: pointer
                     }
@@ -123,7 +126,7 @@ $font_rg: SabicRegular;
 
                     .pmt-options {
                         flex-basis: 30%;
-
+                        div{color:#939598}
                         select {
                             border: 0px;
                             font-size: 17px;
@@ -176,7 +179,7 @@ $font_rg: SabicRegular;
                     font-size: 20px;
                     display: flex;
                     color: #58595B;
-                    font: normal 600 1em 'SABIC Typeface Text Regular', arial, helvetica;
+                    font: normal 600 0.9em 'SABIC Typeface Text Regular', arial, helvetica;
                     letter-spacing: 1px;
                 }
 
@@ -308,7 +311,6 @@ $font_rg: SabicRegular;
         }
 
         .pmt-health-index {
-            padding-left: 0px;
             position: relative;
             background: transparent url(../images/img_Potential_Failure.svg) no-repeat top right;
             background-size: 150px;
@@ -665,11 +667,12 @@ $font_rg: SabicRegular;
 
                     #pmt-alert-list {
                         padding: 20px;
+                        margin-top:15px;
                     }
                 }
 
                 #pmt-right {
-                    flex-basis: calc(50% - 65px);
+                    flex-basis: calc(50% - 55px);
                     padding: 20px;
 
                     .pmt-health-index {

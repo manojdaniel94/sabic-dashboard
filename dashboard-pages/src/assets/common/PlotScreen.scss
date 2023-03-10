@@ -19,7 +19,7 @@ $blue: #009FDF;
     margin: 25px 0;
 
     #sensor-plot-left {
-        flex-basis: 73%;
+        flex-basis: 70%;
         display: flex;
         justify-content: flex-start;
         border-radius: 5px;
@@ -30,7 +30,7 @@ $blue: #009FDF;
         .title {
             font-size: 16px;
             display: flex;
-            color: $header_menu_color;
+            color: $dark_grey;
             font-family: $font_headline_rg;
         }
 
@@ -48,8 +48,7 @@ $blue: #009FDF;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                flex-wrap: wrap;
-
+                .title{flex-basis:21%;}
                 .sensor-time {
                     font-size: 14px;
                     flex-basis: 36%;
@@ -58,7 +57,7 @@ $blue: #009FDF;
 
                     .sensor-stamp {
                         span:first-child {
-                            padding-right: 10px;
+                            padding-right: 10px;color:$dark_grey;
                         }
 
                         span:last-child {
@@ -73,16 +72,15 @@ $blue: #009FDF;
                         span {
                             color: #939598;
                         }
+                        span:last-child{color:$blue}
                     }
 
                 }
 
                 .sensor-options {
                     display: flex;
-                    flex-basis: 100%;
                     gap: 1%;
                     justify-content: flex-end;
-                    margin: 15px 0;
 
                     select {
                         border: 0px;
@@ -97,14 +95,13 @@ $blue: #009FDF;
                     .css-b62m3t-container {
                         min-height: 25px;
                         background: #FBFAFA;
-                        flex-basis: 25%;
+                        flex-basis: 28%;
 
                         .css-13cymwt-control {
                             border: 0px;
                             font-size: 14px;
                             min-height: 25px;
-                            background: #FBFAFA;
-                            border-radius: 3px
+                            border-radius: 3px;
                         }
 
                         .css-1u9des2-indicatorSeparator {
@@ -130,7 +127,7 @@ $blue: #009FDF;
     }
 
     #sensor-plot-right {
-        flex-basis: calc(27% - 25px);
+        flex-basis: calc(30% - 25px);
         display: flex;
         flex-direction: column;
         border-radius: 5px;
@@ -194,12 +191,12 @@ $blue: #009FDF;
         }
 
         #sensor-names {
-            padding: 30px 20px;
+            padding:15px;
             position: relative;
         }
 
         #measure-names {
-            padding: 30px 20px;
+            padding: 15px;
             position: relative;
         }
 
@@ -337,10 +334,8 @@ $blue: #009FDF;
 @media screen and (max-width:1700px) {
     #sensor {
         #sensor-plot-left {
-            #sensor-plot {
+            #sensor-plot {padding:15px;
                 .sensor-filter {
-                    flex-wrap: wrap;
-
                     .sensor-time {
                         flex-basis: 44%;
                     }
