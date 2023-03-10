@@ -25,6 +25,7 @@ const CommonSlice = createSlice({
         loadingHeatMapToolTipbyAssetStatus: false,
         topBarToolTipbyPlantId: [],
         loadingTopBarToolTipbyPlantId: false,
+        sensorGroupId:"",
         // Asset Model Start
         assetlistOfAssetModelByplantid: [],
         loadingassetlistOfAssetModelByplantid: false,
@@ -221,6 +222,9 @@ const CommonSlice = createSlice({
             state.message = action.payload
             state.loadingAssetKPIForAssetModel = false
         },
+        getSensorGroupId: (state, action) => {
+            state.sensorGroupId = action.payload
+        },
         // Plot Screen
         getPlotModelDropDown: (state, action) => {
             state.loadingPlotModelDropDown = true
@@ -342,6 +346,7 @@ export const {
     getAssetKPI,
     getAssetKPISuccess,
     getAssetKPIFailure,
+    getSensorGroupId,
     // Plot Screen
     getPlotModelDropDown,
     getPlotModelDropDownSuccess,
