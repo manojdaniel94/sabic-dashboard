@@ -15,9 +15,10 @@ const Dropdown = ({ options, handleChange, value, defaultValue, multi }: Props) 
     <>
       <Select
         styles={{
-          option: (provided) => ({
+          option: (provided,state) => ({
             ...provided,
-            color: "black",
+            color: "#fff",
+            backgroundColor: state.isSelected ? "rgba(189,197,209,.3)" : "white",
           }),
           valueContainer: (provided, state) => ({
             ...provided,
@@ -25,6 +26,7 @@ const Dropdown = ({ options, handleChange, value, defaultValue, multi }: Props) 
             padding: '0 6px'
           }),
         }}
+        // background:#c5E7F7
         options={options}
         onChange={handleChange}
         data-testid="select"
