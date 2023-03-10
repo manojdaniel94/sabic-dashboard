@@ -433,7 +433,7 @@ const DeviationChart = ({ plotData }: Props) => {
                 <div className="sensor-filter">
                     <div className="title">DEVIATION PLOT</div>
                 </div>
-                <div className="asset-name">K-1701</div>
+                <div className="asset-name">2Y-3001A</div>
                 <div className="sensor-plot-graph">
                     <div id="chartdiv" style={{ width: "100%", height: "350px", }}></div>
                 </div>
