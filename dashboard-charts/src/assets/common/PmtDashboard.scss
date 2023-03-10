@@ -196,8 +196,8 @@ $font_rg:SabicRegular;
         }
         .pmt-right-name{
             color:#939598;
-            font-size:14px;
-            padding:15px 0;
+            font-size:0.8em;
+            padding:10px 0;
         }
         .pmt-health-index {
             position: relative;
@@ -206,7 +206,7 @@ $font_rg:SabicRegular;
             background-position: 90% 20px;
 
             .pmt-heatmap {
-                margin: 40px 0 0 0;
+                margin: 30px 0 0 0;
 
                 img {
                     width: 100%
@@ -383,7 +383,7 @@ $font_rg:SabicRegular;
                         height: 40px;
                         color: #000;
                         border-radius: 5px;
-                        margin-bottom: 20px;
+                        margin-bottom: 13px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -404,8 +404,8 @@ $font_rg:SabicRegular;
                     span.hi-name {
                         background: #929292;
                         color: #fff;
-                        font-size: 15px;
-                        border-bottom: 10px #fff solid;
+                        font-size: 0.9em;
+                        border-bottom: 2px #fff solid;
                         display: flex;
                         width: 100%;
                         justify-content: center;
@@ -417,7 +417,7 @@ $font_rg:SabicRegular;
                         width: 100%;
                         display: flex;
                         justify-content: center;
-                        padding: 10px 0;
+                        padding: 8px 0;
                         font-size: 11px;
                         color:#58595B;
                     }
@@ -773,7 +773,7 @@ $font_rg:SabicRegular;
                         }
                     }
                     #pmt-right{
-                        .pmt-right-title{font: normal 600 15px "SABIC Typeface Text Regular", arial, helvetica;}
+                        .pmt-right-title{font: normal 600 1em "SABIC Typeface Text Regular", arial, helvetica;}
                         >div:nth-child(2){font-size:11px}
                         .pmt-right-dropdown{width:150px;}
                     }
