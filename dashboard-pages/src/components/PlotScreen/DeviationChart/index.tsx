@@ -11,7 +11,7 @@ interface Props {
 
 let Topdata = [
     {
-        "localTime": "2020-10-12T01:27:00",
+        "localTime": "2019-10-12T01:27:00",
         "assetSapId": "310061001",
         "sensorGroupName": "Main Motor Bearing",
         "distance": 3.134,
@@ -29,7 +29,7 @@ let Topdata = [
         "status": "Poor data"
     },
     {
-        "localTime": "2020-10-14T01:27:00",
+        "localTime": "2020-12-14T01:27:00",
         "assetSapId": "310061001",
         "sensorGroupName": "Mixer Gearbox Bearing",
         "distance": 3.569,
@@ -46,7 +46,7 @@ let Topdata = [
         "status": "AssetOff"
     },
     {
-        "localTime": "2022-10-16T01:27:00",
+        "localTime": "2023-10-16T01:27:00",
         "assetSapId": "310061001",
         "sensorGroupName": "Gear Pump Motor Bearing",
         "distance": 10.186,
@@ -76,7 +76,7 @@ const DeviationChart = ({ plotData }: Props) => {
                 am5themes_Animated.new(root)
             ]);
             var container = root.container.children.push(am5.Container.new(root, {
-                width: am5.percent(100),
+                width: am5.percent(110),
                 height: am5.percent(140),
                 layout: root.verticalLayout
             }));
@@ -110,7 +110,7 @@ const DeviationChart = ({ plotData }: Props) => {
                 groupData: true,
                 width: am5.percent(80),
                 height: am5.percent(120),
-                marginTop: 55,
+                marginTop: 45,
                 maxDeviation: 0.5,
                 startLocation: 1,
                 endLocation: 3,
@@ -171,82 +171,82 @@ const DeviationChart = ({ plotData }: Props) => {
             createSeries("Distance", "distance");
 
 
-            let legend1 = chart1.children.push(am5.Legend.new(root, {
-                centerX: am5.percent(50),
-                x: am5.percent(50),
-                y: am5.percent(130),
-                useDefaultMarker: true
-            }));
-            legend1.valueLabels.template.setAll({
-                width: am5.percent(100),
-                textAlign: "center",
-                shadowColor: am5.color(0x4e79a7),//Light sky blue
+            // let legend1 = chart1.children.push(am5.Legend.new(root, {
+            //     centerX: am5.percent(50),
+            //     x: am5.percent(50),
+            //     y: am5.percent(130),
+            //     useDefaultMarker: true
+            // }));
+            // legend1.valueLabels.template.setAll({
+            //     width: am5.percent(100),
+            //     textAlign: "center",
+            //     shadowColor: am5.color(0x4e79a7),//Light sky blue
 
-            });
-            let status = ["Normal", "Asset off", "Poor data/State Change/Pi Data disconnection"];
-            for (let i = 0; i < status.length; i++) {
-                var series = chart1.series.push(
-                    am5xy.ColumnSeries.new(root, {
-                        name: status[i],
-                        xAxis: XAxis1,
-                        yAxis: YAxis1,
-                        valueYField: "value",
-                        categoryXField: "category",
-                        tooltip: am5.Tooltip.new(root, {})
-                    })
-                );
+            // });
+            // let status = ["Normal", "Asset off", "Poor data/State Change/Pi Data disconnection"];
+            // for (let i = 0; i < status.length; i++) {
+            //     var series = chart1.series.push(
+            //         am5xy.ColumnSeries.new(root, {
+            //             name: status[i],
+            //             xAxis: XAxis1,
+            //             yAxis: YAxis1,
+            //             valueYField: "value",
+            //             categoryXField: "category",
+            //             tooltip: am5.Tooltip.new(root, {})
+            //         })
+            //     );
 
-                series.columns.template.setAll({
-                    templateField: "settings"
-                });
-            }
-            legend1.markerRectangles.template.setAll({
-                cornerRadiusTL: 0,
-                cornerRadiusTR: 0,
-                cornerRadiusBL: 0,
-                cornerRadiusBR: 0
-            });
+            //     series.columns.template.setAll({
+            //         templateField: "settings"
+            //     });
+            // }
+            // legend1.markerRectangles.template.setAll({
+            //     cornerRadiusTL: 0,
+            //     cornerRadiusTR: 0,
+            //     cornerRadiusBL: 0,
+            //     cornerRadiusBR: 0
+            // });
 
-            legend1.labels.template.setAll({
-                fontSize: 17,
-                //fontWeight: "700"
-            });
-            var seri = chart1.series.values;
-            legend1.data.setAll(seri.slice(0, 2).concat(seri.slice(3, 6)));
+            // legend1.labels.template.setAll({
+            //     fontSize: 17,
+            //     //fontWeight: "700"
+            // });
+            // var seri = chart1.series.values;
+            // legend1.data.setAll(seri.slice(0, 2).concat(seri.slice(3, 6)));
 
-            var legend = chart1.rightAxesContainer.children.push(am5.Legend.new(root, {
-                background: am5.Rectangle.new(root, {
-                    stroke: am5.color(0x555555),
-                    fill: am5.color(0xFFFFFF),//Light sky blue
-                    strokeWidth: 1,
-                    maxWidth: 1,
-                }),
-                centerX: am5.percent(8),
-                x: am5.percent(50),
-                marginRight: 0,
-                position: "absolute"
-            }));
-            // When legend item container is unhovered, make all series as they are
-            legend.itemContainers.template.events.on("pointerout", function (e) {
-                var itemContainer = e.target;
-                var series = itemContainer.dataItem.dataContext;
-            })
-            legend.itemContainers.template.set("width", am5.percent(40));
-            legend.valueLabels.template.setAll({
-                width: am5.percent(100),
-                textAlign: "right",
-                height: 46,
-                marginRight: 20,
-                shadowColor: am5.color(0x4e79a7),//Light sky blue
+            // var legend = chart1.rightAxesContainer.children.push(am5.Legend.new(root, {
+            //     background: am5.Rectangle.new(root, {
+            //         stroke: am5.color(0x555555),
+            //         fill: am5.color(0xFFFFFF),//Light sky blue
+            //         strokeWidth: 1,
+            //         maxWidth: 1,
+            //     }),
+            //     centerX: am5.percent(8),
+            //     x: am5.percent(50),
+            //     marginRight: 0,
+            //     position: "absolute"
+            // }));
+            // // When legend item container is unhovered, make all series as they are
+            // legend.itemContainers.template.events.on("pointerout", function (e) {
+            //     var itemContainer = e.target;
+            //     var series = itemContainer.dataItem.dataContext;
+            // })
+            // legend.itemContainers.template.set("width", am5.percent(40));
+            // legend.valueLabels.template.setAll({
+            //     width: am5.percent(100),
+            //     textAlign: "right",
+            //     height: 46,
+            //     marginRight: 20,
+            //     shadowColor: am5.color(0x4e79a7),//Light sky blue
 
-            });
+            // });
 
-            legend.data.setAll(chart1.series.values.slice(0, 3));
+            // legend.data.setAll(chart1.series.values.slice(0, 3));
 
             let Chart2 = container.children.push(am5xy.XYChart.new(root, {
                 width: am5.percent(93),
-                marginBottom: 90,
-                marginTop: -190
+                marginBottom: 70,
+                marginTop: -100
                 // panX: true,
                 // panY: true,     
                 // wheelX: "panX",
@@ -425,6 +425,8 @@ const DeviationChart = ({ plotData }: Props) => {
             };
         }
     }, [plotData]);
+
+    
     return (
         <div id="sensor-plot-left">
             <div id="deviation-plot">
@@ -433,7 +435,7 @@ const DeviationChart = ({ plotData }: Props) => {
                 </div>
                 <div className="asset-name">K-1701</div>
                 <div className="sensor-plot-graph">
-                    <div id="chartdiv" style={{ width: "80%", height: "350px", }}></div>
+                    <div id="chartdiv" style={{ width: "100%", height: "350px", }}></div>
                 </div>
             </div>
 

@@ -17,8 +17,8 @@ const Dropdown = ({ options, handleChange, value, defaultValue, multi }: Props) 
         styles={{
           option: (provided,state) => ({
             ...provided,
-            color: "#fff",
-            backgroundColor: state.isSelected ? "rgba(189,197,209,.3)" : "white",
+            color: "#333333",
+            backgroundColor: state.isSelected ? "#c5E7F7" : "white",
           }),
           valueContainer: (provided, state) => ({
             ...provided,
