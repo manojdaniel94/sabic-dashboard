@@ -1,29 +1,35 @@
 import React, { useRef, useState,useEffect } from "react";
-import pucurve from "../../../assets/images/pucurve.png";
+import pucurve from "../../../assets/images/img_PFCurve_RUL.svg";
 import Heatmap from "../../../assets/images/image_Heatmap.svg";
 import ImgGraphYellow from "../../../assets/images/img_graph_yellow_circle.svg";
 import ImgGraphGreen from "../../../assets/images/img_graph_green_circle.svg";
 import ImgGraphRed from "../../../assets/images/img_graph_red_circle.svg";
+import {getSensorGroupId} from "../../../../../dashboard-pages/src/redux/reducers/CommonReducer";
+// import { useDispatch, useSelector } from "react-redux";
 
 interface Props {
     FailurepreDictionByAssetId: any[];
     AnomalyModelbyAssetId: any[];
+    setSensorGroupId :any;
 }
 
-const LiveModel = ({ FailurepreDictionByAssetId, AnomalyModelbyAssetId }: Props) => {
+const LiveModel = ({ FailurepreDictionByAssetId, AnomalyModelbyAssetId, setSensorGroupId }: Props) => {
 
     const [showPanel, togglePanel] = useState<any>(false);
     const [showPanel2, togglePanel2] = useState<any>(false);
     const [showPopup, setShowPopup] = useState<any>(false);
     const [showPopupData, setShowPopupData] = useState<any>();
     const [selected, setSelected] = useState<any>("");
+    const [showToggle, setToggle] = useState<any>(false);
+    const [selectedsensorGroupId, setSelectedsensorGroupId] = useState<any>(""); 
 
-    // console.log(" selected in dropdown in Popup heat", selected);
+    // let dispatch = useDispatch();
+
+    
 
     const openAssetPopup = (data: any) => {
         setShowPopup(true);
         setShowPopupData(data)
-        console.log("showPopupData", showPopupData);
     }
 
     const openFailureDictionPopupDropdown = (data:any)=>{
@@ -31,6 +37,17 @@ const LiveModel = ({ FailurepreDictionByAssetId, AnomalyModelbyAssetId }: Props)
         setShowPopup(true);
         setShowPopupData(getData[0]);
     }
+
+    const getFunctionAnomalyid = (data:any)=>{
+        setSelectedsensorGroupId(data);
+        console.log("showToggle",showToggle);
+        showToggle === false ? setSensorGroupId(data) : setSensorGroupId("");
+    }
+
+    const getSelectedclassName = (id: any) => showToggle=== true  ? selectedsensorGroupId === id ? "getactive" : "setactive" : "";
+        
+
+    
 
     // useEffect(() => {
     //     [].slice.call(country.options)
@@ -64,14 +81,14 @@ const LiveModel = ({ FailurepreDictionByAssetId, AnomalyModelbyAssetId }: Props)
         } else if (data === 56 || data === 60 || data === 61 || data === 62 || data === 63 || data === 64 || data === 65 || data === 66) {
             return 0;
         } else {
-            return 0;
+            return -10;
         }
     }
 
     return (
         <div>
             <div className="right-title">LIVE MODELS</div>
-            <div className="right-asset-name">K-1701</div>
+            <div className="right-asset-name">2Y-3001A</div>
             <div className="accordian-title-active" onClick={() => togglePanel(!showPanel)}>Anomaly Model {showPanel === false ? <span>+</span> : <span>-</span>}</div>
             {showPanel === true ?
                 <div className="accordian-body">
@@ -81,7 +98,7 @@ const LiveModel = ({ FailurepreDictionByAssetId, AnomalyModelbyAssetId }: Props)
                             <div>Health Index %</div>
                         </div>
                         {AnomalyModelbyAssetId.map((item: any) => (
-                            <div className="amhi-row">
+                            <div id = {item.sensorGroupId} className={`amhi-row ${getSelectedclassName(item.sensorGroupId)}`} onClick={() => {getFunctionAnomalyid(item.sensorGroupId); setToggle(!showToggle)}}>
                                 <div>{item.sensorGroup}</div>
                                 <div><span className={item.healthIndexTrend === true ? "uparrow greeny" : "downarrow redy"}></span> <span className="amhi-slider"><i className="abefore" style={{ left: `${item.healthIndex - 25}%` }}>{item.healthIndex}%</i></span></div>
                             </div>
@@ -114,7 +131,7 @@ const LiveModel = ({ FailurepreDictionByAssetId, AnomalyModelbyAssetId }: Props)
                     {showPopup === true && showPopupData !== null ?
                         <div id="asset-popup">
                             <div id="ap-content">
-                                <span className="ap-closePopup" onClick={() => setShowPopup(false)}>x</span>
+                                <span onClick={() => setShowPopup(false)} style={{ float: "right", fontSize: "50px",cursor: "pointer"}}>x</span>
                                 <div className="ap-filter">
                                     <div className="ap-title">P-F-CURVE</div>
                                     <div className="ap-dropdown">
