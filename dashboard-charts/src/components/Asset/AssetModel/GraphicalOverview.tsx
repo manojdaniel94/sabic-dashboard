@@ -253,21 +253,14 @@ const GraphicalOverview = ({ GraphicalImageByAssetId, mysensorGroupId }: Props) 
         const {
           point
         } = this;
-        return `<div className="asset-status-tooltip centerarr"><div className="asset-tooltip-text2"><h3 style="font-size:12px;border-bottom:1px solid white;margin-bottom:10px;width:100%;text-align:center;padding-bottom:5px">${point.name}</h3><button id="AlertList" class="toolbtt" type="button"  
-        onClick="(function(){
-          alert('Hey i am Alert List');
-          return false;
-        })();return false;">Go to Alert List</button><br><button class="toolbtt" type="button" 
-        onClick="(function(){
-          alert('Hey i am Go to Plot');
-          return false;
-        })();return false;">Go to Plot</button><br><button class="toolbtt" type="button" 
-        onClick="(function(){
-        alert('Hey i am Failure Predication');
-        return false;
-    })();return false;">Go to Failure Predication</button></div></div>`
+        return `<div className="asset-status-tooltip centerarr"><div className="asset-tooltip-text2"><h3 style="font-size:12px;border-bottom:1px solid white;margin-bottom:10px;width:100%;text-align:center;padding-bottom:5px">${point.name}</h3><button id="AlertList" class="toolbtt" type="button">Go to Alert List</button><br><button class="toolbtt" type="button">Go to Plot</button><br><button class="toolbtt" type="button">Go to Failure Predication</button></div></div>`
       }
     },
+
+    // onClick="(function(){
+    //   alert('Hey i am Alert List');
+    //   return false;
+    // })();return false;"
 
     series: [{
       showInLegend: false, 
