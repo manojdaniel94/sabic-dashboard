@@ -1,0 +1,367 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReliabilityHeatMap component renders the component 1`] = `
+<div>
+  <div
+    class="pmt-health-index"
+  >
+    <div
+      class="pmt-heatmap"
+    >
+      <img
+        src="image_Heatmap.svg"
+      />
+    </div>
+    <div
+      class="pmt-heatmapvalues"
+    >
+      <div
+        class="hi-value1"
+      >
+        <span
+          class="hi-numbers hi-off"
+        >
+          <div
+            class="hi-popup hi-pos-off hidden"
+          >
+            <h3>
+              HEALTH INDEX
+               
+              <a
+                class="hi-pop-close"
+                href="#"
+              >
+                 
+                X
+              </a>
+            </h3>
+            <div
+              class="hi-popbox"
+            >
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  1
+                </span>
+                <span>
+                  <i />
+                  50
+                  %
+                </span>
+              </div>
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  2
+                </span>
+                <span>
+                  <i />
+                  80
+                  %
+                </span>
+              </div>
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  3
+                </span>
+                <span>
+                  <i />
+                  60
+                  %
+                </span>
+              </div>
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  4
+                </span>
+                <span>
+                  <i />
+                  90
+                  %
+                </span>
+              </div>
+            </div>
+          </div>
+          1
+        </span>
+        <span
+          class="hi-name"
+        >
+          Asset-Off
+        </span>
+        <span
+          class="hi-status"
+        >
+          Off
+        </span>
+      </div>
+      <div
+        class="hi-value2"
+      >
+        <span
+          class="hi-numbers hi-normal"
+        >
+          <div
+            class="hi-popup hi-pos-normal hidden"
+          >
+            <h3>
+              HEALTH INDEX
+               
+              <a
+                class="hi-pop-close"
+                href="#"
+              >
+                 
+                X
+              </a>
+            </h3>
+            <div
+              class="hi-popbox"
+            >
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  1
+                </span>
+                <span>
+                  <i />
+                  50
+                  %
+                </span>
+              </div>
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  2
+                </span>
+                <span>
+                  <i />
+                  80
+                  %
+                </span>
+              </div>
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  3
+                </span>
+                <span>
+                  <i />
+                  60
+                  %
+                </span>
+              </div>
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  4
+                </span>
+                <span>
+                  <i />
+                  90
+                  %
+                </span>
+              </div>
+            </div>
+          </div>
+           
+          2
+        </span>
+        <span
+          class="hi-name"
+        >
+          Normal
+        </span>
+        <span
+          class="hi-status"
+        >
+          Health Index &gt; 70%
+        </span>
+      </div>
+      <div
+        class="hi-value3"
+      >
+        <span
+          class="hi-numbers hi-warning"
+        >
+          <div
+            class="hi-popup hi-pos-warning hidden"
+          >
+            <h3>
+              HEALTH INDEX
+               
+              <a
+                class="hi-pop-close"
+                href="#"
+              >
+                 
+                X
+              </a>
+            </h3>
+            <div
+              class="hi-popbox"
+            >
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  1
+                </span>
+                <span>
+                  <i />
+                  50
+                  %
+                </span>
+              </div>
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  2
+                </span>
+                <span>
+                  <i />
+                  80
+                  %
+                </span>
+              </div>
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  3
+                </span>
+                <span>
+                  <i />
+                  60
+                  %
+                </span>
+              </div>
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  4
+                </span>
+                <span>
+                  <i />
+                  90
+                  %
+                </span>
+              </div>
+            </div>
+          </div>
+           
+          3
+        </span>
+        <span
+          class="hi-name"
+        >
+          Warning
+        </span>
+        <span
+          class="hi-status"
+        >
+          Health Index &lt; 70%
+        </span>
+      </div>
+      <div
+        class="hi-value4"
+      >
+        <span
+          class="hi-numbers hi-risk"
+        >
+          <div
+            class="hi-popup hi-pos-risk hidden"
+          >
+            <h3>
+              HEALTH INDEX
+               
+              <a
+                class="hi-pop-close"
+                href="#"
+              >
+                 
+                X
+              </a>
+            </h3>
+            <div
+              class="hi-popbox"
+            >
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  1
+                </span>
+                <span>
+                  <i />
+                  50
+                  %
+                </span>
+              </div>
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  2
+                </span>
+                <span>
+                  <i />
+                  80
+                  %
+                </span>
+              </div>
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  3
+                </span>
+                <span>
+                  <i />
+                  60
+                  %
+                </span>
+              </div>
+              <div
+                class="hi-popuprow"
+              >
+                <span>
+                  4
+                </span>
+                <span>
+                  <i />
+                  90
+                  %
+                </span>
+              </div>
+            </div>
+          </div>
+          4
+        </span>
+        <span
+          class="hi-name"
+        >
+          Asset Under Risk
+        </span>
+        <span
+          class="hi-status"
+        >
+          Health Index Under Risk
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

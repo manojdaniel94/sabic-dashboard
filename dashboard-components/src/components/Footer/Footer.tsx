@@ -3,7 +3,7 @@ import "./Footer.scss";
 const Footer = () => {
   return (
     <div id="footer">
-      <div className="footer-inner">&copy; 2023 SABIC</div>
+      <div className="footer-inner">&copy; copyright 2023 SABIC</div>
     </div>
   );
 };

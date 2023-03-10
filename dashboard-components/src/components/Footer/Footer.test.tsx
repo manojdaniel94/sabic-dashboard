@@ -6,7 +6,7 @@ import Footer from "./Footer";
 describe("Footer component", () => {
   it("renders the correct copyright text", () => {
     const { getByText } = render(<Footer />);
-    const copyrightText = getByText(/2023 SABIC/i);
+    const copyrightText = getByText(/copyright 2023 SABIC/i);
     expect(copyrightText).toBeInTheDocument();
   });
 });
