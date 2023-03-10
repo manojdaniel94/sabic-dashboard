@@ -308,7 +308,6 @@ $font_rg: SabicRegular;
         }
 
         .pmt-health-index {
-            padding-left: 0px;
             position: relative;
             background: transparent url(../images/img_Potential_Failure.svg) no-repeat top right;
             background-size: 150px;
@@ -326,6 +325,8 @@ $font_rg: SabicRegular;
                 display: flex;
                 margin-top: -55px;
                 background: #fff;
+                width: 94%;
+                float: right;
 
                 div {
                     display: flex;
@@ -398,6 +399,8 @@ $font_rg: SabicRegular;
                                     display: flex;
                                     justify-content: flex-end;
                                     padding-right: 20px;
+                                    i{padding:0 5px;
+                                        }
                                 }
                             }
 
