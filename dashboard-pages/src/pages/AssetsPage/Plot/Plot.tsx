@@ -77,7 +77,7 @@ const Plot = () => {
 
     useEffect(() => {
         if (selectedAsset !== "")
-            dispatch(getPlotDeviationData(`"${assetData}/18/${measureFromDate}/${measureToDate}"`)); //{assetId}/{userId}/{fromDate}/{toDate}
+            dispatch(getPlotDeviationData(`${selectedAsset}/18/${measureFromDate}/${measureToDate}`)); //{assetId}/{userId}/{fromDate}/{toDate}
     }, [measureToDate, selectedAsset]);
 
     // console.log("Model Dropdown Data", plotModelDropDown);
@@ -85,8 +85,8 @@ const Plot = () => {
     // console.log("Sensor Dropdown Data", plotSensorDropDown);
     console.log("Deviation Data", plotDeviationData);
     // console.log("Status graph data", plotStatusData);
-    console.log("measure From Date", moment(measureFromDate).format('d-M-yyyy'));
-    console.log("measure To Date", moment(measureToDate).format('d-M-yyyy'));
+    //  console.log("measure From Date", moment(measureFromDate).format('d-M-yyyy'));
+    //  console.log("measure To Date", moment(measureToDate).format('d-M-yyyy'));
 
     const handlePlotAssetIdDropDown = (e: any) => {
         // console.log(e.value)

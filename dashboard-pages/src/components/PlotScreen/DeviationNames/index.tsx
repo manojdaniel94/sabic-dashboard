@@ -1,6 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import iconCalendar from "../../../assets/images/icon_calendar.svg";
 import CalendarPopup from "../../CalendarPopup";
+import { useDispatch, useSelector } from "react-redux";
 
 interface Props {
     buttonName: string;
@@ -10,13 +11,37 @@ const DeviationNames = () => {
 
     const [showPicker, setShowPicker] = useState(false);
 
+    const { measureFromDate, measureToDate, sensorFromDate, sensorToDate, commonFromDate,
+        commonToDate, measureFromDateFormat, measureToDateFormat } = useSelector((state: any) => ({
+            measureFromDate: state.Common.measureFromDate,
+            measureToDate: state.Common.measureToDate,
+            sensorFromDate: state.Common.sensorFromDate,
+            sensorToDate: state.Common.sensorToDate,
+            commonFromDate: state.Common.commonFromDate,
+            commonToDate: state.Common.commonToDate,
+            measureFromDateFormat: state.Common.measureFromDateFormat,
+            measureToDateFormat: state.Common.measureToDateFormat,
+        }));
+
+    // useEffect(() => {
+    //     if (measureFromDate !== "") {
+    //         setLabelFromValueMeasure(moment(measureFromDate).format('d-M-yyyy'))
+    //     }
+    // }, [measureFromDate]);
+
+    // useEffect(() => {
+    //     if (measureToDate !== "") {
+    //         setLabelToValueMeasure(moment(measureToDate).format('d-M-yyyy'))
+    //     }
+    // }, [measureToDate]);
+
     return (
         <div id="sensor-plot-right">
             <div id="measure-names">
                 <div className="measure-filter">
                     <div className="right-title">MEASURE NAMES</div>
                     <a href="#" className="sensor-calendar">
-                        <span>Today:</span> <span className="calen-date">Feb 7 - 11:13</span> <span className="calen-icon">
+                        <span>Date:</span> <span className="calen-date">{measureFromDateFormat} {measureToDateFormat}</span> <span className="calen-icon">
                             <img src={iconCalendar} title="calendar" onClick={() => setShowPicker(!showPicker)} /></span></a>
                 </div>
                 <div className="sensor-plot-list">

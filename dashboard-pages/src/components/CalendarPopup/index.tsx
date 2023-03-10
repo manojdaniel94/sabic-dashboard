@@ -5,7 +5,9 @@ import {
     getMeasureFromDate,
     getMeasureToDate,
     getSensorFromDate,
-    getSensorToDate
+    getSensorToDate,
+    getCommonFromDate,
+    getCommonToDate
 } from '../../redux/reducers/CommonReducer';
 import moment from 'moment'
 
@@ -20,19 +22,34 @@ const CalendarPopup = ({ title }: Props) => {
     let dispatch = useDispatch();
 
     const [labelFrom, setLabelFrom] = useState(false);
-    const [labelFromValue, setLabelFromValue] = useState("");
+
+    const [labelFromValueMeasure, setLabelFromValueMeasure] = useState("");
+    const [labelFromValueSensor, setLabelFromValueSensor] = useState("");
+    const [labelFromValueCommon, setLabelFromValueCommon] = useState("");
 
     const [labelTo, setLabelTo] = useState(false);
-    const [labelToValue, setLabelToValue] = useState("");
+
+    const [labelToValueMeasure, setLabelToValueMeasure] = useState("");
+    const [labelToValueSensor, setLabelToValueSensor] = useState("");
+    const [labelToValueCommon, setLabelToValueCommon] = useState("");
 
     const { measureFromDate, measureToDate, sensorFromDate, sensorToDate, commonFromDate,
-        commonToDate } = useSelector((state: any) => ({
+        commonToDate, measureFromDateFormat, measureToDateFormat, sensorFromDateFormat, sensorToDateFormat, commonFromDateFormat, commonToDateFormat } = useSelector((state: any) => ({
             measureFromDate: state.Common.measureFromDate,
             measureToDate: state.Common.measureToDate,
             sensorFromDate: state.Common.sensorFromDate,
             sensorToDate: state.Common.sensorToDate,
             commonFromDate: state.Common.commonFromDate,
             commonToDate: state.Common.commonToDate,
+
+            measureFromDateFormat: state.Common.measureFromDateFormat,
+            measureToDateFormat: state.Common.measureToDateFormat,
+            sensorFromDateFormat: state.Common.sensorFromDateFormat,
+            sensorToDateFormat: state.Common.sensorToDateFormat,
+            commonFromDateFormat: state.Common.commonFromDateFormat,
+            commonToDateFormat: state.Common.commonToDateFormat,
+
+
         }));
 
     const handleFromDateChanged = (date: any) => {
@@ -42,6 +59,9 @@ const CalendarPopup = ({ title }: Props) => {
                 break;
             case "Sensor":
                 dispatch(getSensorFromDate(date));
+                break;
+            case "common":
+                dispatch(getCommonFromDate(date));
                 break;
         }
 
@@ -55,22 +75,15 @@ const CalendarPopup = ({ title }: Props) => {
             case "Sensor":
                 dispatch(getSensorToDate(date));
                 break;
+            case "common":
+                dispatch(getCommonToDate(date));
+                break;
         }
 
         // setToDate(date)
     }
 
-    useEffect(() => {
-        if (measureFromDate !== "") {
-            setLabelFromValue(moment(measureFromDate).format('d-M-yyyy'))
-        }
-    }, [measureFromDate]);
 
-    useEffect(() => {
-        if (measureToDate !== "") {
-            setLabelToValue(moment(measureToDate).format('d-M-yyyy'))
-        }
-    }, [measureToDate]);
 
     //  console.log(measureFromDate.toString())
 
@@ -85,13 +98,19 @@ const CalendarPopup = ({ title }: Props) => {
                                 measureFromDate : title === "Sensor" ?
                                     sensorFromDate : commonFromDate}
                             handleDateChange={handleFromDateChanged} /> */}
-                        <label style={{ width: "100px" }} onClick={() => { setLabelFrom(true); setLabelTo(false) }}>{labelFromValue}</label>
+                        <label style={{ width: "100px" }}
+                            onClick={() => { setLabelFrom(true); setLabelTo(false) }}>
+                            {title === "Deviation" ? measureFromDateFormat :
+                                title === "Sensor" ? sensorFromDateFormat : commonFromDateFormat}</label>
                     </div>
                     <div className="cf-right"><span>To</span>
                         {/* <DatePickerComponent selectedDate={title === "Deviation" ?
                             measureToDate : title === "Sensor" ? sensorToDate : commonToDate}
                             handleDateChange={handleToDateChanged} /> */}
-                        <label style={{ width: "100px" }} onClick={() => { setLabelTo(true); setLabelFrom(false) }}>{labelToValue}</label>
+                        <label style={{ width: "100px" }}
+                            onClick={() => { setLabelTo(true); setLabelFrom(false) }}>
+                            {title === "Deviation" ? measureToDateFormat :
+                                title === "Sensor" ? sensorToDateFormat : commonToDateFormat}</label>
                     </div>
                 </div>
                 {/* <div className="calendar-others"><a href="#" className="custom">1D</a><a href="#" className="custom">1M</a><a href="#" className="custom">3M</a><a href="#" className="custom">1Y</a><a href="#" className="custom">5Y</a></div>

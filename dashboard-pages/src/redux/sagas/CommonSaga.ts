@@ -634,6 +634,8 @@ function* getPlotSensorDropDown(action: any) {
 }
 
 function* getPlotDeviationData(action: any) {
+    // const response = yield getRequest(`${Api.getplotsdeviationgraph_byassetid}${action.payload}`);
+    console.log(action.payload)
     if (HTTP_CALL) {
         try {
             const response = yield getRequest(`${Api.getplotsdeviationgraph_byassetid}${action.payload}`);

@@ -19,7 +19,7 @@ const DatePickerComponent = ({ selectedDate, handleDateChange }: Props) => {
     //     setFromDate(date);
     // };
     return (
-        <DatePicker dateFormat={"dd/M/yyyy"} selected={selectedDate} onChange={handleDateChange} inline />
+        <DatePicker maxDate={new Date()} selected={selectedDate} onChange={handleDateChange} inline />
 
     );
 };

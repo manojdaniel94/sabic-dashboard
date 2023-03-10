@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { HOME, HOME_ROUTE, initialSelectedData } from '../../constant/constants'
+import moment from 'moment'
+
 
 const CommonSlice = createSlice({
     name: "Common",
@@ -54,7 +56,13 @@ const CommonSlice = createSlice({
         sensorFromDate: "",
         sensorToDate: "",
         commonFromDate: "",
-        commonToDate: ""
+        commonToDate: "",
+        measureFromDateFormat: "",
+        measureToDateFormat: "",
+        sensorFromDateFormat: "",
+        sensorToDateFormat: "",
+        commonFromDateFormat: "",
+        commonToDateFormat: "",
     },
     reducers: {
         getRegions: (state, action) => {
@@ -275,22 +283,46 @@ const CommonSlice = createSlice({
         // Plot Screen Ends
         // Date
         getMeasureFromDate: (state, action) => {
+            let date = moment(action.payload).format("DD-MM-YYYY")
             state.measureFromDate = action.payload
+            state.measureFromDateFormat = date
         },
         getMeasureToDate: (state, action) => {
+            let date = moment(action.payload).format("DD-MM-YYYY")
             state.measureToDate = action.payload
+            state.measureToDateFormat = date
         },
         getSensorFromDate: (state, action) => {
+            let date = moment(action.payload).format("DD-MM-YYYY")
             state.sensorFromDate = action.payload
+            state.sensorFromDateFormat = date
         },
         getSensorToDate: (state, action) => {
+            let date = moment(action.payload).format("DD-MM-YYYY")
             state.sensorToDate = action.payload
+            state.sensorToDateFormat = date
         },
         getCommonFromDate: (state, action) => {
+            let date = moment(action.payload).format("DD-MM-YYYY")
             state.commonFromDate = action.payload
+            state.commonFromDateFormat = date
+
+            state.measureFromDate = action.payload
+            state.measureFromDateFormat = date
+
+            state.sensorFromDate = action.payload
+            state.sensorFromDateFormat = date
         },
         getCommonToDate: (state, action) => {
+            let date = moment(action.payload).format("DD-MM-YYYY")
             state.commonToDate = action.payload
+            state.commonToDateFormat = date
+
+            state.measureToDate = action.payload
+            state.measureToDateFormat = date
+
+            state.sensorToDate = action.payload
+            state.sensorToDateFormat = date
         },
     }
 })

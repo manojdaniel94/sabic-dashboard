@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import "./CalendarComponet.scss"
 import iconCalendar from "../../assets/images/icon_calendar.svg";
 import CalendarPopup from "../CalendarPopup";
+import { useDispatch, useSelector } from "react-redux";
 
 interface Props {
     buttonName: string;
@@ -12,6 +13,25 @@ interface Props {
 const CalendarComponent = () => {
     const [showPicker, setShowPicker] = useState(true);
     const dateFilterList = ["1D", "1W", "1M", "3M", "1Y", "5Y"];
+
+    const { measureFromDate, measureToDate, sensorFromDate, sensorToDate, commonFromDate,
+        commonToDate, measureFromDateFormat, measureToDateFormat, sensorFromDateFormat, sensorToDateFormat, commonFromDateFormat, commonToDateFormat } = useSelector((state: any) => ({
+            measureFromDate: state.Common.measureFromDate,
+            measureToDate: state.Common.measureToDate,
+            sensorFromDate: state.Common.sensorFromDate,
+            sensorToDate: state.Common.sensorToDate,
+            commonFromDate: state.Common.commonFromDate,
+            commonToDate: state.Common.commonToDate,
+
+            measureFromDateFormat: state.Common.measureFromDateFormat,
+            measureToDateFormat: state.Common.measureToDateFormat,
+            sensorFromDateFormat: state.Common.sensorFromDateFormat,
+            sensorToDateFormat: state.Common.sensorToDateFormat,
+            commonFromDateFormat: state.Common.commonFromDateFormat,
+            commonToDateFormat: state.Common.commonToDateFormat,
+
+
+        }));
 
 
     const onClickDate = (item: any) => {
@@ -53,7 +73,7 @@ const CalendarComponent = () => {
     return (
         <div className="breadcrumb-right">
             <div id="calendar">
-                <a href="#" className="custom" onClick={() => setShowPicker(!showPicker)}><span>Today:</span> <span className="calen-date">Feb 7 - 11:13</span> <span className="calen-icon"><img src={iconCalendar} title="calendar" /></span></a>
+                <a href="#" className="custom" onClick={() => setShowPicker(!showPicker)}><span>Date:</span> <span className="calen-date">{commonFromDateFormat} {commonToDateFormat}</span> <span className="calen-icon"><img src={iconCalendar} title="calendar" /></span></a>
                 {/* {dateFilterList &&
                     dateFilterList.map((item, index) => (
                         <a href="#" className="custom" key={index} onClick={() => onClickDate(item)}> {item}</a>
