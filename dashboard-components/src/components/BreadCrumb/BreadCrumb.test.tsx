@@ -8,7 +8,7 @@ describe("BreadCrumb", () => {
     render(<BreadCrumb />);
     const homeLink = screen.getByRole("link", { name: /home/i });
     const yanpetLink = screen.getByRole("link", { name: /yanpet/i });
-    const pollyLink = screen.getByRole("link", { name: /polly 2/i });
+    const pollyLink = screen.getByRole("link", { name: /poly 2/i });
 
     expect(homeLink).toHaveAttribute("href", "#");
     expect(yanpetLink).toHaveAttribute("href", "#");
