@@ -25,14 +25,12 @@ exports[`ReliabilityHeatMap component renders the component 1`] = `
             class="hi-popup hi-pos-off hidden"
           >
             <h3>
-              HEALTH INDEX
-               
+              HEALTH INDEX 
               <a
                 class="hi-pop-close"
                 href="#"
               >
-                 
-                X
+                 X
               </a>
             </h3>
             <div
@@ -111,14 +109,12 @@ exports[`ReliabilityHeatMap component renders the component 1`] = `
             class="hi-popup hi-pos-normal hidden"
           >
             <h3>
-              HEALTH INDEX
-               
+              HEALTH INDEX 
               <a
                 class="hi-pop-close"
                 href="#"
               >
-                 
-                X
+                 X
               </a>
             </h3>
             <div
@@ -198,14 +194,12 @@ exports[`ReliabilityHeatMap component renders the component 1`] = `
             class="hi-popup hi-pos-warning hidden"
           >
             <h3>
-              HEALTH INDEX
-               
+              HEALTH INDEX 
               <a
                 class="hi-pop-close"
                 href="#"
               >
-                 
-                X
+                 X
               </a>
             </h3>
             <div
@@ -261,7 +255,7 @@ exports[`ReliabilityHeatMap component renders the component 1`] = `
               </div>
             </div>
           </div>
-           
+            
           3
         </span>
         <span
@@ -285,14 +279,12 @@ exports[`ReliabilityHeatMap component renders the component 1`] = `
             class="hi-popup hi-pos-risk hidden"
           >
             <h3>
-              HEALTH INDEX
-               
+              HEALTH INDEX 
               <a
                 class="hi-pop-close"
                 href="#"
               >
-                 
-                X
+                 X
               </a>
             </h3>
             <div
