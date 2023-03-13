@@ -4,26 +4,32 @@ import Select from "react-select";
 interface Props {
   options?: any;
   handleChange?: any;
-  value?: any
-  defaultValue?: any,
-  multi?: any
+  value?: any;
+  defaultValue?: any;
+  multi?: any;
 }
 
 // initial
-const Dropdown = ({ options, handleChange, value, defaultValue, multi }: Props) => {
+const Dropdown = ({
+  options,
+  handleChange,
+  value,
+  defaultValue,
+  multi,
+}: Props) => {
   return (
     <>
       <Select
         styles={{
-          option: (provided,state) => ({
+          option: (provided, state) => ({
             ...provided,
             color: "#333333",
             backgroundColor: state.isSelected ? "#c5E7F7" : "white",
           }),
           valueContainer: (provided, state) => ({
             ...provided,
-            height: '30px',
-            padding: '0 6px'
+            height: "30px",
+            padding: "0 6px",
           }),
         }}
         // background:#c5E7F7
@@ -33,7 +39,12 @@ const Dropdown = ({ options, handleChange, value, defaultValue, multi }: Props) 
         value={value}
         defaultValue={defaultValue}
         // isMulti={multi}
-        components={multi && { DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+        components={
+          multi && {
+            DropdownIndicator: () => null,
+            IndicatorSeparator: () => null,
+          }
+        }
       />
     </>
   );
